@@ -1,0 +1,29 @@
+name: SHACL Validation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install pyshacl
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyshacl rdflib
+
+      - name: Run SHACL validation
+        run: |
+          echo "Validating examples/instances.ttl against shacl/meds-shapes.ttl"
+          pyshacl -s shacl/meds-shapes.ttl -i examples/instances.ttl -f text || (echo "SHACL validation FAILED" && exit 1)

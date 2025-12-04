@@ -1,0 +1,48 @@
+@prefix : <https://albertomarfoglia.github.io/meds/0.1.0/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://albertomarfoglia.github.io/meds/0.1.0/ontology#> .
+
+:Dataset_MIMIC_DEMO
+    a :DatasetMetadata ;
+    :datasetName "MIMIC-IV-Demo" ;
+    :medsVersion "0.3.3" ;
+    :createdAt "2025-03-28T13:47:38.809053"^^xsd:dateTime ;
+    :datasetVersion "2.2" ;
+    :etlVersion "0.0.4" ;
+    :tableName "data/train/0.parquet" , "data/train/1.parquet" .
+
+:trainSplit a :SubjectSplit ; rdfs:label "train"@en .
+:tuningSplit a :SubjectSplit ; rdfs:label "tuning"@en .
+:heldOutSplit a :SubjectSplit ; rdfs:label "held_out"@en .
+
+:subj12345678 a :Subject ;
+    :subjectId "12345678" ;
+    :assignedSplit :trainSplit ;
+    :describedInDataset :Dataset_MIMIC_DEMO .
+
+:LAB_51237_UNK a :Code ;
+    :codeString "LAB//51237//UNK" ;
+    :codeDescription "Example lab code (encoded)" ;
+    :externalCodeId "LOINC/718-7" ;
+    :describedInDataset :Dataset_MIMIC_DEMO .
+
+:meas1 a :Measurement ;
+    :hasSubject :subj12345678 ;
+    :hasCode :LAB_51237_UNK ;
+    :time "2178-02-12T11:38:00"^^xsd:dateTime ;
+    :numericValue "1.4"^^xsd:double ;
+    :siteId "ICU-1" ;
+    :describedInDataset :Dataset_MIMIC_DEMO .
+
+:meas2 a :Measurement ;
+    :hasSubject :subj12345678 ;
+    :codeString "GENDER//M" ;
+    :textValue "M" ;
+    :describedInDataset :Dataset_MIMIC_DEMO .
+
+:label_12345678_20210401 a :LabelSample ;
+    :hasSubject :subj12345678 ;
+    :predictionTime "2021-04-01T09:30:00"^^xsd:dateTime ;
+    :booleanValue "true"^^xsd:boolean ;
+    :describedInDataset :Dataset_MIMIC_DEMO .

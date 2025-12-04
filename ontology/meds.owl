@@ -1,0 +1,332 @@
+@prefix : <https://albertomarfoglia.github.io/meds/0.1.0/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix meds: <https://albertomarfoglia.github.io/meds/0.1.0/ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <https://albertomarfoglia.github.io/meds/0.1.0/ontology#> .
+
+<https://albertomarfoglia.github.io/meds/0.1.0/ontology> a owl:Ontology ;
+    dcterms:title "MEDS conceptual ontology (OWL)" ;
+    dcterms:creator "Alberto Marfoglia" ;
+    dcterms:description "An OWL ontology encoding the MEDS data model (subjects, measurements, codes, labels, dataset metadata, splits). This ontology intentionally models open/extendable value modalities and captures MEDS invariants as annotations where OWL cannot enforce them." ;
+    dcterms:created "2025-12-04"^^xsd:date ;
+    owl:versionInfo "0.1.0" .
+
+#################################################################
+#    Classes
+#################################################################
+###  https://albertomarfoglia.github.io/meds/0.1.0/ontology#Code
+:Code a owl:Class ;
+    rdfs:label "Code" ;
+    rdfs:comment "Metadata/vocabulary entry describing a measurement code (code string, description, parent codes, external links)." .
+
+###  https://albertomarfoglia.github.io/meds/0.1.0/ontology#Dataset
+:DatasetMetadata a owl:Class ;
+    rdfs:label "DatasetMetadata" ;
+    rdfs:comment "High-level provenance and conversion metadata for a MEDS dataset (dataset_name, dataset_version, etl info, created_at, etc.)." .
+
+
+###  https://albertomarfoglia.github.io/meds/0.1.0/ontology#LabelSample
+:LabelSample rdf:type owl:Class ;
+                rdfs:comment "A prediction sample row: subject, prediction_time, and one label value (boolean/integer/float/categorical)." ;
+                rdfs:label "LabelSample" .
+
+
+###  https://albertomarfoglia.github.io/meds/0.1.0/ontology#Measurement
+:Measurement rdf:type owl:Class ;
+                rdfs:label "Measurement" ;
+                rdfs:comment "A single observation/row in MEDS: (subject, time?, code, value modalities...). Time is nullable for static measurements." ;
+                owl:disjointWith :LabelSample .
+
+
+###  https://albertomarfoglia.github.io/meds/0.1.0/ontology#Subject
+:Subject a owl:Class ;
+    rdfs:label "Subject" ;
+    rdfs:comment "Primary entity for which care observations are recorded. Maps to MEDS subject_id (patient or admission-level subject)." .
+
+###  https://albertomarfoglia.github.io/meds/0.1.0/ontology#SubjectSplit
+:SubjectSplit a owl:Class ;
+    rdfs:label "SubjectSplit" ;
+    rdfs:comment "An assignment of a subject to a named split (train, tuning, held_out)." .
+
+:ValueModality a owl:Class ;
+    rdfs:label "ValueModality" ;
+    rdfs:comment "Generic holder for additional value modalities (image path, waveform id, etc.). Instances may contain modality-specific properties." .
+
+:ImageValue a owl:Class ;
+    rdfs:subClassOf :ValueModality ;
+    rdfs:label "ImageValue" ;
+    rdfs:comment "Value modality pointing to an image path/uri." .
+
+
+################################################################
+# Class restrictions (cardinalities & guidance)
+################################################################
+# Measurements must have exactly one subject and exactly one code; time is optional (0..1).
+:Measurement
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty :hasSubject ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty :hasCode ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty :time ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty :numericValue ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty :textValue ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+    ] .
+
+# Code must have exactly one codeString
+ :Code
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty  :codeString ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] .
+
+:DatasetMetadata
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty :datasetName ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty :medsVersion ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty :createdAt ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] .
+
+# LabelSample requirements: subject and predictionTime required; label value properties are optional but typically exactly one will be used.
+:LabelSample
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty :hasSubject ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty  :predictionTime ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty  :booleanValue ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty  :integerValue ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty  :floatValue ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty  :categoricalValue ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+    ] .
+
+################################################################
+# Important invariants as annotations (procedural constraints)
+################################################################
+:DatasetMetadata rdfs:comment
+    "MEDS invariants to be enforced by dataset creators/ETL: 1) Subject contiguity: data for a single subject must not be split across multiple physical files. 2) Sorted order: within a subject, measurements should be ordered by time. These are operational constraints and not fully expressible in OWL; they are documented here for consumers." .
+
+#################################################################
+#    Object Properties
+#################################################################
+:hasSubject a owl:ObjectProperty ;
+    rdfs:label "hasSubject" ;
+    rdfs:domain :Measurement , :LabelSample ;
+    rdfs:range :Subject ;
+    rdfs:comment "Links a Measurement or LabelSample to its Subject (maps to subject_id)." .
+
+:hasCode a owl:ObjectProperty ;
+    rdfs:label "hasCode" ;
+    rdfs:domain :Measurement ;
+    rdfs:range :Code ;
+    rdfs:comment "Link from a Measurement to a Code metadata entry. If no Code metadata file exists, codeString on Measurement is used." .
+
+:hasValueModality a owl:ObjectProperty ;
+    rdfs:label "hasValueModality" ;
+    rdfs:domain :Measurement ;
+    rdfs:range :ValueModality ;
+    rdfs:comment "Attach additional value modalities (image, waveform, etc.) to a Measurement." .
+
+:assignedSplit a owl:ObjectProperty ;
+    rdfs:label "assignedSplit" ;
+    rdfs:domain :Subject ;
+    rdfs:range :SubjectSplit ;
+    rdfs:comment "Assign a subject to a split (train, tuning, held_out)." .
+
+:describedInDataset a owl:ObjectProperty ;
+    rdfs:label "describedInDataset" ;
+    rdfs:domain [ owl:unionOf ( :Measurement :Code :Subject :LabelSample ) ] ;
+    rdfs:range :DatasetMetadata ;
+    rdfs:comment "Link to the dataset-level metadata that describes the provenance/etl for instances." .
+
+:parentCode a owl:ObjectProperty ;
+    rdfs:label "parentCode" ;
+    rdfs:domain :Code ;
+    rdfs:range :Code ;
+    rdfs:comment "Ontological/aggregation parent relations between codes (maps to CodeMetadata.parent_codes)." .
+
+#################################################################
+#    Data properties
+#################################################################
+:subjectId a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Unique identifier for a Subject; functional (= at most one value per Subject)." .
+
+:Subject owl:hasKey ( :subjectId ) .
+
+:codeString a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain [ a owl:Class ;
+                  owl:unionOf ( :Code :Measurement )
+                ] ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Canonical textual code; functional for Code. Also present on Measurement when no Code metadata exists." .
+
+:Code owl:hasKey ( :codeString ) .
+
+:time a owl:DatatypeProperty ;
+    rdfs:label "time" ;
+    rdfs:domain :Measurement ;
+    rdfs:range xsd:dateTime ;
+    rdfs:comment "Timestamp of the measurement. MEDS allows null for static measurements; modelled as 0..1 cardinality." .
+
+:codeDescription a owl:DatatypeProperty ;
+    rdfs:label "codeDescription" ;
+    rdfs:domain :Code ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Human readable description of the code." .
+
+:numericValue a owl:DatatypeProperty ;
+    rdfs:label "numericValue" ;
+    rdfs:domain :Measurement ;
+    rdfs:range xsd:double ;
+    rdfs:comment "Numeric measurement value (optional in MEDS)." .
+
+:textValue a owl:DatatypeProperty ;
+    rdfs:label "textValue" ;
+    rdfs:domain :Measurement ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Text measurement value (optional in MEDS)." .
+
+:predictionTime a owl:DatatypeProperty ;
+    rdfs:label "predictionTime" ;
+    rdfs:domain :LabelSample ;
+    rdfs:range xsd:dateTime ;
+    rdfs:comment "Inclusive endpoint of the data usable for predicting the label (required for LabelSample)." .
+
+:booleanValue a owl:DatatypeProperty ;
+    rdfs:label "booleanValue" ;
+    rdfs:domain :LabelSample ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Boolean label value (if applicable)." .
+
+:integerValue a owl:DatatypeProperty ;
+    rdfs:label "integerValue" ;
+    rdfs:domain :LabelSample ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Integer label value (e.g., ordinal labels)." .
+
+:floatValue a owl:DatatypeProperty ;
+    rdfs:label "floatValue" ;
+    rdfs:domain :LabelSample ;
+    rdfs:range xsd:double ;
+    rdfs:comment "Float label value (continuous target)." .
+
+:categoricalValue a owl:DatatypeProperty ;
+    rdfs:label "categoricalValue" ;
+    rdfs:domain :LabelSample ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Categorical label encoded as a string." .
+
+:siteId a owl:DatatypeProperty ;
+    rdfs:label "siteId" ;
+    rdfs:domain :Measurement ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Identifier for site of care (maps to MEDS metadata: site_id_columns)." .
+
+:datasetName a owl:DatatypeProperty ;
+    rdfs:label "datasetName" ;
+    rdfs:domain :DatasetMetadata ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Name of the dataset. REQUIRED. Matches MEDS: dataset_name." .
+
+:datasetVersion a owl:DatatypeProperty ;
+    rdfs:label "datasetVersion" ;
+    rdfs:domain :DatasetMetadata ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Dataset version string assigned by the dataset creator. OPTIONAL. Matches MEDS: dataset_version." .
+
+:etlVersion a owl:DatatypeProperty ;
+    rdfs:label "etlVersion" ;
+    rdfs:domain :DatasetMetadata ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Version of the ETL pipeline used to create the dataset. OPTIONAL. Matches MEDS: etl_version." .
+
+:etlNotes a owl:DatatypeProperty ;
+    rdfs:label "etlNotes" ;
+    rdfs:domain :DatasetMetadata ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Freeform notes describing how conversion to MEDS was performed. OPTIONAL. Matches MEDS: etl_notes." .
+
+:protocolNotes a owl:DatatypeProperty ;
+    rdfs:label "protocolNotes" ;
+    rdfs:domain :DatasetMetadata ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Notes describing how to interpret data, data quirks, filtering logic, or protocol differences across sites. OPTIONAL. Matches MEDS: protocol_notes." .
+
+:createdAt a owl:DatatypeProperty ;
+    rdfs:label "createdAt" ;
+    rdfs:domain :DatasetMetadata ;
+    rdfs:range xsd:dateTime ;
+    rdfs:comment "Creation timestamp of the dataset in RFC 3339 format. REQUIRED. Matches MEDS: created_at." .
+
+:tableName a owl:DatatypeProperty ;
+    rdfs:label "tableName" ;
+    rdfs:domain :DatasetMetadata ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Name of a measurement table included in the dataset. Repeated one triple per table (preferred to comma-separated lists)." .
+
+:siteIdColumns a owl:DatatypeProperty ;
+    rdfs:label "siteIdColumns" ;
+    rdfs:domain :DatasetMetadata ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Comma-separated list of columns that represent site identifiers. OPTIONAL. Matches MEDS: site_id_columns." .
+
+:subjectIdColumns a owl:DatatypeProperty ;
+    rdfs:label "subjectIdColumns" ;
+    rdfs:domain :DatasetMetadata ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Comma-separated list of columns used as subject identifiers. REQUIRED (typically 'subject_id'). Matches MEDS: subject_id_columns." .
+
+:medsVersion a owl:DatatypeProperty ;
+    rdfs:label "medsVersion" ;
+    rdfs:domain :DatasetMetadata ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Version of the MEDS schema used to generate the dataset. REQUIRED. Matches MEDS: meds_version." .
+
+################################################################
+# Canonical split individuals
+################################################################
+:trainSplit a :SubjectSplit ; rdfs:label "train"@en .
+:tuningSplit a :SubjectSplit ; rdfs:label "tuning"@en .
+:heldOutSplit a :SubjectSplit ; rdfs:label "held_out"@en .

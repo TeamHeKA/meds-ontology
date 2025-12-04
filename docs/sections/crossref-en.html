@@ -1,0 +1,941 @@
+<h2 id="crossreference" class="list">Cross-reference for MEDS conceptual ontology (OWL) classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by MEDS conceptual ontology (OWL).
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#Code" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Code">Code</a></li>
+  <li><a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#DatasetMetadata">DatasetMetadata</a></li>
+  <li><a href="#ImageValue" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#ImageValue">ImageValue</a></li>
+  <li><a href="#LabelSample" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#LabelSample">LabelSample</a></li>
+  <li><a href="#Measurement" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Measurement">Measurement</a></li>
+  <li><a href="#Subject" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Subject">Subject</a></li>
+  <li><a href="#SubjectSplit" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#SubjectSplit">SubjectSplit</a></li>
+  <li><a href="#ValueModality" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#ValueModality">ValueModality</a></li>
+ </ul>
+ <div class="entity" id="Code">
+  <h3>Code<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#Code</p>
+  <div class="comment">
+   <span class="markdown">Metadata/vocabulary entry describing a measurement code (code string, description, parent codes, external links).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#codeString" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#codeString">code String</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#codeDescription" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#codeDescription">codeDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#describedInDataset" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#describedInDataset">describedInDataset</a> <sup class="type-op" title="object property">op</sup>, <a href="#parentCode" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#parentCode">parentCode</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasCode" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#hasCode">hasCode</a> <sup class="type-op" title="object property">op</sup>, <a href="#parentCode" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#parentCode">parentCode</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has keys
+   </dt>
+   <dd>
+    <a href="#codeString" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#codeString">code String</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="DatasetMetadata">
+  <h3>DatasetMetadata<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#DatasetMetadata</p>
+  <div class="comment">
+   <span class="markdown">High-level provenance and conversion metadata for a MEDS dataset (dataset_name, dataset_version, etl info, created_at, etc.).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#createdAt" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#createdAt">createdAt</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#datasetName" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#datasetName">datasetName</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#datasetVersion" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#datasetVersion">datasetVersion</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#etlNotes" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#etlNotes">etlNotes</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#etlVersion" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#etlVersion">etlVersion</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#medsVersion" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#medsVersion">medsVersion</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#protocolNotes" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#protocolNotes">protocolNotes</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#siteIdColumns" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#siteIdColumns">siteIdColumns</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#subjectIdColumns" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#subjectIdColumns">subjectIdColumns</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#tableName" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#tableName">tableName</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#describedInDataset" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#describedInDataset">describedInDataset</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ImageValue">
+  <h3>ImageValue<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#ImageValue</p>
+  <div class="comment">
+   <span class="markdown">Value modality pointing to an image path/uri.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#ValueModality" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#ValueModality">ValueModality</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LabelSample">
+  <h3>LabelSample<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#LabelSample</p>
+  <div class="comment">
+   <span class="markdown">A prediction sample row: subject, prediction_time, and one label value (boolean/integer/float/categorical).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#booleanValue" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#booleanValue">booleanValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#categoricalValue" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#categoricalValue">categoricalValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#describedInDataset" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#describedInDataset">describedInDataset</a> <sup class="type-op" title="object property">op</sup>, <a href="#floatValue" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#floatValue">floatValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasSubject" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#hasSubject">hasSubject</a> <sup class="type-op" title="object property">op</sup>, <a href="#integerValue" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#integerValue">integerValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#predictionTime" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#predictionTime">predictionTime</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Measurement" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Measurement">Measurement</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Measurement">
+  <h3>Measurement<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#Measurement</p>
+  <div class="comment">
+   <span class="markdown">A single observation/row in MEDS: (subject, time?, code, value modalities...). Time is nullable for static measurements.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#codeString" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#codeString">code String</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#describedInDataset" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#describedInDataset">describedInDataset</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasCode" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#hasCode">hasCode</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasSubject" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#hasSubject">hasSubject</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasValueModality" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#hasValueModality">hasValueModality</a> <sup class="type-op" title="object property">op</sup>, <a href="#numericValue" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#numericValue">numericValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#siteId" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#siteId">siteId</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#textValue" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#textValue">textValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#time" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#time">time</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#LabelSample" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Subject">
+  <h3>Subject<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#Subject</p>
+  <div class="comment">
+   <span class="markdown">Primary entity for which care observations are recorded. Maps to MEDS subject_id (patient or admission-level subject).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#assignedSplit" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#assignedSplit">assignedSplit</a> <sup class="type-op" title="object property">op</sup>, <a href="#describedInDataset" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#describedInDataset">describedInDataset</a> <sup class="type-op" title="object property">op</sup>, <a href="#subjectId" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#subjectId">subject Id</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasSubject" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#hasSubject">hasSubject</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has keys
+   </dt>
+   <dd>
+    <a href="#subjectId" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#subjectId">subject Id</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SubjectSplit">
+  <h3>SubjectSplit<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#SubjectSplit</p>
+  <div class="comment">
+   <span class="markdown">An assignment of a subject to a named split (train, tuning, held_out).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#assignedSplit" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#assignedSplit">assignedSplit</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#heldOutSplit" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#heldOutSplit">held_out</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#trainSplit" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#trainSplit">train</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#tuningSplit" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#tuningSplit">tuning</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ValueModality">
+  <h3>ValueModality<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#ValueModality</p>
+  <div class="comment">
+   <span class="markdown">Generic holder for additional value modalities (image path, waveform id, etc.). Instances may contain modality-specific properties.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#ImageValue" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#ImageValue">ImageValue</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasValueModality" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#hasValueModality">hasValueModality</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#assignedSplit" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#assignedSplit">assignedSplit</a></li>
+  <li><a href="#describedInDataset" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#describedInDataset">describedInDataset</a></li>
+  <li><a href="#hasCode" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#hasCode">hasCode</a></li>
+  <li><a href="#hasSubject" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#hasSubject">hasSubject</a></li>
+  <li><a href="#hasValueModality" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#hasValueModality">hasValueModality</a></li>
+  <li><a href="#parentCode" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#parentCode">parentCode</a></li>
+ </ul>
+ <div class="entity" id="assignedSplit">
+  <h3>assignedSplit<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#assignedSplit</p>
+  <div class="comment">
+   <span class="markdown">Assign a subject to a split (train, tuning, held_out).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Subject" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Subject">Subject</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#SubjectSplit" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#SubjectSplit">SubjectSplit</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="describedInDataset">
+  <h3>describedInDataset<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#describedInDataset</p>
+  <div class="comment">
+   <span class="markdown">Link to the dataset-level metadata that describes the provenance/etl for instances.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Code" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Code">Code</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#LabelSample" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Measurement" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Measurement">Measurement</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Subject" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Subject">Subject</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasCode">
+  <h3>hasCode<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#hasCode</p>
+  <div class="comment">
+   <span class="markdown">Link from a Measurement to a Code metadata entry. If no Code metadata file exists, codeString on Measurement is used.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Measurement" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Measurement">Measurement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Code" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Code">Code</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasSubject">
+  <h3>hasSubject<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#hasSubject</p>
+  <div class="comment">
+   <span class="markdown">Links a Measurement or LabelSample to its Subject (maps to subject_id).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#LabelSample" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#Measurement" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Measurement">Measurement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Subject" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Subject">Subject</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasValueModality">
+  <h3>hasValueModality<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#hasValueModality</p>
+  <div class="comment">
+   <span class="markdown">Attach additional value modalities (image, waveform, etc.) to a Measurement.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Measurement" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Measurement">Measurement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#ValueModality" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#ValueModality">ValueModality</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="parentCode">
+  <h3>parentCode<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#parentCode</p>
+  <div class="comment">
+   <span class="markdown">Ontological/aggregation parent relations between codes (maps to CodeMetadata.parent_codes).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Code" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Code">Code</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Code" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Code">Code</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#booleanValue" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#booleanValue">booleanValue</a></li>
+  <li><a href="#categoricalValue" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#categoricalValue">categoricalValue</a></li>
+  <li><a href="#codeString" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#codeString"> <span>code String</span> </a></li>
+  <li><a href="#codeDescription" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#codeDescription">codeDescription</a></li>
+  <li><a href="#createdAt" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#createdAt">createdAt</a></li>
+  <li><a href="#datasetName" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#datasetName">datasetName</a></li>
+  <li><a href="#datasetVersion" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#datasetVersion">datasetVersion</a></li>
+  <li><a href="#etlNotes" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#etlNotes">etlNotes</a></li>
+  <li><a href="#etlVersion" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#etlVersion">etlVersion</a></li>
+  <li><a href="#floatValue" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#floatValue">floatValue</a></li>
+  <li><a href="#integerValue" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#integerValue">integerValue</a></li>
+  <li><a href="#medsVersion" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#medsVersion">medsVersion</a></li>
+  <li><a href="#numericValue" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#numericValue">numericValue</a></li>
+  <li><a href="#predictionTime" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#predictionTime">predictionTime</a></li>
+  <li><a href="#protocolNotes" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#protocolNotes">protocolNotes</a></li>
+  <li><a href="#siteId" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#siteId">siteId</a></li>
+  <li><a href="#siteIdColumns" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#siteIdColumns">siteIdColumns</a></li>
+  <li><a href="#subjectId" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#subjectId"> <span>subject Id</span> </a></li>
+  <li><a href="#subjectIdColumns" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#subjectIdColumns">subjectIdColumns</a></li>
+  <li><a href="#tableName" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#tableName">tableName</a></li>
+  <li><a href="#textValue" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#textValue">textValue</a></li>
+  <li><a href="#time" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#time">time</a></li>
+ </ul>
+ <div class="entity" id="booleanValue">
+  <h3>booleanValue<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#booleanValue</p>
+  <div class="comment">
+   <span class="markdown">Boolean label value (if applicable).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#LabelSample" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="categoricalValue">
+  <h3>categoricalValue<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#categoricalValue</p>
+  <div class="comment">
+   <span class="markdown">Categorical label encoded as a string.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#LabelSample" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="codeString">
+  <h3>code String<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#codeString</p>
+  <div class="comment">
+   <span class="markdown">Canonical textual code; functional for Code. Also present on Measurement when no Code metadata exists.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Code" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Code">Code</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Measurement" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Measurement">Measurement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="codeDescription">
+  <h3>codeDescription<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#codeDescription</p>
+  <div class="comment">
+   <span class="markdown">Human readable description of the code.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Code" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Code">Code</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="createdAt">
+  <h3>createdAt<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#createdAt</p>
+  <div class="comment">
+   <span class="markdown">Creation timestamp of the dataset in RFC 3339 format. REQUIRED. Matches MEDS: created_at.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="datasetName">
+  <h3>datasetName<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#datasetName</p>
+  <div class="comment">
+   <span class="markdown">Name of the dataset. REQUIRED. Matches MEDS: dataset_name.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="datasetVersion">
+  <h3>datasetVersion<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#datasetVersion</p>
+  <div class="comment">
+   <span class="markdown">Dataset version string assigned by the dataset creator. OPTIONAL. Matches MEDS: dataset_version.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="etlNotes">
+  <h3>etlNotes<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#etlNotes</p>
+  <div class="comment">
+   <span class="markdown">Freeform notes describing how conversion to MEDS was performed. OPTIONAL. Matches MEDS: etl_notes.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="etlVersion">
+  <h3>etlVersion<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#etlVersion</p>
+  <div class="comment">
+   <span class="markdown">Version of the ETL pipeline used to create the dataset. OPTIONAL. Matches MEDS: etl_version.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="floatValue">
+  <h3>floatValue<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#floatValue</p>
+  <div class="comment">
+   <span class="markdown">Float label value (continuous target).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#LabelSample" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#double" target="_blank" title="http://www.w3.org/2001/XMLSchema#double">double</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="integerValue">
+  <h3>integerValue<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#integerValue</p>
+  <div class="comment">
+   <span class="markdown">Integer label value (e.g., ordinal labels).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#LabelSample" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="medsVersion">
+  <h3>medsVersion<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#medsVersion</p>
+  <div class="comment">
+   <span class="markdown">Version of the MEDS schema used to generate the dataset. REQUIRED. Matches MEDS: meds_version.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="numericValue">
+  <h3>numericValue<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#numericValue</p>
+  <div class="comment">
+   <span class="markdown">Numeric measurement value (optional in MEDS).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Measurement" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Measurement">Measurement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#double" target="_blank" title="http://www.w3.org/2001/XMLSchema#double">double</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="predictionTime">
+  <h3>predictionTime<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#predictionTime</p>
+  <div class="comment">
+   <span class="markdown">Inclusive endpoint of the data usable for predicting the label (required for LabelSample).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#LabelSample" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="protocolNotes">
+  <h3>protocolNotes<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#protocolNotes</p>
+  <div class="comment">
+   <span class="markdown">Notes describing how to interpret data, data quirks, filtering logic, or protocol differences across sites. OPTIONAL. Matches MEDS: protocol_notes.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="siteId">
+  <h3>siteId<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#siteId</p>
+  <div class="comment">
+   <span class="markdown">Identifier for site of care (maps to MEDS metadata: site_id_columns).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Measurement" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Measurement">Measurement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="siteIdColumns">
+  <h3>siteIdColumns<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#siteIdColumns</p>
+  <div class="comment">
+   <span class="markdown">Comma-separated list of columns that represent site identifiers. OPTIONAL. Matches MEDS: site_id_columns.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="subjectId">
+  <h3>subject Id<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#subjectId</p>
+  <div class="comment">
+   <span class="markdown">Unique identifier for a Subject; functional (= at most one value per Subject).</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Subject" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Subject">Subject</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="subjectIdColumns">
+  <h3>subjectIdColumns<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#subjectIdColumns</p>
+  <div class="comment">
+   <span class="markdown">Comma-separated list of columns used as subject identifiers. REQUIRED (typically 'subject_id'). Matches MEDS: subject_id_columns.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="tableName">
+  <h3>tableName<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#tableName</p>
+  <div class="comment">
+   <span class="markdown">Name of a measurement table included in the dataset. Repeated one triple per table (preferred to comma-separated lists).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="textValue">
+  <h3>textValue<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#textValue</p>
+  <div class="comment">
+   <span class="markdown">Text measurement value (optional in MEDS).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Measurement" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Measurement">Measurement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="time">
+  <h3>time<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#time</p>
+  <div class="comment">
+   <span class="markdown">Timestamp of the measurement. MEDS allows null for static measurements; modelled as 0..1 cardinality.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Measurement" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#Measurement">Measurement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+ <h3 id="namedindividuals" class="list">Named Individuals</h3>
+ <ul class="hlist">
+  <li><a href="#heldOutSplit" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#heldOutSplit">held_out</a></li>
+  <li><a href="#trainSplit" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#trainSplit">train</a></li>
+  <li><a href="#tuningSplit" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#tuningSplit">tuning</a></li>
+ </ul>
+ <div class="entity" id="heldOutSplit">
+  <h3>held_out<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#heldOutSplit</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#SubjectSplit" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#SubjectSplit">SubjectSplit</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="trainSplit">
+  <h3>train<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#trainSplit</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#SubjectSplit" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#SubjectSplit">SubjectSplit</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="tuningSplit">
+  <h3>tuning<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds/0.1.0/ontology#tuningSplit</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#SubjectSplit" title="https://albertomarfoglia.github.io/meds/0.1.0/ontology#SubjectSplit">SubjectSplit</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
+</div>
+</div>

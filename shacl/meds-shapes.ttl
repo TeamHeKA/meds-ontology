@@ -1,0 +1,200 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix : <https://albertomarfoglia.github.io/meds/0.1.0/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <https://albertomarfoglia.github.io/meds/0.1.0/ontology#> .
+
+# Subject shape
+:SubjectShape
+    a sh:NodeShape ;
+    sh:targetClass :Subject ;
+    sh:property [
+        sh:path :subjectId ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Each Subject must have a subjectId (string)." ;
+    ] ;
+    sh:message "Subject nodes should have a unique subjectId; uniqueness across the graph must be checked by dataset-level logic." .
+
+# Code shape
+:CodeShape
+    a sh:NodeShape ;
+    sh:targetClass :Code ;
+    sh:property [
+        sh:path :codeString ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Each Code must have a codeString (canonical code text)." ;
+    ] ;
+    sh:property [
+        sh:path :parentCode ;
+        sh:nodeKind sh:IRI ;
+        sh:class :Code ;
+        sh:maxCount 1 ;
+        sh:message "parentCode, if present, should point to another Code node." ;
+    ] .
+
+# DatasetMetadata shape
+:DatasetMetadataShape
+    a sh:NodeShape ;
+    sh:targetClass :DatasetMetadata ;
+    sh:property [
+        sh:path :datasetName ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "DatasetMetadata should have datasetName." ;
+    ] ;
+    sh:property [
+        sh:path :medsVersion ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "DatasetMetadata should have medsVersion." ;
+    ] ;
+    sh:property [
+        sh:path :createdAt ;
+        sh:minCount 1 ;
+        sh:datatype xsd:dateTime ;
+        sh:message "DatasetMetadata should have createdAt (RFC3339 datetime)." ;
+    ] ;
+    sh:property [
+        sh:path :tableName ;
+        sh:minCount 0 ;
+        sh:datatype xsd:string ;
+        sh:message "tableName may be repeated (one triple per table)." ;
+    ] .
+
+# Measurement shape
+:MeasurementShape
+    a sh:NodeShape ;
+    sh:targetClass :Measurement ;
+    sh:property [
+        sh:path :hasSubject ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class :Subject ;
+        sh:message "Measurement must link to a Subject via :hasSubject." ;
+    ] ;
+    sh:or (
+        [ sh:property [
+            sh:path :hasCode ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:class :Code ;
+            sh:message "If present, hasCode must point to a Code node." ;
+        ] ]
+        [ sh:property [
+            sh:path :codeString ;
+            sh:minCount 1 ;
+            sh:datatype xsd:string ;
+            sh:message "If no Code node is used, the Measurement must have a codeString literal." ;
+        ] ]
+    ) ;
+    sh:property [
+        sh:path :time ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ;
+        sh:message "time must be an xsd:dateTime if present." ;
+    ] ;
+    sh:property [
+        sh:path :numericValue ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:message "numericValue, if present, must be a numeric literal." ;
+    ] ;
+    sh:property [
+        sh:path :textValue ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "textValue, if present, must be a string literal." ;
+    ] ;
+    sh:property [
+        sh:path :hasValueModality ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:IRI ;
+        sh:class :ValueModality ;
+        sh:message "hasValueModality should reference ValueModality instances (e.g., ImageValue)." ;
+    ] .
+
+# LabelSample shape (exactly-one-of)
+:LabelSampleShape
+    a sh:NodeShape ;
+    sh:targetClass :LabelSample ;
+    sh:property [
+        sh:path :hasSubject ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class :Subject ;
+        sh:message "LabelSample must reference a Subject via :hasSubject." ;
+    ] ;
+    sh:property [
+        sh:path :predictionTime ;
+        sh:minCount 1 ;
+        sh:datatype xsd:dateTime ;
+        sh:message "LabelSample must have predictionTime (xsd:dateTime) specifying the inclusive as-of endpoint." ;
+    ] ;
+    sh:or (
+        [
+            sh:property [
+                sh:path :booleanValue ;
+                sh:minCount 1 ;
+                sh:datatype xsd:boolean ;
+            ] ;
+            sh:property [ sh:path :integerValue ; sh:maxCount 0 ] ;
+            sh:property [ sh:path :floatValue ; sh:maxCount 0 ] ;
+            sh:property [ sh:path :categoricalValue ; sh:maxCount 0 ] ;
+        ]
+        [
+            sh:property [
+                sh:path :integerValue ;
+                sh:minCount 1 ;
+                sh:datatype xsd:integer ;
+            ] ;
+            sh:property [ sh:path :booleanValue ; sh:maxCount 0 ] ;
+            sh:property [ sh:path :floatValue ; sh:maxCount 0 ] ;
+            sh:property [ sh:path :categoricalValue ; sh:maxCount 0 ] ;
+        ]
+        [
+            sh:property [
+                sh:path :floatValue ;
+                sh:minCount 1 ;
+                sh:datatype xsd:double ;
+            ] ;
+            sh:property [ sh:path :booleanValue ; sh:maxCount 0 ] ;
+            sh:property [ sh:path :integerValue ; sh:maxCount 0 ] ;
+            sh:property [ sh:path :categoricalValue ; sh:maxCount 0 ] ;
+        ]
+        [
+            sh:property [
+                sh:path :categoricalValue ;
+                sh:minCount 1 ;
+                sh:datatype xsd:string ;
+            ] ;
+            sh:property [ sh:path :booleanValue ; sh:maxCount 0 ] ;
+            sh:property [ sh:path :integerValue ; sh:maxCount 0 ] ;
+            sh:property [ sh:path :floatValue ; sh:maxCount 0 ] ;
+        ]
+    ) ;
+    sh:message "LabelSample must contain exactly one label value (booleanValue OR integerValue OR floatValue OR categoricalValue)." .
+
+# SubjectSplit shape
+:SubjectSplitShape
+    a sh:NodeShape ;
+    sh:targetClass :SubjectSplit ;
+    sh:property [
+        sh:path :splitName ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:in ( "train" "tuning" "held_out" ) ;
+        sh:message "SubjectSplit must have a splitName in {train, tuning, held_out}." ;
+    ] .
+
+# Informational constraints
+:OperationalConstraintsInfo
+    a sh:NodeShape ;
+    sh:targetClass :DatasetMetadata ;
+    sh:message """
+        MEDS operational invariants that are NOT fully enforceable by SHACL/OWL:
+         - Subject contiguity: data for a single subject must not be split across multiple physical files.
+         - Sorted order: within a subject, measurements should be ordered by time.
+        These constraints must be enforced by ETL/ingestion pipelines or checked by procedural scripts.
+    """ .
