@@ -45,26 +45,16 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
+###  http://www.w3.org/ns/prov#wasDerivedFrom
+<http://www.w3.org/ns/prov#wasDerivedFrom> rdf:type owl:ObjectProperty .
+
+
 ###  https://albertomarfoglia.github.io/meds-ontology#assignedSplit
 :assignedSplit rdf:type owl:ObjectProperty ;
                rdfs:domain :Subject ;
                rdfs:range :SubjectSplit ;
                rdfs:comment "Assign a subject to a split (train, tuning, held_out)." ;
                rdfs:label "assignedSplit" .
-
-
-###  https://albertomarfoglia.github.io/meds-ontology#describedInDataset
-:describedInDataset rdf:type owl:ObjectProperty ;
-                    rdfs:domain [ rdf:type owl:Class ;
-                                  owl:unionOf ( :Code
-                                                :LabelSample
-                                                :Measurement
-                                                :Subject
-                                              )
-                                ] ;
-                    rdfs:range :DatasetMetadata ;
-                    rdfs:comment "Link to the dataset-level metadata that describes the provenance/etl for instances." ;
-                    rdfs:label "describedInDataset" .
 
 
 ###  https://albertomarfoglia.github.io/meds-ontology#hasCode
@@ -104,6 +94,14 @@ xsd:date rdf:type rdfs:Datatype .
 #    Data properties
 #################################################################
 
+###  https://albertomarfoglia.github.io/meds-ontology#additionalValueModalityColumn
+:additionalValueModalityColumn rdf:type owl:DatatypeProperty ;
+                               rdfs:domain :DatasetMetadata ;
+                               rdfs:range xsd:string ;
+                               rdfs:comment "Column containing additional value modality (image, waveform, etc.). OPTIONAL. One triple per column. Matches MEDS: additional_value_modality_columns." ;
+                               rdfs:label "additionalValueModalityColumn" .
+
+
 ###  https://albertomarfoglia.github.io/meds-ontology#booleanValue
 :booleanValue rdf:type owl:DatatypeProperty ;
               rdfs:domain :LabelSample ;
@@ -126,6 +124,14 @@ xsd:date rdf:type rdfs:Datatype .
                  rdfs:range xsd:string ;
                  rdfs:comment "Human readable description of the code." ;
                  rdfs:label "codeDescription" .
+
+
+###  https://albertomarfoglia.github.io/meds-ontology#codeModifierColumn
+:codeModifierColumn rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :DatasetMetadata ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Column used to modify/augment code values. OPTIONAL. One triple per column. Matches MEDS: code_modifier_columns." ;
+                    rdfs:label "codeModifierColumn" .
 
 
 ###  https://albertomarfoglia.github.io/meds-ontology#codeString
@@ -164,6 +170,22 @@ xsd:date rdf:type rdfs:Datatype .
                 rdfs:label "datasetVersion" .
 
 
+###  https://albertomarfoglia.github.io/meds-ontology#descriptionUri
+:descriptionUri rdf:type owl:DatatypeProperty ;
+                rdfs:domain :DatasetMetadata ;
+                rdfs:range xsd:string ;
+                rdfs:comment "URI pointing to a dataset description or README. OPTIONAL. Matches MEDS: description_uri / descriptionUri." ;
+                rdfs:label "descriptionUri" .
+
+
+###  https://albertomarfoglia.github.io/meds-ontology#etlName
+:etlName rdf:type owl:DatatypeProperty ;
+         rdfs:domain :DatasetMetadata ;
+         rdfs:range xsd:string ;
+         rdfs:comment "Name of the ETL pipeline used to create the dataset. OPTIONAL. Matches MEDS: etl_name / etlName." ;
+         rdfs:label "etlName" .
+
+
 ###  https://albertomarfoglia.github.io/meds-ontology#etlNotes
 :etlNotes rdf:type owl:DatatypeProperty ;
           rdfs:domain :DatasetMetadata ;
@@ -196,6 +218,22 @@ xsd:date rdf:type rdfs:Datatype .
               rdfs:label "integerValue" .
 
 
+###  https://albertomarfoglia.github.io/meds-ontology#license
+:license rdf:type owl:DatatypeProperty ;
+         rdfs:domain :DatasetMetadata ;
+         rdfs:range xsd:string ;
+         rdfs:comment "License under which the dataset is distributed. OPTIONAL. Matches MEDS: license." ;
+         rdfs:label "license" .
+
+
+###  https://albertomarfoglia.github.io/meds-ontology#locationUri
+:locationUri rdf:type owl:DatatypeProperty ;
+             rdfs:domain :DatasetMetadata ;
+             rdfs:range xsd:string ;
+             rdfs:comment "URI/location where the dataset is stored. OPTIONAL. Matches MEDS: location_uri / locationUri." ;
+             rdfs:label "locationUri" .
+
+
 ###  https://albertomarfoglia.github.io/meds-ontology#medsVersion
 :medsVersion rdf:type owl:DatatypeProperty ;
              rdfs:domain :DatasetMetadata ;
@@ -210,6 +248,14 @@ xsd:date rdf:type rdfs:Datatype .
               rdfs:range xsd:double ;
               rdfs:comment "Numeric measurement value (optional in MEDS)." ;
               rdfs:label "numericValue" .
+
+
+###  https://albertomarfoglia.github.io/meds-ontology#otherExtensionColumn
+:otherExtensionColumn rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :DatasetMetadata ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "Other dataset-specific extension column not covered elsewhere. OPTIONAL. One triple per column. Matches MEDS: other_extension_columns." ;
+                      rdfs:label "otherExtensionColumn" .
 
 
 ###  https://albertomarfoglia.github.io/meds-ontology#predictionTime
@@ -228,20 +274,20 @@ xsd:date rdf:type rdfs:Datatype .
                rdfs:label "protocolNotes" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#siteId
-:siteId rdf:type owl:DatatypeProperty ;
-        rdfs:domain :Measurement ;
-        rdfs:range xsd:string ;
-        rdfs:comment "Identifier for site of care (maps to MEDS metadata: site_id_columns)." ;
-        rdfs:label "siteId" .
+###  https://albertomarfoglia.github.io/meds-ontology#rawSourceIdColumn
+:rawSourceIdColumn rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :DatasetMetadata ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Raw source ID column before mapping to subject IDs. OPTIONAL. One triple per column. Matches MEDS: raw_source_id_columns." ;
+                   rdfs:label "rawSourceIdColumn" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#siteIdColumns
-:siteIdColumns rdf:type owl:DatatypeProperty ;
-               rdfs:domain :DatasetMetadata ;
-               rdfs:range xsd:string ;
-               rdfs:comment "Comma-separated list of columns that represent site identifiers. OPTIONAL. Matches MEDS: site_id_columns." ;
-               rdfs:label "siteIdColumns" .
+###  https://albertomarfoglia.github.io/meds-ontology#siteIdColumn
+:siteIdColumn rdf:type owl:DatatypeProperty ;
+              rdfs:domain :DatasetMetadata ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Column representing a site identifier. OPTIONAL. One triple per column. Previously siteIdColumns." ;
+              rdfs:label "siteIdColumn" .
 
 
 ###  https://albertomarfoglia.github.io/meds-ontology#subjectId
@@ -252,12 +298,12 @@ xsd:date rdf:type rdfs:Datatype .
            rdfs:comment "Unique identifier for a Subject; functional (= at most one value per Subject)." .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#subjectIdColumns
-:subjectIdColumns rdf:type owl:DatatypeProperty ;
-                  rdfs:domain :DatasetMetadata ;
-                  rdfs:range xsd:string ;
-                  rdfs:comment "Comma-separated list of columns used as subject identifiers. REQUIRED (typically 'subject_id'). Matches MEDS: subject_id_columns." ;
-                  rdfs:label "subjectIdColumns" .
+###  https://albertomarfoglia.github.io/meds-ontology#subjectIdColumn
+:subjectIdColumn rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :DatasetMetadata ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Column used as a subject identifier. REQUIRED. One triple per column. Previously subjectIdColumns." ;
+                 rdfs:label "subjectIdColumn" .
 
 
 ###  https://albertomarfoglia.github.io/meds-ontology#tableName
@@ -288,9 +334,17 @@ xsd:date rdf:type rdfs:Datatype .
 #    Classes
 #################################################################
 
+###  http://www.w3.org/ns/prov#Entity
+<http://www.w3.org/ns/prov#Entity> rdf:type owl:Class .
+
+
 ###  https://albertomarfoglia.github.io/meds-ontology#Code
 :Code rdf:type owl:Class ;
       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty <http://www.w3.org/ns/prov#wasDerivedFrom> ;
+                        owl:allValuesFrom :DatasetMetadata
+                      ] ,
+                      [ rdf:type owl:Restriction ;
                         owl:onProperty :codeString ;
                         owl:cardinality "1"^^xsd:nonNegativeInteger
                       ] ;
@@ -302,7 +356,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata
 :DatasetMetadata rdf:type owl:Class ;
-                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                 rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty :createdAt ;
                                    owl:cardinality "1"^^xsd:nonNegativeInteger
                                  ] ,
@@ -329,6 +384,10 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://albertomarfoglia.github.io/meds-ontology#LabelSample
 :LabelSample rdf:type owl:Class ;
              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://www.w3.org/ns/prov#wasDerivedFrom> ;
+                               owl:allValuesFrom :DatasetMetadata
+                             ] ,
+                             [ rdf:type owl:Restriction ;
                                owl:onProperty :hasSubject ;
                                owl:cardinality "1"^^xsd:nonNegativeInteger
                              ] ,
@@ -360,6 +419,10 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://albertomarfoglia.github.io/meds-ontology#Measurement
 :Measurement rdf:type owl:Class ;
              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://www.w3.org/ns/prov#wasDerivedFrom> ;
+                               owl:allValuesFrom :DatasetMetadata
+                             ] ,
+                             [ rdf:type owl:Restriction ;
                                owl:onProperty :hasCode ;
                                owl:cardinality "1"^^xsd:nonNegativeInteger
                              ] ,
@@ -385,6 +448,10 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://albertomarfoglia.github.io/meds-ontology#Subject
 :Subject rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty <http://www.w3.org/ns/prov#wasDerivedFrom> ;
+                           owl:allValuesFrom :DatasetMetadata
+                         ] ;
          owl:hasKey ( :subjectId
                     ) ;
          rdfs:comment "Primary entity for which care observations are recorded. Maps to MEDS subject_id (patient or admission-level subject)." ;

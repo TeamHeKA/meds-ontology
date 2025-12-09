@@ -6,6 +6,7 @@
 @prefix meds: <https://albertomarfoglia.github.io/meds-ontology#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @base <https://albertomarfoglia.github.io/meds-ontology#> .
 
 <https://albertomarfoglia.github.io/meds-ontology> a owl:Ontology ;
@@ -23,11 +24,11 @@
     rdfs:label "Code" ;
     rdfs:comment "Metadata/vocabulary entry describing a measurement code (code string, description, parent codes, external links)." .
 
-###  https://albertomarfoglia.github.io/meds-ontology#Dataset
+###  https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata
 :DatasetMetadata a owl:Class ;
     rdfs:label "DatasetMetadata" ;
+    rdfs:subClassOf prov:Entity ;
     rdfs:comment "High-level provenance and conversion metadata for a MEDS dataset (dataset_name, dataset_version, etl info, created_at, etc.)." .
-
 
 ###  https://albertomarfoglia.github.io/meds-ontology#LabelSample
 :LabelSample rdf:type owl:Class ;
@@ -87,7 +88,11 @@
         a owl:Restriction ;
         owl:onProperty :textValue ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger
-    ] .
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty prov:wasDerivedFrom ;
+        owl:allValuesFrom meds:DatasetMetadata
+    ]  .
 
 # Code must have exactly one codeString
  :Code
@@ -95,7 +100,11 @@
         a owl:Restriction ;
         owl:onProperty  :codeString ;
         owl:cardinality "1"^^xsd:nonNegativeInteger
-    ] .
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty prov:wasDerivedFrom ;
+        owl:allValuesFrom meds:DatasetMetadata
+    ]  .
 
 :DatasetMetadata
     rdfs:subClassOf [
@@ -138,7 +147,17 @@
         a owl:Restriction ;
         owl:onProperty  :categoricalValue ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger
-    ] .
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty prov:wasDerivedFrom ;
+        owl:allValuesFrom meds:DatasetMetadata
+    ]  .
+
+meds:Subject rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty prov:wasDerivedFrom ;
+    owl:allValuesFrom meds:DatasetMetadata
+] .
 
 ################################################################
 # Important invariants as annotations (procedural constraints)
@@ -172,12 +191,6 @@
     rdfs:domain :Subject ;
     rdfs:range :SubjectSplit ;
     rdfs:comment "Assign a subject to a split (train, tuning, held_out)." .
-
-:describedInDataset a owl:ObjectProperty ;
-    rdfs:label "describedInDataset" ;
-    rdfs:domain [ owl:unionOf ( :Measurement :Code :Subject :LabelSample ) ] ;
-    rdfs:range :DatasetMetadata ;
-    rdfs:comment "Link to the dataset-level metadata that describes the provenance/etl for instances." .
 
 :parentCode a owl:ObjectProperty ;
     rdfs:label "parentCode" ;
@@ -258,12 +271,6 @@
     rdfs:range xsd:string ;
     rdfs:comment "Categorical label encoded as a string." .
 
-:siteId a owl:DatatypeProperty ;
-    rdfs:label "siteId" ;
-    rdfs:domain :Measurement ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Identifier for site of care (maps to MEDS metadata: site_id_columns)." .
-
 :datasetName a owl:DatatypeProperty ;
     rdfs:label "datasetName" ;
     rdfs:domain :DatasetMetadata ;
@@ -306,17 +313,65 @@
     rdfs:range xsd:string ;
     rdfs:comment "Name of a measurement table included in the dataset. Repeated one triple per table (preferred to comma-separated lists)." .
 
-:siteIdColumns a owl:DatatypeProperty ;
-    rdfs:label "siteIdColumns" ;
+:etlName a owl:DatatypeProperty ;
+    rdfs:label "etlName" ;
     rdfs:domain :DatasetMetadata ;
     rdfs:range xsd:string ;
-    rdfs:comment "Comma-separated list of columns that represent site identifiers. OPTIONAL. Matches MEDS: site_id_columns." .
+    rdfs:comment "Name of the ETL pipeline used to create the dataset. OPTIONAL. Matches MEDS: etl_name / etlName." .
 
-:subjectIdColumns a owl:DatatypeProperty ;
-    rdfs:label "subjectIdColumns" ;
+:license a owl:DatatypeProperty ;
+    rdfs:label "license" ;
     rdfs:domain :DatasetMetadata ;
     rdfs:range xsd:string ;
-    rdfs:comment "Comma-separated list of columns used as subject identifiers. REQUIRED (typically 'subject_id'). Matches MEDS: subject_id_columns." .
+    rdfs:comment "License under which the dataset is distributed. OPTIONAL. Matches MEDS: license." .
+
+:locationUri a owl:DatatypeProperty ;
+    rdfs:label "locationUri" ;
+    rdfs:domain :DatasetMetadata ;
+    rdfs:range xsd:string ;
+    rdfs:comment "URI/location where the dataset is stored. OPTIONAL. Matches MEDS: location_uri / locationUri." .
+
+:descriptionUri a owl:DatatypeProperty ;
+    rdfs:label "descriptionUri" ;
+    rdfs:domain :DatasetMetadata ;
+    rdfs:range xsd:string ;
+    rdfs:comment "URI pointing to a dataset description or README. OPTIONAL. Matches MEDS: description_uri / descriptionUri." .
+
+:rawSourceIdColumn a owl:DatatypeProperty ;
+    rdfs:label "rawSourceIdColumn" ;
+    rdfs:domain :DatasetMetadata ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Raw source ID column before mapping to subject IDs. OPTIONAL. One triple per column. Matches MEDS: raw_source_id_columns." .
+
+:codeModifierColumn a owl:DatatypeProperty ;
+    rdfs:label "codeModifierColumn" ;
+    rdfs:domain :DatasetMetadata ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Column used to modify/augment code values. OPTIONAL. One triple per column. Matches MEDS: code_modifier_columns." .
+
+:additionalValueModalityColumn a owl:DatatypeProperty ;
+    rdfs:label "additionalValueModalityColumn" ;
+    rdfs:domain :DatasetMetadata ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Column containing additional value modality (image, waveform, etc.). OPTIONAL. One triple per column. Matches MEDS: additional_value_modality_columns." .
+
+:siteIdColumn a owl:DatatypeProperty ;
+    rdfs:label "siteIdColumn" ;
+    rdfs:domain :DatasetMetadata ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Column representing a site identifier. OPTIONAL. One triple per column. Previously siteIdColumns." .
+
+:subjectIdColumn a owl:DatatypeProperty ;
+    rdfs:label "subjectIdColumn" ;
+    rdfs:domain :DatasetMetadata ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Column used as a subject identifier. REQUIRED. One triple per column. Previously subjectIdColumns." .
+
+:otherExtensionColumn a owl:DatatypeProperty ;
+    rdfs:label "otherExtensionColumn" ;
+    rdfs:domain :DatasetMetadata ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Other dataset-specific extension column not covered elsewhere. OPTIONAL. One triple per column. Matches MEDS: other_extension_columns." .
 
 :medsVersion a owl:DatatypeProperty ;
     rdfs:label "medsVersion" ;

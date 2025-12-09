@@ -54,6 +54,7 @@ These CQs drove the selection of classes, properties, and enforced constraints.
 **Reused patterns and vocabularies:**
 - `rdfs:label`, `rdfs:comment` for human-readable annotations.
 - `dcterms:` (Dublin Core Terms) used to annotate provenance fields (e.g., `dcterms:created`, ontology metadata).
+prov: (W3C PROV-O) used to represent dataset-level provenance.
 - `xsd:` datatypes for literal typing (`xsd:dateTime`, `xsd:string`, `xsd:double`, `xsd:boolean`, `xsd:integer`).
 
 **Deliberate non-imports / minimal linking:**
@@ -73,7 +74,7 @@ High-level terms distilled from MEDS:
 - DatasetMetadata (dataset-level provenance)
 - SubjectSplit (train/tuning/held_out)
 - LabelSample (prediction sample)
-- Value modalities (numeric_value, text_value, image, waveform, etc.)
+- Value modalities (image, waveform, etc.)
 - Special codes (MEDS_BIRTH, MEDS_DEATH)
 
 ---
@@ -86,7 +87,7 @@ High-level terms distilled from MEDS:
 - `:Subject` — primary entity; declared with a functional key `:subjectId`.
 - `:Measurement` — core per-row observation. Declared disjoint with `:LabelSample`.
 - `:Code` — vocabulary entry; required to have `:codeString`.
-- `:DatasetMetadata` — dataset provenance & conversion metadata.
+- `:DatasetMetadata` — dataset provenance & conversion metadata; declared as a subclass of `prov:Entity` so that all provenance relations (e.g., prov:wasDerivedFrom) use the standard PROV-O pattern.
 - `:SubjectSplit` — enumeration-style class for dataset partitions.
 - `:LabelSample` — supervised learning sample (subject × prediction_time × label).
 - `:ValueModality` (abstract) with concrete subclasses (e.g., `:ImageValue`) to model extensions.
@@ -102,7 +103,7 @@ High-level terms distilled from MEDS:
 - `:hasCode` (Measurement → Code) — link to code metadata.
 - `:hasValueModality` (Measurement → ValueModality) — extensible modalities.
 - `:assignedSplit` (Subject → SubjectSplit) — split assignment.
-- `:describedInDataset` (Measurement|Code|Subject|LabelSample → DatasetMetadata) — provenance.
+- `prov:wasDerivedFrom` (Measurement|Code|Subject|LabelSample → DatasetMetadata) — provenance.
 
 **Datatype properties (selected):**
 - `:subjectId` (Subject → xsd:string) — functional key.
@@ -124,6 +125,7 @@ High-level terms distilled from MEDS:
 - `Measurement` has exactly one `:hasSubject` and exactly one `:hasCode` (the ontology encodes a cardinality of 1 but SHACL relaxes this to allow `codeString` alternative).
 - `Code` must have exactly one `:codeString` (OWL `hasKey` is used).
 - `LabelSample` must have exactly one `:hasSubject` and one `:predictionTime`; each label value property has `maxCardinality 1`.
+- `prov:wasDerivedFrom` values for `Measurements`, `Codes`, `Subjects`, and `LabelSamples` must be of type `DatasetMetadata` (a `prov:Entity`).
 
 **SHACL-level constraints (enforcement & pragmatic choices):**
 - SHACL shapes enforce:
@@ -142,7 +144,7 @@ OWL expresses conceptual constraints and enables reasoning; SHACL provides pract
 See `examples/examples.ttl`. Instances demonstrate:
 - `:Dataset_MIMIC_DEMO :datasetName "MIMIC-IV-Demo" ; :medsVersion "0.3.3" ; ...`
 - `:subj12345678 a :Subject ; :subjectId "12345678" ; :assignedSplit :trainSplit .`
-- `:meas1 a :Measurement ; :hasSubject :subj12345678 ; :hasCode :LAB_51237_UNK ; :time "2178-02-12T11:38:00"^^xsd:dateTime ; :numericValue 1.4 .`
+- `:meas1 a :Measurement ; :hasSubject :subj12345678 ; :hasCode :LAB_51237_UNK ; :time "2178-02-12T11:38:00"^^xsd:dateTime ; :numericValue 1.4; prov:wasDerivedFrom :Dataset_MIMIC_DEMO .`
 - `:label_12345678_20210401 a :LabelSample ; :hasSubject :subj12345678 ; :predictionTime "2021-04-01T09:30:00"^^xsd:dateTime ; :booleanValue true .`
 
 ---
@@ -176,13 +178,22 @@ The following table explicitly maps MEDS components (as specified in MEDS docume
 
 ### 8.3 DatasetMetadataSchema → `:DatasetMetadata`
 
-| MEDS element | Ontology mapping | Datatype / range | Required? (ontology profile) | Enforcement |
-|---|---:|---|---:|---|
-| `dataset_name` | `:DatasetMetadata :datasetName` | `xsd:string` | Required (in current SHACL profile; MEDS JSON schema treats fields as optional) | SHACL: `DatasetMetadataShape` requires `datasetName`; OWL: `DatasetMetadata rdfs:subClassOf` cardinality 1 (current design) |
-| `meds_version` | `:DatasetMetadata :medsVersion` | `xsd:string` | Required (profile) | SHACL: `minCount 1` |
-| `created_at` | `:DatasetMetadata :createdAt` | `xsd:dateTime` | Required (profile) | SHACL: `minCount 1` |
-| `table_names` | `:DatasetMetadata :tableName` (repeatable) | `xsd:string` | Optional / repeatable | SHACL: `tableName` `minCount 0` |
-| `code_modifier_columns`, `raw_source_id_columns`, `site_id_columns`, `additional_value_modality_columns` | Represented as `:DatasetMetadata` datatype properties (e.g., `:siteIdColumns`) | `xsd:string` (or repeated triples) | Optional | Procedural: ETL and dataset documentation recommended |
+| MEDS element                       |                                               Ontology mapping | Datatype / range | Required? (ontology profile) | Enforcement                                                                                                |
+| ---------------------------------- | -------------------------------------------------------------: | ---------------- | ---------------------------: | ---------------------------------------------------------------------------------------------------------- |
+| `dataset_name`                     |                                `:DatasetMetadata :datasetName` | `xsd:string`     |           Required (profile) | SHACL: `DatasetMetadataShape` requires `datasetName`; OWL: `DatasetMetadata rdfs:subClassOf` cardinality 1 |
+| `meds_version`                     |                                `:DatasetMetadata :medsVersion` | `xsd:string`     |           Required (profile) | SHACL: `minCount 1`                                                                                        |
+| `created_at`                       |                                  `:DatasetMetadata :createdAt` | `xsd:dateTime`   |           Required (profile) | SHACL: `minCount 1`                                                                                        |
+| `table_name`                       |                     `:DatasetMetadata :tableName` (repeatable) | `xsd:string`     |        Optional / repeatable | SHACL: `minCount 0`                                                                                        |
+| `site_id_column`                   |                  `:DatasetMetadata :siteIdColumn` (repeatable) | `xsd:string`     |                     Optional | Procedural: ETL and dataset documentation recommended                                                      |
+| `subject_id_column`                |               `:DatasetMetadata :subjectIdColumn` (repeatable) | `xsd:string`     |                     Required | Procedural: ETL must provide at least one subjectIdColumn                                                  |
+| `etl_name`                         |                                    `:DatasetMetadata :etlName` | `xsd:string`     |                     Optional | Procedural: ETL documentation recommended                                                                  |
+| `license`                          |                                    `:DatasetMetadata :license` | `xsd:string`     |                     Optional | Procedural: license documentation recommended                                                              |
+| `location_uri`                     |                                `:DatasetMetadata :locationUri` | `xsd:string`     |                     Optional | Procedural: dataset location documentation recommended                                                     |
+| `description_uri`                  |                             `:DatasetMetadata :descriptionUri` | `xsd:string`     |                     Optional | Procedural: dataset description documentation recommended                                                  |
+| `raw_source_id_column`             |             `:DatasetMetadata :rawSourceIdColumn` (repeatable) | `xsd:string`     |                     Optional | Procedural: ETL and dataset documentation recommended                                                      |
+| `code_modifier_column`             |            `:DatasetMetadata :codeModifierColumn` (repeatable) | `xsd:string`     |                     Optional | Procedural: ETL and dataset documentation recommended                                                      |
+| `additional_value_modality_column` | `:DatasetMetadata :additionalValueModalityColumn` (repeatable) | `xsd:string`     |                     Optional | Procedural: ETL and dataset documentation recommended                                                      |
+| `other_extension_column`           |          `:DatasetMetadata :otherExtensionColumn` (repeatable) | `xsd:string`     |                     Optional | Procedural: ETL and dataset documentation recommended                                                      |
 
 ### 8.4 SubjectSplitSchema → `:SubjectSplit`
 
@@ -251,7 +262,7 @@ The following table explicitly maps MEDS components (as specified in MEDS docume
 
 3. **SPARQL-based SHACL constraints**: add SPARQL-based shapes to check uniqueness constraints (e.g., ensure `subjectId` is unique across `:Subject` individuals).
 
-4. **Provenance / audit trail**: integrate `prov:` properties (W3C PROV) for ETL provenance (`prov:wasGeneratedBy`, `prov:wasDerivedFrom`) and link dataset validation runs.
+4. **Provenance / audit trail**: Extend PROV-O integration by introducing `prov:Activity` for ETL processes and linking via `prov:wasGeneratedBy`, enabling richer lineage (source raw dataset → ETL activity → MEDS dataset → derived items).
 
 5. **Integration examples**: provide mapping examples to OMOP/LOINC/SNOMED via `skos:exactMatch` or `rdfs:seeAlso` for canonical `:Code` instances.
 

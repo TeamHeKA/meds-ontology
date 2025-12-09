@@ -45,7 +45,7 @@ This ontology is based on the official **Medical Event Data Standard (MEDS)** sp
 
 The OWL ontology and SHACL shapes are **direct semantic translations** of the MEDS schemas:
 DataSchema, CodeMetadataSchema, DatasetMetadataSchema, SubjectSplitSchema, and LabelSchema.  
-A detailed alignment is provided in `modeling.md`.
+A detailed alignment is provided in `MODELING.md`.
 
 ## Documentation
 This ontology provides multiple ways to explore and understand its structure:
@@ -59,7 +59,7 @@ This ontology provides multiple ways to explore and understand its structure:
   [View the documentation](https://albertomarfoglia.github.io/meds-ontology)
 
 - **Modeling Rationale:**  
-  For a rigorous discussion of design decisions, alignment with MEDS schemas, and adherence to *Ontology Development 101*, see [`modeling.md`](modeling.md).  
+  For a rigorous discussion of design decisions, alignment with MEDS schemas, and adherence to *Ontology Development 101*, see [`MODELING.md`](MODELING.md).  
   This includes tables, mapping details, and constraints implemented in OWL and SHACL.
 
 ## Quickstart

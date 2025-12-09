@@ -88,6 +88,13 @@
     
 
 
+    <!-- http://www.w3.org/ns/prov#wasDerivedFrom -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+    
+
+
     <!-- https://albertomarfoglia.github.io/meds-ontology#assignedSplit -->
 
 
@@ -96,27 +103,6 @@
         <rdfs:range rdf:resource="https://albertomarfoglia.github.io/meds-ontology#SubjectSplit"/>
         <rdfs:comment>Assign a subject to a split (train, tuning, held_out).</rdfs:comment>
         <rdfs:label>assignedSplit</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://albertomarfoglia.github.io/meds-ontology#describedInDataset -->
-
-
-    <owl:ObjectProperty rdf:about="https://albertomarfoglia.github.io/meds-ontology#describedInDataset">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://albertomarfoglia.github.io/meds-ontology#Code"/>
-                    <rdf:Description rdf:about="https://albertomarfoglia.github.io/meds-ontology#LabelSample"/>
-                    <rdf:Description rdf:about="https://albertomarfoglia.github.io/meds-ontology#Measurement"/>
-                    <rdf:Description rdf:about="https://albertomarfoglia.github.io/meds-ontology#Subject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"/>
-        <rdfs:comment>Link to the dataset-level metadata that describes the provenance/etl for instances.</rdfs:comment>
-        <rdfs:label>describedInDataset</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -182,6 +168,18 @@
     
 
 
+    <!-- https://albertomarfoglia.github.io/meds-ontology#additionalValueModalityColumn -->
+
+
+    <owl:DatatypeProperty rdf:about="https://albertomarfoglia.github.io/meds-ontology#additionalValueModalityColumn">
+        <rdfs:domain rdf:resource="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Column containing additional value modality (image, waveform, etc.). OPTIONAL. One triple per column. Matches MEDS: additional_value_modality_columns.</rdfs:comment>
+        <rdfs:label>additionalValueModalityColumn</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://albertomarfoglia.github.io/meds-ontology#booleanValue -->
 
 
@@ -214,6 +212,18 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Human readable description of the code.</rdfs:comment>
         <rdfs:label>codeDescription</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://albertomarfoglia.github.io/meds-ontology#codeModifierColumn -->
+
+
+    <owl:DatatypeProperty rdf:about="https://albertomarfoglia.github.io/meds-ontology#codeModifierColumn">
+        <rdfs:domain rdf:resource="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Column used to modify/augment code values. OPTIONAL. One triple per column. Matches MEDS: code_modifier_columns.</rdfs:comment>
+        <rdfs:label>codeModifierColumn</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -273,6 +283,30 @@
     
 
 
+    <!-- https://albertomarfoglia.github.io/meds-ontology#descriptionUri -->
+
+
+    <owl:DatatypeProperty rdf:about="https://albertomarfoglia.github.io/meds-ontology#descriptionUri">
+        <rdfs:domain rdf:resource="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>URI pointing to a dataset description or README. OPTIONAL. Matches MEDS: description_uri / descriptionUri.</rdfs:comment>
+        <rdfs:label>descriptionUri</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://albertomarfoglia.github.io/meds-ontology#etlName -->
+
+
+    <owl:DatatypeProperty rdf:about="https://albertomarfoglia.github.io/meds-ontology#etlName">
+        <rdfs:domain rdf:resource="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Name of the ETL pipeline used to create the dataset. OPTIONAL. Matches MEDS: etl_name / etlName.</rdfs:comment>
+        <rdfs:label>etlName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://albertomarfoglia.github.io/meds-ontology#etlNotes -->
 
 
@@ -321,6 +355,30 @@
     
 
 
+    <!-- https://albertomarfoglia.github.io/meds-ontology#license -->
+
+
+    <owl:DatatypeProperty rdf:about="https://albertomarfoglia.github.io/meds-ontology#license">
+        <rdfs:domain rdf:resource="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>License under which the dataset is distributed. OPTIONAL. Matches MEDS: license.</rdfs:comment>
+        <rdfs:label>license</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://albertomarfoglia.github.io/meds-ontology#locationUri -->
+
+
+    <owl:DatatypeProperty rdf:about="https://albertomarfoglia.github.io/meds-ontology#locationUri">
+        <rdfs:domain rdf:resource="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>URI/location where the dataset is stored. OPTIONAL. Matches MEDS: location_uri / locationUri.</rdfs:comment>
+        <rdfs:label>locationUri</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://albertomarfoglia.github.io/meds-ontology#medsVersion -->
 
 
@@ -341,6 +399,18 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <rdfs:comment>Numeric measurement value (optional in MEDS).</rdfs:comment>
         <rdfs:label>numericValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://albertomarfoglia.github.io/meds-ontology#otherExtensionColumn -->
+
+
+    <owl:DatatypeProperty rdf:about="https://albertomarfoglia.github.io/meds-ontology#otherExtensionColumn">
+        <rdfs:domain rdf:resource="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Other dataset-specific extension column not covered elsewhere. OPTIONAL. One triple per column. Matches MEDS: other_extension_columns.</rdfs:comment>
+        <rdfs:label>otherExtensionColumn</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -369,26 +439,26 @@
     
 
 
-    <!-- https://albertomarfoglia.github.io/meds-ontology#siteId -->
+    <!-- https://albertomarfoglia.github.io/meds-ontology#rawSourceIdColumn -->
 
 
-    <owl:DatatypeProperty rdf:about="https://albertomarfoglia.github.io/meds-ontology#siteId">
-        <rdfs:domain rdf:resource="https://albertomarfoglia.github.io/meds-ontology#Measurement"/>
+    <owl:DatatypeProperty rdf:about="https://albertomarfoglia.github.io/meds-ontology#rawSourceIdColumn">
+        <rdfs:domain rdf:resource="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Identifier for site of care (maps to MEDS metadata: site_id_columns).</rdfs:comment>
-        <rdfs:label>siteId</rdfs:label>
+        <rdfs:comment>Raw source ID column before mapping to subject IDs. OPTIONAL. One triple per column. Matches MEDS: raw_source_id_columns.</rdfs:comment>
+        <rdfs:label>rawSourceIdColumn</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://albertomarfoglia.github.io/meds-ontology#siteIdColumns -->
+    <!-- https://albertomarfoglia.github.io/meds-ontology#siteIdColumn -->
 
 
-    <owl:DatatypeProperty rdf:about="https://albertomarfoglia.github.io/meds-ontology#siteIdColumns">
+    <owl:DatatypeProperty rdf:about="https://albertomarfoglia.github.io/meds-ontology#siteIdColumn">
         <rdfs:domain rdf:resource="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Comma-separated list of columns that represent site identifiers. OPTIONAL. Matches MEDS: site_id_columns.</rdfs:comment>
-        <rdfs:label>siteIdColumns</rdfs:label>
+        <rdfs:comment>Column representing a site identifier. OPTIONAL. One triple per column. Previously siteIdColumns.</rdfs:comment>
+        <rdfs:label>siteIdColumn</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -405,14 +475,14 @@
     
 
 
-    <!-- https://albertomarfoglia.github.io/meds-ontology#subjectIdColumns -->
+    <!-- https://albertomarfoglia.github.io/meds-ontology#subjectIdColumn -->
 
 
-    <owl:DatatypeProperty rdf:about="https://albertomarfoglia.github.io/meds-ontology#subjectIdColumns">
+    <owl:DatatypeProperty rdf:about="https://albertomarfoglia.github.io/meds-ontology#subjectIdColumn">
         <rdfs:domain rdf:resource="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Comma-separated list of columns used as subject identifiers. REQUIRED (typically &apos;subject_id&apos;). Matches MEDS: subject_id_columns.</rdfs:comment>
-        <rdfs:label>subjectIdColumns</rdfs:label>
+        <rdfs:comment>Column used as a subject identifier. REQUIRED. One triple per column. Previously subjectIdColumns.</rdfs:comment>
+        <rdfs:label>subjectIdColumn</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -465,10 +535,23 @@
     
 
 
+    <!-- http://www.w3.org/ns/prov#Entity -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Entity"/>
+    
+
+
     <!-- https://albertomarfoglia.github.io/meds-ontology#Code -->
 
 
     <owl:Class rdf:about="https://albertomarfoglia.github.io/meds-ontology#Code">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+                <owl:allValuesFrom rdf:resource="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://albertomarfoglia.github.io/meds-ontology#codeString"/>
@@ -488,6 +571,7 @@
 
 
     <owl:Class rdf:about="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://albertomarfoglia.github.io/meds-ontology#createdAt"/>
@@ -528,6 +612,12 @@
 
 
     <owl:Class rdf:about="https://albertomarfoglia.github.io/meds-ontology#LabelSample">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+                <owl:allValuesFrom rdf:resource="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://albertomarfoglia.github.io/meds-ontology#hasSubject"/>
@@ -577,6 +667,12 @@
     <owl:Class rdf:about="https://albertomarfoglia.github.io/meds-ontology#Measurement">
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+                <owl:allValuesFrom rdf:resource="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://albertomarfoglia.github.io/meds-ontology#hasCode"/>
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
@@ -615,6 +711,12 @@
 
 
     <owl:Class rdf:about="https://albertomarfoglia.github.io/meds-ontology#Subject">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+                <owl:allValuesFrom rdf:resource="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:hasKey rdf:parseType="Collection">
             <rdf:Description rdf:about="https://albertomarfoglia.github.io/meds-ontology#subjectId"/>
         </owl:hasKey>
