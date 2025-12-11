@@ -62,16 +62,16 @@
         sh:message "tableName may be repeated (one triple per table)." ;
     ] .
 
-# Measurement shape
-:MeasurementShape
+# Event shape
+:EventShape
     a sh:NodeShape ;
-    sh:targetClass :Measurement ;
+    sh:targetClass :Event ;
     sh:property [
         sh:path :hasSubject ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:class :Subject ;
-        sh:message "Measurement must link to a Subject via :hasSubject." ;
+        sh:message "Event must link to a Subject via :hasSubject." ;
     ] ;
     sh:or (
         [ sh:property [
@@ -85,7 +85,7 @@
             sh:path :codeString ;
             sh:minCount 1 ;
             sh:datatype xsd:string ;
-            sh:message "If no Code node is used, the Measurement must have a codeString literal." ;
+            sh:message "If no Code node is used, the Event must have a codeString literal." ;
         ] ]
     ) ;
     sh:property [
@@ -195,6 +195,6 @@
     sh:message """
         MEDS operational invariants that are NOT fully enforceable by SHACL/OWL:
          - Subject contiguity: data for a single subject must not be split across multiple physical files.
-         - Sorted order: within a subject, measurements should be ordered by time.
+         - Sorted order: within a subject, events should be ordered by time.
         These constraints must be enforced by ETL/ingestion pipelines or checked by procedural scripts.
     """ .

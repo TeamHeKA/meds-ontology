@@ -37,9 +37,9 @@ This document provides a systematic, academically-oriented justification of the 
 - Tooling authors (validators, data catalogs, dataset profilers).
 
 **Primary competency questions (CQs):**
-1. For a given measurement, who is the subject and when did it occur?
-2. Does the measurement carry a numeric or textual value (or additional modalities)?
-3. What is the canonical code for this measurement and what human-readable description or parent codes exist?
+1. For a given event, who is the subject and when did it occur?
+2. Does the event carry a numeric or textual value (or additional modalities)?
+3. What is the canonical code for this event and what human-readable description or parent codes exist?
 4. Which subjects belong to the training split and which to held-out?
 5. For a label sample, what is the prediction time and which label-type/value is present?
 6. What provenance metadata (dataset name, MEDS version, ETL version) is associated with a dataset?
@@ -69,7 +69,7 @@ prov: (W3C PROV-O) used to represent dataset-level provenance.
 High-level terms distilled from MEDS:
 
 - Subject (primary entity, subject_id)
-- Measurement (event/observation)
+- Event (event/observation)
 - Code (vocabulary metadata for codes)
 - DatasetMetadata (dataset-level provenance)
 - SubjectSplit (train/tuning/held_out)
@@ -81,36 +81,36 @@ High-level terms distilled from MEDS:
 
 ## 4. Classes and class hierarchy (taxonomy)
 
-**Modeling strategy:** *middle-out*, with `Measurement` as central.
+**Modeling strategy:** *middle-out*, with `Event` as central.
 
 **Top-level classes:**
 - `:Subject` — primary entity; declared with a functional key `:subjectId`.
-- `:Measurement` — core per-row observation. Declared disjoint with `:LabelSample`.
+- `:Event` — core per-row observation. Declared disjoint with `:LabelSample`.
 - `:Code` — vocabulary entry; required to have `:codeString`.
 - `:DatasetMetadata` — dataset provenance & conversion metadata; declared as a subclass of `prov:Entity` so that all provenance relations (e.g., prov:wasDerivedFrom) use the standard PROV-O pattern.
 - `:SubjectSplit` — enumeration-style class for dataset partitions.
 - `:LabelSample` — supervised learning sample (subject × prediction_time × label).
 - `:ValueModality` (abstract) with concrete subclasses (e.g., `:ImageValue`) to model extensions.
 
-**Design note:** `StaticMeasurement` was considered but not made a strict subclass — staticity (absence of time) is modeled via optionality of the `:time` property rather than dedicated subclassing, to preserve data flexibility.
+**Design note:** `StaticEvent` was considered but not made a strict subclass — staticity (absence of time) is modeled via optionality of the `:time` property rather than dedicated subclassing, to preserve data flexibility.
 
 ---
 
 ## 5. Class properties (slots)
 
 **Object properties (selected):**
-- `:hasSubject` (Measurement|LabelSample → Subject) — primary join.
-- `:hasCode` (Measurement → Code) — link to code metadata.
-- `:hasValueModality` (Measurement → ValueModality) — extensible modalities.
+- `:hasSubject` (Event|LabelSample → Subject) — primary join.
+- `:hasCode` (Event → Code) — link to code metadata.
+- `:hasValueModality` (Event → ValueModality) — extensible modalities.
 - `:assignedSplit` (Subject → SubjectSplit) — split assignment.
-- `prov:wasDerivedFrom` (Measurement|Code|Subject|LabelSample → DatasetMetadata) — provenance.
+- `prov:wasDerivedFrom` (Event|Code|Subject|LabelSample → DatasetMetadata) — provenance.
 
 **Datatype properties (selected):**
 - `:subjectId` (Subject → xsd:string) — functional key.
-- `:time` (Measurement → xsd:dateTime) — optional (0..1).
-- `:codeString` (Measurement|Code → xsd:string) — canonical code literal.
-- `:numericValue` (Measurement → xsd:double) — optional numeric.
-- `:textValue` (Measurement → xsd:string) — optional textual.
+- `:time` (Event → xsd:dateTime) — optional (0..1).
+- `:codeString` (Event|Code → xsd:string) — canonical code literal.
+- `:numericValue` (Event → xsd:double) — optional numeric.
+- `:textValue` (Event → xsd:string) — optional textual.
 - `:predictionTime` (LabelSample → xsd:dateTime) — required.
 - `:booleanValue`, `:integerValue`, `:floatValue`, `:categoricalValue` (LabelSample) — mutually exclusive by design (SHACL enforces exactly-one-of).
 - Dataset metadata properties: `:datasetName`, `:medsVersion`, `:createdAt`, `:tableName`, etc.
@@ -122,14 +122,14 @@ High-level terms distilled from MEDS:
 ## 6. Facets of the properties (constraints)
 
 **OWL-level constraints (expressed as restrictions):**
-- `Measurement` has exactly one `:hasSubject` and exactly one `:hasCode` (the ontology encodes a cardinality of 1 but SHACL relaxes this to allow `codeString` alternative).
+- `Event` has exactly one `:hasSubject` and exactly one `:hasCode` (the ontology encodes a cardinality of 1 but SHACL relaxes this to allow `codeString` alternative).
 - `Code` must have exactly one `:codeString` (OWL `hasKey` is used).
 - `LabelSample` must have exactly one `:hasSubject` and one `:predictionTime`; each label value property has `maxCardinality 1`.
-- `prov:wasDerivedFrom` values for `Measurements`, `Codes`, `Subjects`, and `LabelSamples` must be of type `DatasetMetadata` (a `prov:Entity`).
+- `prov:wasDerivedFrom` values for `Events`, `Codes`, `Subjects`, and `LabelSamples` must be of type `DatasetMetadata` (a `prov:Entity`).
 
 **SHACL-level constraints (enforcement & pragmatic choices):**
 - SHACL shapes enforce:
-  - `Measurement` requires either `:hasCode` (link to `:Code`) **or** `:codeString` literal (reflects MEDS flexibility).
+  - `Event` requires either `:hasCode` (link to `:Code`) **or** `:codeString` literal (reflects MEDS flexibility).
   - `LabelSample` must contain **exactly one** of `{booleanValue, integerValue, floatValue, categoricalValue}` via `sh:or`.
   - `DatasetMetadata` requires `:datasetName`, `:medsVersion`, and `:createdAt` (this is a stricter profile than the permissive MEDS JSON schema and can be relaxed).
   - `SubjectSplit.splitName` limited to enumerated values `train`, `tuning`, `held_out`.
@@ -144,7 +144,7 @@ OWL expresses conceptual constraints and enables reasoning; SHACL provides pract
 See `examples/examples.ttl`. Instances demonstrate:
 - `:Dataset_MIMIC_DEMO :datasetName "MIMIC-IV-Demo" ; :medsVersion "0.3.3" ; ...`
 - `:subj12345678 a :Subject ; :subjectId "12345678" ; :assignedSplit :trainSplit .`
-- `:meas1 a :Measurement ; :hasSubject :subj12345678 ; :hasCode :LAB_51237_UNK ; :time "2178-02-12T11:38:00"^^xsd:dateTime ; :numericValue 1.4; prov:wasDerivedFrom :Dataset_MIMIC_DEMO .`
+- `:meas1 a :Event ; :hasSubject :subj12345678 ; :hasCode :LAB_51237_UNK ; :time "2178-02-12T11:38:00"^^xsd:dateTime ; :numericValue 1.4; prov:wasDerivedFrom :Dataset_MIMIC_DEMO .`
 - `:label_12345678_20210401 a :LabelSample ; :hasSubject :subj12345678 ; :predictionTime "2021-04-01T09:30:00"^^xsd:dateTime ; :booleanValue true .`
 
 ---
@@ -158,15 +158,15 @@ The following table explicitly maps MEDS components (as specified in MEDS docume
 > — Ontology = class / property or instance in `ontology/meds.ttl`.  
 > — Enforcement = where the constraint is enforced (OWL, SHACL, or Procedural/ETL).
 
-### 8.1 Core DataSchema → `:Measurement` and related
+### 8.1 Core DataSchema → `:Event` and related
 
 | MEDS element | Ontology mapping | Datatype / range | Required? (MEDS) | Enforcement |
 |---|---:|---|---:|---|
-| `subject_id` (DataSchema column) | `:Measurement :hasSubject → :Subject` ; `:Subject :subjectId` holds the literal | `xsd:string` for `:subjectId` | Yes | SHACL: `MeasurementShape` requires `:hasSubject`; SHACL: `SubjectShape` requires `:subjectId`; OWL: `:subjectId` is functional |
-| `time` (DataSchema column) | `:Measurement :time` | `xsd:dateTime` | Yes (nullable only for static measurements) | SHACL: `time` `maxCount 1` and `datatype xsd:dateTime` |
-| `code` (DataSchema column) | `:Measurement :hasCode → :Code` or fallback `:Measurement :codeString` (literal) | `xsd:string` | Yes | SHACL: `MeasurementShape` `sh:or` requires `hasCode` or `codeString`; OWL: `Code` `hasKey :codeString` |
-| `numeric_value` | `:Measurement :numericValue` | `xsd:double` | Optional | SHACL: `numericValue` `maxCount 1` and `datatype xsd:double` |
-| `text_value` | `:Measurement :textValue` | `xsd:string` | Optional | SHACL: `textValue` `maxCount 1` |
+| `subject_id` (DataSchema column) | `:Event :hasSubject → :Subject` ; `:Subject :subjectId` holds the literal | `xsd:string` for `:subjectId` | Yes | SHACL: `EventShape` requires `:hasSubject`; SHACL: `SubjectShape` requires `:subjectId`; OWL: `:subjectId` is functional |
+| `time` (DataSchema column) | `:Event :time` | `xsd:dateTime` | Yes (nullable only for static events) | SHACL: `time` `maxCount 1` and `datatype xsd:dateTime` |
+| `code` (DataSchema column) | `:Event :hasCode → :Code` or fallback `:Event :codeString` (literal) | `xsd:string` | Yes | SHACL: `EventShape` `sh:or` requires `hasCode` or `codeString`; OWL: `Code` `hasKey :codeString` |
+| `numeric_value` | `:Event :numericValue` | `xsd:double` | Optional | SHACL: `numericValue` `maxCount 1` and `datatype xsd:double` |
+| `text_value` | `:Event :textValue` | `xsd:string` | Optional | SHACL: `textValue` `maxCount 1` |
 
 ### 8.2 CodeMetadataSchema → `:Code`
 
@@ -220,7 +220,7 @@ The following table explicitly maps MEDS components (as specified in MEDS docume
      *Rationale for alternative:* Better OWL reasoning support for “one-of” constraints and richer provenance/annotation on label values. More verbose in RDF. Use Option B if stronger reasoning is required.
 
 2. **`code` as literal vs resource**  
-   - *Option A (chosen):* Support both: `:Measurement :hasCode → :Code` *or* inline `:Measurement :codeString "..."` literal.  
+   - *Option A (chosen):* Support both: `:Event :hasCode → :Code` *or* inline `:Event :codeString "..."` literal.  
      *Rationale:* MEDS allows datasets without a `codes.parquet`; this hybrid supports both workflows while enabling richer semantics when `:Code` resources exist.
    - *Option B (alternative):* Force `hasCode` to always reference a `:Code`.  
      *Rationale:* Simpler reasoning and consistent URI referencing but would penalize datasets lacking a separate code table.

@@ -12,7 +12,7 @@
 <https://albertomarfoglia.github.io/meds-ontology> a owl:Ontology ;
     dcterms:title "MEDS conceptual ontology (OWL)" ;
     dcterms:creator "Alberto Marfoglia" ;
-    dcterms:description "An OWL ontology encoding the MEDS data model (subjects, measurements, codes, labels, dataset metadata, splits). This ontology intentionally models open/extendable value modalities and captures MEDS invariants as annotations where OWL cannot enforce them." ;
+    dcterms:description "An OWL ontology encoding the MEDS data model (subjects, events, codes, labels, dataset metadata, splits). This ontology intentionally models open/extendable value modalities and captures MEDS invariants as annotations where OWL cannot enforce them." ;
     dcterms:created "2025-12-04"^^xsd:date ;
     owl:versionInfo "0.1.0" .
 
@@ -22,7 +22,7 @@
 ###  https://albertomarfoglia.github.io/meds-ontology#Code
 :Code a owl:Class ;
     rdfs:label "Code" ;
-    rdfs:comment "Metadata/vocabulary entry describing a measurement code (code string, description, parent codes, external links)." .
+    rdfs:comment "Metadata/vocabulary entry describing a event code (code string, description, parent codes, external links)." .
 
 ###  https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata
 :DatasetMetadata a owl:Class ;
@@ -36,10 +36,10 @@
                 rdfs:label "LabelSample" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#Measurement
-:Measurement rdf:type owl:Class ;
-                rdfs:label "Measurement" ;
-                rdfs:comment "A single observation/row in MEDS: (subject, time?, code, value modalities...). Time is nullable for static measurements." ;
+###  https://albertomarfoglia.github.io/meds-ontology#Event
+:Event rdf:type owl:Class ;
+                rdfs:label "Event" ;
+                rdfs:comment "A single observation/row in MEDS: (subject, time?, code, value modalities...). Time is nullable for static events." ;
                 owl:disjointWith :LabelSample .
 
 
@@ -66,8 +66,8 @@
 ################################################################
 # Class restrictions (cardinalities & guidance)
 ################################################################
-# Measurements must have exactly one subject and exactly one code; time is optional (0..1).
-:Measurement
+# Events must have exactly one subject and exactly one code; time is optional (0..1).
+:Event
     rdfs:subClassOf [
         a owl:Restriction ;
         owl:onProperty :hasSubject ;
@@ -163,28 +163,28 @@ meds:Subject rdfs:subClassOf [
 # Important invariants as annotations (procedural constraints)
 ################################################################
 :DatasetMetadata rdfs:comment
-    "MEDS invariants to be enforced by dataset creators/ETL: 1) Subject contiguity: data for a single subject must not be split across multiple physical files. 2) Sorted order: within a subject, measurements should be ordered by time. These are operational constraints and not fully expressible in OWL; they are documented here for consumers." .
+    "MEDS invariants to be enforced by dataset creators/ETL: 1) Subject contiguity: data for a single subject must not be split across multiple physical files. 2) Sorted order: within a subject, events should be ordered by time. These are operational constraints and not fully expressible in OWL; they are documented here for consumers." .
 
 #################################################################
 #    Object Properties
 #################################################################
 :hasSubject a owl:ObjectProperty ;
     rdfs:label "hasSubject" ;
-    rdfs:domain :Measurement , :LabelSample ;
+    rdfs:domain :Event , :LabelSample ;
     rdfs:range :Subject ;
-    rdfs:comment "Links a Measurement or LabelSample to its Subject (maps to subject_id)." .
+    rdfs:comment "Links a Event or LabelSample to its Subject (maps to subject_id)." .
 
 :hasCode a owl:ObjectProperty ;
     rdfs:label "hasCode" ;
-    rdfs:domain :Measurement ;
+    rdfs:domain :Event ;
     rdfs:range :Code ;
-    rdfs:comment "Link from a Measurement to a Code metadata entry. If no Code metadata file exists, codeString on Measurement is used." .
+    rdfs:comment "Link from a Event to a Code metadata entry. If no Code metadata file exists, codeString on Event is used." .
 
 :hasValueModality a owl:ObjectProperty ;
     rdfs:label "hasValueModality" ;
-    rdfs:domain :Measurement ;
+    rdfs:domain :Event ;
     rdfs:range :ValueModality ;
-    rdfs:comment "Attach additional value modalities (image, waveform, etc.) to a Measurement." .
+    rdfs:comment "Attach additional value modalities (image, waveform, etc.) to a Event." .
 
 :assignedSplit a owl:ObjectProperty ;
     rdfs:label "assignedSplit" ;
@@ -210,18 +210,18 @@ meds:Subject rdfs:subClassOf [
 
 :codeString a owl:DatatypeProperty , owl:FunctionalProperty ;
     rdfs:domain [ a owl:Class ;
-                  owl:unionOf ( :Code :Measurement )
+                  owl:unionOf ( :Code :Event )
                 ] ;
     rdfs:range xsd:string ;
-    rdfs:comment "Canonical textual code; functional for Code. Also present on Measurement when no Code metadata exists." .
+    rdfs:comment "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists." .
 
 :Code owl:hasKey ( :codeString ) .
 
 :time a owl:DatatypeProperty ;
     rdfs:label "time" ;
-    rdfs:domain :Measurement ;
+    rdfs:domain :Event ;
     rdfs:range xsd:dateTime ;
-    rdfs:comment "Timestamp of the measurement. MEDS allows null for static measurements; modelled as 0..1 cardinality." .
+    rdfs:comment "Timestamp of the event. MEDS allows null for static events; modelled as 0..1 cardinality." .
 
 :codeDescription a owl:DatatypeProperty ;
     rdfs:label "codeDescription" ;
@@ -231,15 +231,15 @@ meds:Subject rdfs:subClassOf [
 
 :numericValue a owl:DatatypeProperty ;
     rdfs:label "numericValue" ;
-    rdfs:domain :Measurement ;
+    rdfs:domain :Event ;
     rdfs:range xsd:double ;
-    rdfs:comment "Numeric measurement value (optional in MEDS)." .
+    rdfs:comment "Numeric event value (optional in MEDS)." .
 
 :textValue a owl:DatatypeProperty ;
     rdfs:label "textValue" ;
-    rdfs:domain :Measurement ;
+    rdfs:domain :Event ;
     rdfs:range xsd:string ;
-    rdfs:comment "Text measurement value (optional in MEDS)." .
+    rdfs:comment "Text event value (optional in MEDS)." .
 
 :predictionTime a owl:DatatypeProperty ;
     rdfs:label "predictionTime" ;
@@ -311,7 +311,7 @@ meds:Subject rdfs:subClassOf [
     rdfs:label "tableName" ;
     rdfs:domain :DatasetMetadata ;
     rdfs:range xsd:string ;
-    rdfs:comment "Name of a measurement table included in the dataset. Repeated one triple per table (preferred to comma-separated lists)." .
+    rdfs:comment "Name of a event table included in the dataset. Repeated one triple per table (preferred to comma-separated lists)." .
 
 :etlName a owl:DatatypeProperty ;
     rdfs:label "etlName" ;

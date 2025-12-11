@@ -28,14 +28,14 @@
     :externalCodeId "LOINC/718-7" ;
     prov:wasDerivedFrom :Dataset_MIMIC_DEMO .
 
-:meas1 a :Measurement ;
+:meas1 a :Event ;
     :hasSubject :subj12345678 ;
     :hasCode :LAB_51237_UNK ;
     :time "2178-02-12T11:38:00"^^xsd:dateTime ;
     :numericValue "1.4"^^xsd:double ;
     prov:wasDerivedFrom :Dataset_MIMIC_DEMO .
 
-:meas2 a :Measurement ;
+:meas2 a :Event ;
     :hasSubject :subj12345678 ;
     :codeString "GENDER//M" ;
     :textValue "M" ;
