@@ -7,8 +7,10 @@
 @base <https://albertomarfoglia.github.io/meds-ontology#> .
 
 <https://albertomarfoglia.github.io/meds-ontology> rdf:type owl:Ontology ;
+                                                    <http://purl.org/dc/terms#created> "2025-12-04"^^xsd:date ;
                                                     <http://purl.org/dc/terms#creator> "Alberto Marfoglia" ;
                                                     <http://purl.org/dc/terms#description> "An OWL ontology encoding the MEDS data model (subjects, events, codes, labels, dataset metadata, splits). This ontology intentionally models open/extendable value modalities and captures MEDS invariants as annotations where OWL cannot enforce them." ;
+                                                    <http://purl.org/dc/terms#title> "MEDS conceptual ontology (OWL)" ;
                                                     owl:versionInfo "0.1.0" .
 
 #################################################################
@@ -21,6 +23,10 @@
 
 ###  http://purl.org/dc/terms#description
 <http://purl.org/dc/terms#description> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#cardinality
+owl:cardinality rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2002/07/owl#maxCardinality
@@ -103,14 +109,6 @@ xsd:date rdf:type rdfs:Datatype .
 #################################################################
 #    Data properties
 #################################################################
-
-###  http://purl.org/dc/terms#created
-<http://purl.org/dc/terms#created> rdf:type owl:DatatypeProperty .
-
-
-###  http://purl.org/dc/terms#title
-<http://purl.org/dc/terms#title> rdf:type owl:DatatypeProperty .
-
 
 ###  https://albertomarfoglia.github.io/meds-ontology#additionalValueModalityColumn
 :additionalValueModalityColumn rdf:type owl:DatatypeProperty ;
@@ -268,6 +266,10 @@ xsd:date rdf:type rdfs:Datatype .
 <http://purl.org/dc/terms#LicenseDocument> rdf:type owl:Class .
 
 
+###  http://www.w3.org/2000/01/rdf-schema#Resource
+rdfs:Resource rdf:type owl:Class .
+
+
 ###  http://www.w3.org/ns/dcat#Dataset
 <http://www.w3.org/ns/dcat#Dataset> rdf:type owl:Class .
 
@@ -305,6 +307,10 @@ xsd:date rdf:type rdfs:Datatype .
                  rdfs:subClassOf <http://www.w3.org/ns/dcat#Dataset> ,
                                  <http://www.w3.org/ns/prov#Entity> ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://purl.org/dc/terms#hasVersion> ;
+                                   owl:allValuesFrom rdfs:Resource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty <http://purl.org/dc/terms#license> ;
                                    owl:allValuesFrom <http://purl.org/dc/terms#LicenseDocument>
                                  ] ,
@@ -317,16 +323,12 @@ xsd:date rdf:type rdfs:Datatype .
                                    owl:allValuesFrom <http://www.w3.org/ns/prov#Activity>
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty <http://purl.org/dc/terms#hasVersion> ;
-                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty <http://purl.org/dc/terms#created> ;
-                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   owl:allValuesFrom xsd:string
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty <http://purl.org/dc/terms#title> ;
-                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   owl:allValuesFrom xsd:string
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :medsVersion ;
@@ -444,12 +446,6 @@ xsd:date rdf:type rdfs:Datatype .
 #    Individuals
 #################################################################
 
-###  https://albertomarfoglia.github.io/meds-ontology
-<https://albertomarfoglia.github.io/meds-ontology> rdf:type owl:NamedIndividual ;
-                                                   <http://purl.org/dc/terms#created> "2025-12-04"^^xsd:date ;
-                                                   <http://purl.org/dc/terms#title> "MEDS conceptual ontology (OWL)" .
-
-
 ###  https://albertomarfoglia.github.io/meds-ontology#heldOutSplit
 :heldOutSplit rdf:type owl:NamedIndividual ,
                        :SubjectSplit ;
@@ -468,7 +464,16 @@ xsd:date rdf:type rdfs:Datatype .
              rdfs:label "tuning"@en .
 
 
-[ owl:maxCardinality 1
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
 ] .
+
+[ owl:maxCardinality 1
+ ] .
+
+[ owl:maxCardinality 1
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

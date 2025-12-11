@@ -17,10 +17,6 @@
     dct:created "2025-12-04"^^xsd:date ;
     owl:versionInfo "0.1.0" .
 
-dct:title a owl:DatatypeProperty .
-dct:created a owl:DatatypeProperty .
-dct:hasVersion a owl:ObjectProperty .
-
 #################################################################
 #    Classes
 #################################################################
@@ -112,15 +108,8 @@ meds:DatasetMetadata
 :DatasetMetadata
     rdfs:subClassOf [
         a owl:Restriction ;
-        owl:onProperty dct:title ;
-        owl:cardinality 1
-    ] , [
-        a owl:Restriction ;
-        owl:onProperty dct:created ;
-        owl:cardinality 1
-    ] , [
-        a owl:Restriction ;
         owl:onProperty dct:hasVersion ;
+        owl:allValuesFrom rdfs:Resource ;
         owl:maxCardinality 1
     ] , [
         a owl:Restriction ;
@@ -131,6 +120,18 @@ meds:DatasetMetadata
         a owl:Restriction ;
         owl:onProperty meds:medsVersion ;
         owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] ,
+    [
+        a owl:Restriction ;
+        owl:onProperty dct:title ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:allValuesFrom xsd:string
+    ] ,
+    [
+        a owl:Restriction ;
+        owl:onProperty dct:created ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:allValuesFrom xsd:string
     ] , [
         a owl:Restriction ;
         owl:onProperty dcat:distribution ;    # location_uri + description_uri
@@ -140,7 +141,6 @@ meds:DatasetMetadata
         owl:onProperty prov:wasGeneratedBy ;  # ETL activity
         owl:allValuesFrom prov:Activity
     ] .
-
 
 # Code must have exactly one codeString
  :Code

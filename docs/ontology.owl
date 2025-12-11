@@ -8,8 +8,10 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:terms="http://purl.org/dc/terms#">
     <owl:Ontology rdf:about="https://albertomarfoglia.github.io/meds-ontology">
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-04</terms:created>
         <terms:creator>Alberto Marfoglia</terms:creator>
         <terms:description>An OWL ontology encoding the MEDS data model (subjects, events, codes, labels, dataset metadata, splits). This ontology intentionally models open/extendable value modalities and captures MEDS invariants as annotations where OWL cannot enforce them.</terms:description>
+        <terms:title>MEDS conceptual ontology (OWL)</terms:title>
         <owl:versionInfo>0.1.0</owl:versionInfo>
     </owl:Ontology>
     
@@ -38,6 +40,13 @@
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms#description"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#cardinality -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#cardinality"/>
     
 
 
@@ -184,20 +193,6 @@
      -->
 
 
-    
-
-
-    <!-- http://purl.org/dc/terms#created -->
-
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms#created"/>
-    
-
-
-    <!-- http://purl.org/dc/terms#title -->
-
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms#title"/>
     
 
 
@@ -443,6 +438,13 @@
     
 
 
+    <!-- http://www.w3.org/2000/01/rdf-schema#Resource -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    
+
+
     <!-- http://www.w3.org/ns/dcat#Dataset -->
 
 
@@ -504,6 +506,12 @@
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms#hasVersion"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/dc/terms#license"/>
                 <owl:allValuesFrom rdf:resource="http://purl.org/dc/terms#LicenseDocument"/>
             </owl:Restriction>
@@ -522,20 +530,14 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/dc/terms#hasVersion"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/dc/terms#created"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/dc/terms#title"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -719,16 +721,6 @@
     
 
 
-    <!-- https://albertomarfoglia.github.io/meds-ontology -->
-
-
-    <owl:NamedIndividual rdf:about="https://albertomarfoglia.github.io/meds-ontology">
-        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-04</terms:created>
-        <terms:title>MEDS conceptual ontology (OWL)</terms:title>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://albertomarfoglia.github.io/meds-ontology#heldOutSplit -->
 
 
@@ -757,7 +749,16 @@
         <rdfs:label xml:lang="en">tuning</rdfs:label>
     </owl:NamedIndividual>
     <rdf:Description>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </rdf:Description>
+    <rdf:Description>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
     </rdf:Description>
 </rdf:RDF>
 
