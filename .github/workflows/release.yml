@@ -49,7 +49,7 @@ jobs:
       - name: Get new version
         id: get_version
         run: |
-          VERSION=$(semantic-release show-version)
+          VERSION=$(semantic-release version --print)
           if [ -z "$VERSION" ]; then
             echo "No new release created. Exiting."
             exit 0
