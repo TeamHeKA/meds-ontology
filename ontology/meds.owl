@@ -1,5 +1,4 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix meds: <https://hekameds.github.io/meds-ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -9,12 +8,28 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://hekameds.github.io/meds-ontology> a owl:Ontology ;
-    dct:created "2025-12-04"^^xsd:date ;
-    dct:creator "Alberto Marfoglia" ;
-    dct:description "An OWL ontology encoding the MEDS data model (subjects, events, codes, labels, dataset metadata, splits). This ontology intentionally models open/extendable value modalities and captures MEDS invariants as annotations where OWL cannot enforce them." ;
-    dct:title "MEDS conceptual ontology (OWL)" ;
+    dcterms:title "MEDS Ontology"@en ;
+    rdfs:label "MEDS Ontology"@en ;
+    dcterms:abstract """The MEDS Ontology is an OWL ontology that formally encodes the
+Medical Event Data Standard (MEDS) conceptual data model.
+It provides a semantic representation of medical event data
+to support interoperability, validation, and machine-readable
+analysis across datasets."""@en ;
+    dcterms:description """This ontology provides a semantic framework for representing
+key components of the Medical Event Data Standard (MEDS),
+including subjects, clinical measurements, code metadata,
+dataset-level provenance, subject splits, and prediction labels.
+
+The ontology is accompanied by SHACL shapes that constrain
+and validate data according to the MEDS conceptual model,
+enabling consistent data representation and quality control
+across implementations."""@en ;
+    dcterms:created "2025-12-04"^^xsd:date ;
+    dcterms:creator "Alberto Marfoglia" ;
     dcterms:modified "2025-12-15"^^xsd:date ;
-    owl:versionInfo "" .
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:publisher "HeKa Team"@en ;
+    owl:versionInfo "1.0.0" .
 
 meds:additionalValueModalityColumn a owl:DatatypeProperty ;
     rdfs:label "additionalValueModalityColumn" ;
@@ -246,11 +261,11 @@ meds:DatasetMetadata a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty dct:title ],
+            owl:onProperty dcterms:title ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty dct:created ],
+            owl:onProperty dcterms:created ],
         [ a owl:Restriction ;
             owl:allValuesFrom dcat:Distribution ;
             owl:onProperty dcat:distribution ],
@@ -260,11 +275,11 @@ meds:DatasetMetadata a owl:Class ;
         [ a owl:Restriction ;
             owl:allValuesFrom rdfs:Resource ;
             owl:maxCardinality 1 ;
-            owl:onProperty dct:hasVersion ],
+            owl:onProperty dcterms:hasVersion ],
         [ a owl:Restriction ;
-            owl:allValuesFrom dct:LicenseDocument ;
+            owl:allValuesFrom dcterms:LicenseDocument ;
             owl:maxCardinality 1 ;
-            owl:onProperty dct:license ],
+            owl:onProperty dcterms:license ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty meds:medsVersion ],

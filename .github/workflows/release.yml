@@ -48,7 +48,13 @@ jobs:
       # 6️⃣ Extract the new version
       - name: Get new version
         id: get_version
-        run: echo "VERSION=$(semantic-release show-version)" >> $GITHUB_ENV
+        run: |
+          VERSION=$(semantic-release show-version)
+          if [ -z "$VERSION" ]; then
+            echo "No new release created. Exiting."
+            exit 0
+          fi
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       # 7️⃣ Update owl:versionInfo in ontology
       - name: Update ontology version

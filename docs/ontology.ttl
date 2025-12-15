@@ -7,27 +7,51 @@
 @base <https://hekameds.github.io/meds-ontology#> .
 
 <https://hekameds.github.io/meds-ontology> rdf:type owl:Ontology ;
-                                            <http://purl.org/dc/terms#created> "2025-12-04"^^xsd:date ;
-                                            <http://purl.org/dc/terms#creator> "Alberto Marfoglia" ;
-                                            <http://purl.org/dc/terms#description> "An OWL ontology encoding the MEDS data model (subjects, events, codes, labels, dataset metadata, splits). This ontology intentionally models open/extendable value modalities and captures MEDS invariants as annotations where OWL cannot enforce them." ;
-                                            <http://purl.org/dc/terms#title> "MEDS conceptual ontology (OWL)" ;
+                                            <http://purl.org/dc/terms/abstract> """The MEDS Ontology is an OWL ontology that formally encodes the
+Medical Event Data Standard (MEDS) conceptual data model.
+It provides a semantic representation of medical event data
+to support interoperability, validation, and machine-readable
+analysis across datasets."""@en ;
+                                            <http://purl.org/dc/terms/created> "2025-12-04"^^xsd:date ;
+                                            <http://purl.org/dc/terms/creator> "Alberto Marfoglia" ;
+                                            <http://purl.org/dc/terms/description> """This ontology provides a semantic framework for representing
+key components of the Medical Event Data Standard (MEDS),
+including subjects, clinical measurements, code metadata,
+dataset-level provenance, subject splits, and prediction labels.
+
+The ontology is accompanied by SHACL shapes that constrain
+and validate data according to the MEDS conceptual model,
+enabling consistent data representation and quality control
+across implementations."""@en ;
+                                            <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
                                             <http://purl.org/dc/terms/modified> "2025-12-15"^^xsd:date ;
-                                            owl:versionInfo "" .
+                                            <http://purl.org/dc/terms/publisher> "HeKa Team"@en ;
+                                            <http://purl.org/dc/terms/title> "MEDS Ontology"@en ;
+                                            rdfs:label "MEDS Ontology"@en ;
+                                            owl:versionInfo "1.0.0" .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
-###  http://purl.org/dc/terms#creator
-<http://purl.org/dc/terms#creator> rdf:type owl:AnnotationProperty .
+###  http://purl.org/dc/terms/abstract
+<http://purl.org/dc/terms/abstract> rdf:type owl:AnnotationProperty .
 
 
-###  http://purl.org/dc/terms#description
-<http://purl.org/dc/terms#description> rdf:type owl:AnnotationProperty .
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/modified
 <http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2002/07/owl#cardinality
@@ -50,12 +74,8 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  http://purl.org/dc/terms#hasVersion
-<http://purl.org/dc/terms#hasVersion> rdf:type owl:ObjectProperty .
-
-
-###  http://purl.org/dc/terms#license
-<http://purl.org/dc/terms#license> rdf:type owl:ObjectProperty .
+###  http://purl.org/dc/terms/hasVersion
+<http://purl.org/dc/terms/hasVersion> rdf:type owl:ObjectProperty .
 
 
 ###  http://www.w3.org/ns/dcat#distribution
@@ -267,8 +287,8 @@ xsd:date rdf:type rdfs:Datatype .
 #    Classes
 #################################################################
 
-###  http://purl.org/dc/terms#LicenseDocument
-<http://purl.org/dc/terms#LicenseDocument> rdf:type owl:Class .
+###  http://purl.org/dc/terms/LicenseDocument
+<http://purl.org/dc/terms/LicenseDocument> rdf:type owl:Class .
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#Resource
@@ -312,12 +332,12 @@ rdfs:Resource rdf:type owl:Class .
                  rdfs:subClassOf <http://www.w3.org/ns/dcat#Dataset> ,
                                  <http://www.w3.org/ns/prov#Entity> ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty <http://purl.org/dc/terms#hasVersion> ;
+                                   owl:onProperty <http://purl.org/dc/terms/hasVersion> ;
                                    owl:allValuesFrom rdfs:Resource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty <http://purl.org/dc/terms#license> ;
-                                   owl:allValuesFrom <http://purl.org/dc/terms#LicenseDocument>
+                                   owl:onProperty <http://purl.org/dc/terms/license> ;
+                                   owl:allValuesFrom <http://purl.org/dc/terms/LicenseDocument>
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty <http://www.w3.org/ns/dcat#distribution> ;
@@ -328,11 +348,11 @@ rdfs:Resource rdf:type owl:Class .
                                    owl:allValuesFrom <http://www.w3.org/ns/prov#Activity>
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty <http://purl.org/dc/terms#created> ;
+                                   owl:onProperty <http://purl.org/dc/terms/created> ;
                                    owl:allValuesFrom xsd:string
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty <http://purl.org/dc/terms#title> ;
+                                   owl:onProperty <http://purl.org/dc/terms/title> ;
                                    owl:allValuesFrom xsd:string
                                  ] ,
                                  [ rdf:type owl:Restriction ;
@@ -454,16 +474,16 @@ rdfs:Resource rdf:type owl:Class .
              rdfs:label "tuning"@en .
 
 
-[ owl:maxCardinality 1
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
 ] .
 
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
 [ owl:maxCardinality 1
  ] .
 
-[ owl:cardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:cardinality "1"^^xsd:nonNegativeInteger
+[ owl:maxCardinality 1
  ] .
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
