@@ -8,13 +8,14 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://hekameds.github.io/meds-ontology> a owl:Ontology ;
-    dcterms:title "MEDS Ontology"@en ;
     rdfs:label "MEDS Ontology"@en ;
     dcterms:abstract """The MEDS Ontology is an OWL ontology that formally encodes the
 Medical Event Data Standard (MEDS) conceptual data model.
 It provides a semantic representation of medical event data
 to support interoperability, validation, and machine-readable
 analysis across datasets."""@en ;
+    dcterms:created "2025-12-04"^^xsd:date ;
+    dcterms:creator "Alberto Marfoglia" ;
     dcterms:description """This ontology provides a semantic framework for representing
 key components of the Medical Event Data Standard (MEDS),
 including subjects, clinical measurements, code metadata,
@@ -24,11 +25,10 @@ The ontology is accompanied by SHACL shapes that constrain
 and validate data according to the MEDS conceptual model,
 enabling consistent data representation and quality control
 across implementations."""@en ;
-    dcterms:created "2025-12-04"^^xsd:date ;
-    dcterms:creator "Alberto Marfoglia" ;
-    dcterms:modified "2025-12-15"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2025-12-15"^^xsd:date ;
     dcterms:publisher "HeKa Team"@en ;
+    dcterms:title "MEDS Ontology"@en ;
     owl:versionInfo "1.0.0" .
 
 meds:additionalValueModalityColumn a owl:DatatypeProperty ;
@@ -212,9 +212,6 @@ meds:Event a owl:Class ;
     rdfs:comment "A single observation/row in MEDS: (subject, time?, code, value modalities...). Time is nullable for static events." ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty meds:hasSubject ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty meds:hasCode ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -227,7 +224,10 @@ meds:Event a owl:Class ;
             owl:onProperty meds:textValue ],
         [ a owl:Restriction ;
             owl:allValuesFrom meds:DatasetMetadata ;
-            owl:onProperty prov:wasDerivedFrom ] ;
+            owl:onProperty prov:wasDerivedFrom ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty meds:hasSubject ] ;
     owl:disjointWith meds:LabelSample .
 
 meds:LabelSample a owl:Class ;
