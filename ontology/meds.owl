@@ -28,18 +28,8 @@
 meds:DatasetMetadata
     a owl:Class ;
     rdfs:label "DatasetMetadata" ;
-    rdfs:comment
-        "High-level provenance and conversion metadata for a MEDS dataset. 
-         dataset_name → dct:title ;
-         dataset_version → dct:hasVersion ;
-         meds_version → meds:medsVersion ;
-         created_at → dct:created ;
-         license → dct:license ;
-         location_uri/description_uri → dcat:distribution (Distribution with dcat:downloadURL / dcat:accessURL) ;
-         ETL metadata (name, version, notes) are captured via prov:wasGeneratedBy → prov:Activity (rdfs:label, dct:hasVersion, rdfs:comment);
-         column lists → meds:... repeated-literal properties." ;
+    rdfs:comment "High-level provenance and conversion metadata for a MEDS dataset." ;
     rdfs:subClassOf prov:Entity , dcat:Dataset .
-
     
 ###  https://hekameds.github.io/meds-ontology#LabelSample
 :LabelSample rdf:type owl:Class ;
