@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://hekameds.github.io/meds-ontology#"
-     xml:base="https://hekameds.github.io/meds-ontology"
+<rdf:RDF xmlns="https://teamheka.github.io/meds-ontology#"
+     xml:base="https://teamheka.github.io/meds-ontology"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:terms="http://purl.org/dc/terms/">
-    <owl:Ontology rdf:about="https://hekameds.github.io/meds-ontology">
+    <owl:Ontology rdf:about="https://teamheka.github.io/meds-ontology">
         <terms:abstract xml:lang="en">The MEDS Ontology is an OWL ontology that formally encodes the
 Medical Event Data Standard (MEDS) conceptual data model.
 It provides a semantic representation of medical event data
@@ -154,61 +154,61 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#assignedSplit -->
+    <!-- https://teamheka.github.io/meds-ontology#assignedSplit -->
 
 
-    <owl:ObjectProperty rdf:about="https://hekameds.github.io/meds-ontology#assignedSplit">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#Subject"/>
-        <rdfs:range rdf:resource="https://hekameds.github.io/meds-ontology#SubjectSplit"/>
+    <owl:ObjectProperty rdf:about="https://teamheka.github.io/meds-ontology#assignedSplit">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#Subject"/>
+        <rdfs:range rdf:resource="https://teamheka.github.io/meds-ontology#SubjectSplit"/>
         <rdfs:comment>Assign a subject to a split (train, tuning, held_out).</rdfs:comment>
         <rdfs:label>assignedSplit</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#hasCode -->
+    <!-- https://teamheka.github.io/meds-ontology#hasCode -->
 
 
-    <owl:ObjectProperty rdf:about="https://hekameds.github.io/meds-ontology#hasCode">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#Event"/>
-        <rdfs:range rdf:resource="https://hekameds.github.io/meds-ontology#Code"/>
+    <owl:ObjectProperty rdf:about="https://teamheka.github.io/meds-ontology#hasCode">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#Event"/>
+        <rdfs:range rdf:resource="https://teamheka.github.io/meds-ontology#Code"/>
         <rdfs:comment>Link from a Event to a Code metadata entry. If no Code metadata file exists, codeString on Event is used.</rdfs:comment>
         <rdfs:label>hasCode</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#hasSubject -->
+    <!-- https://teamheka.github.io/meds-ontology#hasSubject -->
 
 
-    <owl:ObjectProperty rdf:about="https://hekameds.github.io/meds-ontology#hasSubject">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#Event"/>
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#LabelSample"/>
-        <rdfs:range rdf:resource="https://hekameds.github.io/meds-ontology#Subject"/>
+    <owl:ObjectProperty rdf:about="https://teamheka.github.io/meds-ontology#hasSubject">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#Event"/>
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#LabelSample"/>
+        <rdfs:range rdf:resource="https://teamheka.github.io/meds-ontology#Subject"/>
         <rdfs:comment>Links a Event or LabelSample to its Subject (maps to subject_id).</rdfs:comment>
         <rdfs:label>hasSubject</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#hasValueModality -->
+    <!-- https://teamheka.github.io/meds-ontology#hasValueModality -->
 
 
-    <owl:ObjectProperty rdf:about="https://hekameds.github.io/meds-ontology#hasValueModality">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#Event"/>
-        <rdfs:range rdf:resource="https://hekameds.github.io/meds-ontology#ValueModality"/>
+    <owl:ObjectProperty rdf:about="https://teamheka.github.io/meds-ontology#hasValueModality">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#Event"/>
+        <rdfs:range rdf:resource="https://teamheka.github.io/meds-ontology#ValueModality"/>
         <rdfs:comment>Attach additional value modalities (image, waveform, etc.) to a Event.</rdfs:comment>
         <rdfs:label>hasValueModality</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#parentCode -->
+    <!-- https://teamheka.github.io/meds-ontology#parentCode -->
 
 
-    <owl:ObjectProperty rdf:about="https://hekameds.github.io/meds-ontology#parentCode">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#Code"/>
-        <rdfs:range rdf:resource="https://hekameds.github.io/meds-ontology#Code"/>
+    <owl:ObjectProperty rdf:about="https://teamheka.github.io/meds-ontology#parentCode">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#Code"/>
+        <rdfs:range rdf:resource="https://teamheka.github.io/meds-ontology#Code"/>
         <rdfs:comment>Ontological/aggregation parent relations between codes (maps to CodeMetadata.parent_codes).</rdfs:comment>
         <rdfs:label>parentCode</rdfs:label>
     </owl:ObjectProperty>
@@ -227,11 +227,11 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#additionalValueModalityColumn -->
+    <!-- https://teamheka.github.io/meds-ontology#additionalValueModalityColumn -->
 
 
-    <owl:DatatypeProperty rdf:about="https://hekameds.github.io/meds-ontology#additionalValueModalityColumn">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#DatasetMetadata"/>
+    <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#additionalValueModalityColumn">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#DatasetMetadata"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Column containing additional value modality (image, waveform, etc.). OPTIONAL. One triple per column. Matches MEDS: additional_value_modality_columns.</rdfs:comment>
         <rdfs:label>additionalValueModalityColumn</rdfs:label>
@@ -239,11 +239,11 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#booleanValue -->
+    <!-- https://teamheka.github.io/meds-ontology#booleanValue -->
 
 
-    <owl:DatatypeProperty rdf:about="https://hekameds.github.io/meds-ontology#booleanValue">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#LabelSample"/>
+    <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#booleanValue">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#LabelSample"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Boolean label value (if applicable).</rdfs:comment>
         <rdfs:label>booleanValue</rdfs:label>
@@ -251,11 +251,11 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#categoricalValue -->
+    <!-- https://teamheka.github.io/meds-ontology#categoricalValue -->
 
 
-    <owl:DatatypeProperty rdf:about="https://hekameds.github.io/meds-ontology#categoricalValue">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#LabelSample"/>
+    <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#categoricalValue">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#LabelSample"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Categorical label encoded as a string.</rdfs:comment>
         <rdfs:label>categoricalValue</rdfs:label>
@@ -263,11 +263,11 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#codeDescription -->
+    <!-- https://teamheka.github.io/meds-ontology#codeDescription -->
 
 
-    <owl:DatatypeProperty rdf:about="https://hekameds.github.io/meds-ontology#codeDescription">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#Code"/>
+    <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#codeDescription">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#Code"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Human readable description of the code.</rdfs:comment>
         <rdfs:label>codeDescription</rdfs:label>
@@ -275,11 +275,11 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#codeModifierColumn -->
+    <!-- https://teamheka.github.io/meds-ontology#codeModifierColumn -->
 
 
-    <owl:DatatypeProperty rdf:about="https://hekameds.github.io/meds-ontology#codeModifierColumn">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#DatasetMetadata"/>
+    <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#codeModifierColumn">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#DatasetMetadata"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Column used to modify/augment code values. OPTIONAL. One triple per column. Matches MEDS: code_modifier_columns.</rdfs:comment>
         <rdfs:label>codeModifierColumn</rdfs:label>
@@ -287,16 +287,16 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#codeString -->
+    <!-- https://teamheka.github.io/meds-ontology#codeString -->
 
 
-    <owl:DatatypeProperty rdf:about="https://hekameds.github.io/meds-ontology#codeString">
+    <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#codeString">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://hekameds.github.io/meds-ontology#Code"/>
-                    <rdf:Description rdf:about="https://hekameds.github.io/meds-ontology#Event"/>
+                    <rdf:Description rdf:about="https://teamheka.github.io/meds-ontology#Code"/>
+                    <rdf:Description rdf:about="https://teamheka.github.io/meds-ontology#Event"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -306,11 +306,11 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#floatValue -->
+    <!-- https://teamheka.github.io/meds-ontology#floatValue -->
 
 
-    <owl:DatatypeProperty rdf:about="https://hekameds.github.io/meds-ontology#floatValue">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#LabelSample"/>
+    <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#floatValue">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#LabelSample"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <rdfs:comment>Float label value (continuous target).</rdfs:comment>
         <rdfs:label>floatValue</rdfs:label>
@@ -318,11 +318,11 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#integerValue -->
+    <!-- https://teamheka.github.io/meds-ontology#integerValue -->
 
 
-    <owl:DatatypeProperty rdf:about="https://hekameds.github.io/meds-ontology#integerValue">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#LabelSample"/>
+    <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#integerValue">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#LabelSample"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment>Integer label value (e.g., ordinal labels).</rdfs:comment>
         <rdfs:label>integerValue</rdfs:label>
@@ -330,11 +330,11 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#medsVersion -->
+    <!-- https://teamheka.github.io/meds-ontology#medsVersion -->
 
 
-    <owl:DatatypeProperty rdf:about="https://hekameds.github.io/meds-ontology#medsVersion">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#DatasetMetadata"/>
+    <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#medsVersion">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#DatasetMetadata"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Version of the MEDS schema used to generate the dataset. REQUIRED. Matches MEDS: meds_version.</rdfs:comment>
         <rdfs:label>medsVersion</rdfs:label>
@@ -342,11 +342,11 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#numericValue -->
+    <!-- https://teamheka.github.io/meds-ontology#numericValue -->
 
 
-    <owl:DatatypeProperty rdf:about="https://hekameds.github.io/meds-ontology#numericValue">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#Event"/>
+    <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#numericValue">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#Event"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <rdfs:comment>Numeric event value (optional in MEDS).</rdfs:comment>
         <rdfs:label>numericValue</rdfs:label>
@@ -354,11 +354,11 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#otherExtensionColumn -->
+    <!-- https://teamheka.github.io/meds-ontology#otherExtensionColumn -->
 
 
-    <owl:DatatypeProperty rdf:about="https://hekameds.github.io/meds-ontology#otherExtensionColumn">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#DatasetMetadata"/>
+    <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#otherExtensionColumn">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#DatasetMetadata"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Other dataset-specific extension column not covered elsewhere. OPTIONAL. One triple per column. Matches MEDS: other_extension_columns.</rdfs:comment>
         <rdfs:label>otherExtensionColumn</rdfs:label>
@@ -366,11 +366,11 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#predictionTime -->
+    <!-- https://teamheka.github.io/meds-ontology#predictionTime -->
 
 
-    <owl:DatatypeProperty rdf:about="https://hekameds.github.io/meds-ontology#predictionTime">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#LabelSample"/>
+    <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#predictionTime">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#LabelSample"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Inclusive endpoint of the data usable for predicting the label (required for LabelSample).</rdfs:comment>
         <rdfs:label>predictionTime</rdfs:label>
@@ -378,11 +378,11 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#rawSourceIdColumn -->
+    <!-- https://teamheka.github.io/meds-ontology#rawSourceIdColumn -->
 
 
-    <owl:DatatypeProperty rdf:about="https://hekameds.github.io/meds-ontology#rawSourceIdColumn">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#DatasetMetadata"/>
+    <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#rawSourceIdColumn">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#DatasetMetadata"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Raw source ID column before mapping to subject IDs. OPTIONAL. One triple per column. Matches MEDS: raw_source_id_columns.</rdfs:comment>
         <rdfs:label>rawSourceIdColumn</rdfs:label>
@@ -390,11 +390,11 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#siteIdColumn -->
+    <!-- https://teamheka.github.io/meds-ontology#siteIdColumn -->
 
 
-    <owl:DatatypeProperty rdf:about="https://hekameds.github.io/meds-ontology#siteIdColumn">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#DatasetMetadata"/>
+    <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#siteIdColumn">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#DatasetMetadata"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Column representing a site identifier. OPTIONAL. One triple per column. Previously siteIdColumns.</rdfs:comment>
         <rdfs:label>siteIdColumn</rdfs:label>
@@ -402,23 +402,23 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#subjectId -->
+    <!-- https://teamheka.github.io/meds-ontology#subjectId -->
 
 
-    <owl:DatatypeProperty rdf:about="https://hekameds.github.io/meds-ontology#subjectId">
+    <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#subjectId">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#Subject"/>
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#Subject"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Unique identifier for a Subject; functional (= at most one value per Subject).</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#subjectIdColumn -->
+    <!-- https://teamheka.github.io/meds-ontology#subjectIdColumn -->
 
 
-    <owl:DatatypeProperty rdf:about="https://hekameds.github.io/meds-ontology#subjectIdColumn">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#DatasetMetadata"/>
+    <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#subjectIdColumn">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#DatasetMetadata"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Column used as a subject identifier. REQUIRED. One triple per column. Previously subjectIdColumns.</rdfs:comment>
         <rdfs:label>subjectIdColumn</rdfs:label>
@@ -426,11 +426,11 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#textValue -->
+    <!-- https://teamheka.github.io/meds-ontology#textValue -->
 
 
-    <owl:DatatypeProperty rdf:about="https://hekameds.github.io/meds-ontology#textValue">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#Event"/>
+    <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#textValue">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#Event"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Text event value (optional in MEDS).</rdfs:comment>
         <rdfs:label>textValue</rdfs:label>
@@ -438,11 +438,11 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#time -->
+    <!-- https://teamheka.github.io/meds-ontology#time -->
 
 
-    <owl:DatatypeProperty rdf:about="https://hekameds.github.io/meds-ontology#time">
-        <rdfs:domain rdf:resource="https://hekameds.github.io/meds-ontology#Event"/>
+    <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#time">
+        <rdfs:domain rdf:resource="https://teamheka.github.io/meds-ontology#Event"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Timestamp of the event. MEDS allows null for static events; modelled as 0..1 cardinality.</rdfs:comment>
         <rdfs:label>time</rdfs:label>
@@ -504,24 +504,24 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#Code -->
+    <!-- https://teamheka.github.io/meds-ontology#Code -->
 
 
-    <owl:Class rdf:about="https://hekameds.github.io/meds-ontology#Code">
+    <owl:Class rdf:about="https://teamheka.github.io/meds-ontology#Code">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
-                <owl:allValuesFrom rdf:resource="https://hekameds.github.io/meds-ontology#DatasetMetadata"/>
+                <owl:allValuesFrom rdf:resource="https://teamheka.github.io/meds-ontology#DatasetMetadata"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://hekameds.github.io/meds-ontology#codeString"/>
+                <owl:onProperty rdf:resource="https://teamheka.github.io/meds-ontology#codeString"/>
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:hasKey rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://hekameds.github.io/meds-ontology#codeString"/>
+            <rdf:Description rdf:about="https://teamheka.github.io/meds-ontology#codeString"/>
         </owl:hasKey>
         <rdfs:comment>Metadata/vocabulary entry describing a event code (code string, description, parent codes, external links).</rdfs:comment>
         <rdfs:label>Code</rdfs:label>
@@ -529,10 +529,10 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#DatasetMetadata -->
+    <!-- https://teamheka.github.io/meds-ontology#DatasetMetadata -->
 
 
-    <owl:Class rdf:about="https://hekameds.github.io/meds-ontology#DatasetMetadata">
+    <owl:Class rdf:about="https://teamheka.github.io/meds-ontology#DatasetMetadata">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <rdfs:subClassOf>
@@ -573,7 +573,7 @@ across implementations.</terms:description>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://hekameds.github.io/meds-ontology#medsVersion"/>
+                <owl:onProperty rdf:resource="https://teamheka.github.io/meds-ontology#medsVersion"/>
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -583,96 +583,96 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#Event -->
+    <!-- https://teamheka.github.io/meds-ontology#Event -->
 
 
-    <owl:Class rdf:about="https://hekameds.github.io/meds-ontology#Event">
+    <owl:Class rdf:about="https://teamheka.github.io/meds-ontology#Event">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
-                <owl:allValuesFrom rdf:resource="https://hekameds.github.io/meds-ontology#DatasetMetadata"/>
+                <owl:allValuesFrom rdf:resource="https://teamheka.github.io/meds-ontology#DatasetMetadata"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://hekameds.github.io/meds-ontology#hasCode"/>
+                <owl:onProperty rdf:resource="https://teamheka.github.io/meds-ontology#hasCode"/>
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://hekameds.github.io/meds-ontology#hasSubject"/>
+                <owl:onProperty rdf:resource="https://teamheka.github.io/meds-ontology#hasSubject"/>
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://hekameds.github.io/meds-ontology#numericValue"/>
+                <owl:onProperty rdf:resource="https://teamheka.github.io/meds-ontology#numericValue"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://hekameds.github.io/meds-ontology#textValue"/>
+                <owl:onProperty rdf:resource="https://teamheka.github.io/meds-ontology#textValue"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://hekameds.github.io/meds-ontology#time"/>
+                <owl:onProperty rdf:resource="https://teamheka.github.io/meds-ontology#time"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="https://hekameds.github.io/meds-ontology#LabelSample"/>
+        <owl:disjointWith rdf:resource="https://teamheka.github.io/meds-ontology#LabelSample"/>
         <rdfs:comment>A single observation/row in MEDS: (subject, time?, code, value modalities...). Time is nullable for static events.</rdfs:comment>
         <rdfs:label>Event</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#LabelSample -->
+    <!-- https://teamheka.github.io/meds-ontology#LabelSample -->
 
 
-    <owl:Class rdf:about="https://hekameds.github.io/meds-ontology#LabelSample">
+    <owl:Class rdf:about="https://teamheka.github.io/meds-ontology#LabelSample">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
-                <owl:allValuesFrom rdf:resource="https://hekameds.github.io/meds-ontology#DatasetMetadata"/>
+                <owl:allValuesFrom rdf:resource="https://teamheka.github.io/meds-ontology#DatasetMetadata"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://hekameds.github.io/meds-ontology#hasSubject"/>
+                <owl:onProperty rdf:resource="https://teamheka.github.io/meds-ontology#hasSubject"/>
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://hekameds.github.io/meds-ontology#predictionTime"/>
+                <owl:onProperty rdf:resource="https://teamheka.github.io/meds-ontology#predictionTime"/>
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://hekameds.github.io/meds-ontology#booleanValue"/>
+                <owl:onProperty rdf:resource="https://teamheka.github.io/meds-ontology#booleanValue"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://hekameds.github.io/meds-ontology#categoricalValue"/>
+                <owl:onProperty rdf:resource="https://teamheka.github.io/meds-ontology#categoricalValue"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://hekameds.github.io/meds-ontology#floatValue"/>
+                <owl:onProperty rdf:resource="https://teamheka.github.io/meds-ontology#floatValue"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://hekameds.github.io/meds-ontology#integerValue"/>
+                <owl:onProperty rdf:resource="https://teamheka.github.io/meds-ontology#integerValue"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -682,18 +682,18 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#Subject -->
+    <!-- https://teamheka.github.io/meds-ontology#Subject -->
 
 
-    <owl:Class rdf:about="https://hekameds.github.io/meds-ontology#Subject">
+    <owl:Class rdf:about="https://teamheka.github.io/meds-ontology#Subject">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
-                <owl:allValuesFrom rdf:resource="https://hekameds.github.io/meds-ontology#DatasetMetadata"/>
+                <owl:allValuesFrom rdf:resource="https://teamheka.github.io/meds-ontology#DatasetMetadata"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:hasKey rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://hekameds.github.io/meds-ontology#subjectId"/>
+            <rdf:Description rdf:about="https://teamheka.github.io/meds-ontology#subjectId"/>
         </owl:hasKey>
         <rdfs:comment>Primary entity for which care observations are recorded. Maps to MEDS subject_id (patient or admission-level subject).</rdfs:comment>
         <rdfs:label>Subject</rdfs:label>
@@ -701,20 +701,20 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#SubjectSplit -->
+    <!-- https://teamheka.github.io/meds-ontology#SubjectSplit -->
 
 
-    <owl:Class rdf:about="https://hekameds.github.io/meds-ontology#SubjectSplit">
+    <owl:Class rdf:about="https://teamheka.github.io/meds-ontology#SubjectSplit">
         <rdfs:comment>An assignment of a subject to a named split (train, tuning, held_out).</rdfs:comment>
         <rdfs:label>SubjectSplit</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#ValueModality -->
+    <!-- https://teamheka.github.io/meds-ontology#ValueModality -->
 
 
-    <owl:Class rdf:about="https://hekameds.github.io/meds-ontology#ValueModality">
+    <owl:Class rdf:about="https://teamheka.github.io/meds-ontology#ValueModality">
         <rdfs:comment>Generic holder for additional value modalities (image path, waveform id, etc.). Instances may contain modality-specific properties.</rdfs:comment>
         <rdfs:label>ValueModality</rdfs:label>
     </owl:Class>
@@ -733,31 +733,31 @@ across implementations.</terms:description>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#heldOutSplit -->
+    <!-- https://teamheka.github.io/meds-ontology#heldOutSplit -->
 
 
-    <owl:NamedIndividual rdf:about="https://hekameds.github.io/meds-ontology#heldOutSplit">
-        <rdf:type rdf:resource="https://hekameds.github.io/meds-ontology#SubjectSplit"/>
+    <owl:NamedIndividual rdf:about="https://teamheka.github.io/meds-ontology#heldOutSplit">
+        <rdf:type rdf:resource="https://teamheka.github.io/meds-ontology#SubjectSplit"/>
         <rdfs:label xml:lang="en">held_out</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#trainSplit -->
+    <!-- https://teamheka.github.io/meds-ontology#trainSplit -->
 
 
-    <owl:NamedIndividual rdf:about="https://hekameds.github.io/meds-ontology#trainSplit">
-        <rdf:type rdf:resource="https://hekameds.github.io/meds-ontology#SubjectSplit"/>
+    <owl:NamedIndividual rdf:about="https://teamheka.github.io/meds-ontology#trainSplit">
+        <rdf:type rdf:resource="https://teamheka.github.io/meds-ontology#SubjectSplit"/>
         <rdfs:label xml:lang="en">train</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://hekameds.github.io/meds-ontology#tuningSplit -->
+    <!-- https://teamheka.github.io/meds-ontology#tuningSplit -->
 
 
-    <owl:NamedIndividual rdf:about="https://hekameds.github.io/meds-ontology#tuningSplit">
-        <rdf:type rdf:resource="https://hekameds.github.io/meds-ontology#SubjectSplit"/>
+    <owl:NamedIndividual rdf:about="https://teamheka.github.io/meds-ontology#tuningSplit">
+        <rdf:type rdf:resource="https://teamheka.github.io/meds-ontology#SubjectSplit"/>
         <rdfs:label xml:lang="en">tuning</rdfs:label>
     </owl:NamedIndividual>
     <rdf:Description>
