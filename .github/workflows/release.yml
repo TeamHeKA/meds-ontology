@@ -87,7 +87,6 @@ jobs:
           java -jar widoco.jar \
               -ontFile ./ontology/meds.owl \
               -outFolder ./docs \
-              -getOntologyMetadata false \
               -webVowl \
               -rewriteAll \
               -oops \
