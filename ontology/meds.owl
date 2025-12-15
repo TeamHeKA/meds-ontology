@@ -1,332 +1,273 @@
-@prefix : <https://hekameds.github.io/meds-ontology#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix meds: <https://hekameds.github.io/meds-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix dct:    <http://purl.org/dc/terms#> .
-@prefix dcat:   <http://www.w3.org/ns/dcat#> .
-@prefix prov:   <http://www.w3.org/ns/prov#> .
-@base <https://hekameds.github.io/meds-ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://hekameds.github.io/meds-ontology> a owl:Ontology ;
-    dct:title "MEDS conceptual ontology (OWL)" ;
+    dct:created "2025-12-04"^^xsd:date ;
     dct:creator "Alberto Marfoglia" ;
     dct:description "An OWL ontology encoding the MEDS data model (subjects, events, codes, labels, dataset metadata, splits). This ontology intentionally models open/extendable value modalities and captures MEDS invariants as annotations where OWL cannot enforce them." ;
-    dct:created "2025-12-04"^^xsd:date ;
-    owl:versionInfo "0.1.0" .
+    dct:title "MEDS conceptual ontology (OWL)" ;
+    dcterms:modified "2025-12-15"^^xsd:date ;
+    owl:versionInfo "" .
 
-#################################################################
-#    Classes
-#################################################################
-###  https://hekameds.github.io/meds-ontology#Code
-:Code a owl:Class ;
-    rdfs:label "Code" ;
-    rdfs:comment "Metadata/vocabulary entry describing a event code (code string, description, parent codes, external links)." .
+meds:additionalValueModalityColumn a owl:DatatypeProperty ;
+    rdfs:label "additionalValueModalityColumn" ;
+    rdfs:comment "Column containing additional value modality (image, waveform, etc.). OPTIONAL. One triple per column. Matches MEDS: additional_value_modality_columns." ;
+    rdfs:domain meds:DatasetMetadata ;
+    rdfs:range xsd:string .
 
-meds:DatasetMetadata
-    a owl:Class ;
-    rdfs:label "DatasetMetadata" ;
-    rdfs:comment "High-level provenance and conversion metadata for a MEDS dataset." ;
-    rdfs:subClassOf prov:Entity , dcat:Dataset .
-    
-###  https://hekameds.github.io/meds-ontology#LabelSample
-:LabelSample rdf:type owl:Class ;
-                rdfs:comment "A prediction sample row: subject, prediction_time, and one label value (boolean/integer/float/categorical)." ;
-                rdfs:label "LabelSample" .
+meds:assignedSplit a owl:ObjectProperty ;
+    rdfs:label "assignedSplit" ;
+    rdfs:comment "Assign a subject to a split (train, tuning, held_out)." ;
+    rdfs:domain meds:Subject ;
+    rdfs:range meds:SubjectSplit .
 
+meds:codeDescription a owl:DatatypeProperty ;
+    rdfs:label "codeDescription" ;
+    rdfs:comment "Human readable description of the code." ;
+    rdfs:domain meds:Code ;
+    rdfs:range xsd:string .
 
-###  https://hekameds.github.io/meds-ontology#Event
-:Event rdf:type owl:Class ;
-                rdfs:label "Event" ;
-                rdfs:comment "A single observation/row in MEDS: (subject, time?, code, value modalities...). Time is nullable for static events." ;
-                owl:disjointWith :LabelSample .
+meds:codeModifierColumn a owl:DatatypeProperty ;
+    rdfs:label "codeModifierColumn" ;
+    rdfs:comment "Column used to modify/augment code values. OPTIONAL. One triple per column. Matches MEDS: code_modifier_columns." ;
+    rdfs:domain meds:DatasetMetadata ;
+    rdfs:range xsd:string .
 
+meds:hasValueModality a owl:ObjectProperty ;
+    rdfs:label "hasValueModality" ;
+    rdfs:comment "Attach additional value modalities (image, waveform, etc.) to a Event." ;
+    rdfs:domain meds:Event ;
+    rdfs:range meds:ValueModality .
 
-###  https://hekameds.github.io/meds-ontology#Subject
-:Subject a owl:Class ;
-    rdfs:label "Subject" ;
-    rdfs:comment "Primary entity for which care observations are recorded. Maps to MEDS subject_id (patient or admission-level subject)." .
+meds:heldOutSplit a meds:SubjectSplit ;
+    rdfs:label "held_out"@en .
 
-###  https://hekameds.github.io/meds-ontology#SubjectSplit
-:SubjectSplit a owl:Class ;
-    rdfs:label "SubjectSplit" ;
-    rdfs:comment "An assignment of a subject to a named split (train, tuning, held_out)." .
+meds:otherExtensionColumn a owl:DatatypeProperty ;
+    rdfs:label "otherExtensionColumn" ;
+    rdfs:comment "Other dataset-specific extension column not covered elsewhere. OPTIONAL. One triple per column. Matches MEDS: other_extension_columns." ;
+    rdfs:domain meds:DatasetMetadata ;
+    rdfs:range xsd:string .
 
-:ValueModality a owl:Class ;
+meds:parentCode a owl:ObjectProperty ;
+    rdfs:label "parentCode" ;
+    rdfs:comment "Ontological/aggregation parent relations between codes (maps to CodeMetadata.parent_codes)." ;
+    rdfs:domain meds:Code ;
+    rdfs:range meds:Code .
+
+meds:rawSourceIdColumn a owl:DatatypeProperty ;
+    rdfs:label "rawSourceIdColumn" ;
+    rdfs:comment "Raw source ID column before mapping to subject IDs. OPTIONAL. One triple per column. Matches MEDS: raw_source_id_columns." ;
+    rdfs:domain meds:DatasetMetadata ;
+    rdfs:range xsd:string .
+
+meds:siteIdColumn a owl:DatatypeProperty ;
+    rdfs:label "siteIdColumn" ;
+    rdfs:comment "Column representing a site identifier. OPTIONAL. One triple per column. Previously siteIdColumns." ;
+    rdfs:domain meds:DatasetMetadata ;
+    rdfs:range xsd:string .
+
+meds:subjectIdColumn a owl:DatatypeProperty ;
+    rdfs:label "subjectIdColumn" ;
+    rdfs:comment "Column used as a subject identifier. REQUIRED. One triple per column. Previously subjectIdColumns." ;
+    rdfs:domain meds:DatasetMetadata ;
+    rdfs:range xsd:string .
+
+meds:trainSplit a meds:SubjectSplit ;
+    rdfs:label "train"@en .
+
+meds:tuningSplit a meds:SubjectSplit ;
+    rdfs:label "tuning"@en .
+
+meds:ValueModality a owl:Class ;
     rdfs:label "ValueModality" ;
     rdfs:comment "Generic holder for additional value modalities (image path, waveform id, etc.). Instances may contain modality-specific properties." .
 
-################################################################
-# Class restrictions (cardinalities & guidance)
-################################################################
-# Events must have exactly one subject and exactly one code; time is optional (0..1).
-:Event
-    rdfs:subClassOf [
-        a owl:Restriction ;
-        owl:onProperty :hasSubject ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger
-    ] , [
-        a owl:Restriction ;
-        owl:onProperty :hasCode ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger
-    ] , [
-        a owl:Restriction ;
-        owl:onProperty :time ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger
-    ] , [
-        a owl:Restriction ;
-        owl:onProperty :numericValue ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger
-    ] , [
-        a owl:Restriction ;
-        owl:onProperty :textValue ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger
-    ] , [
-        a owl:Restriction ;
-        owl:onProperty prov:wasDerivedFrom ;
-        owl:allValuesFrom meds:DatasetMetadata
-    ]  .
-
-:DatasetMetadata
-    rdfs:subClassOf [
-        a owl:Restriction ;
-        owl:onProperty dct:hasVersion ;
-        owl:allValuesFrom rdfs:Resource ;
-        owl:maxCardinality 1
-    ] , [
-        a owl:Restriction ;
-        owl:onProperty dct:license ;
-        owl:allValuesFrom dct:LicenseDocument ;
-        owl:maxCardinality 1
-    ] , [
-        a owl:Restriction ;
-        owl:onProperty meds:medsVersion ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger
-    ] ,
-    [
-        a owl:Restriction ;
-        owl:onProperty dct:title ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:allValuesFrom xsd:string
-    ] ,
-    [
-        a owl:Restriction ;
-        owl:onProperty dct:created ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:allValuesFrom xsd:string
-    ] , [
-        a owl:Restriction ;
-        owl:onProperty dcat:distribution ;    # location_uri + description_uri
-        owl:allValuesFrom dcat:Distribution
-    ] , [
-        a owl:Restriction ;
-        owl:onProperty prov:wasGeneratedBy ;  # ETL activity
-        owl:allValuesFrom prov:Activity
-    ] .
-
-# Code must have exactly one codeString
- :Code
-    rdfs:subClassOf [
-        a owl:Restriction ;
-        owl:onProperty  :codeString ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger
-    ] , [
-        a owl:Restriction ;
-        owl:onProperty prov:wasDerivedFrom ;
-        owl:allValuesFrom meds:DatasetMetadata
-    ]  .
-
-# LabelSample requirements: subject and predictionTime required; label value properties are optional but typically exactly one will be used.
-:LabelSample
-    rdfs:subClassOf [
-        a owl:Restriction ;
-        owl:onProperty :hasSubject ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger
-    ] , [
-        a owl:Restriction ;
-        owl:onProperty  :predictionTime ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger
-    ] , [
-        a owl:Restriction ;
-        owl:onProperty  :booleanValue ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger
-    ] , [
-        a owl:Restriction ;
-        owl:onProperty  :integerValue ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger
-    ] , [
-        a owl:Restriction ;
-        owl:onProperty  :floatValue ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger
-    ] , [
-        a owl:Restriction ;
-        owl:onProperty  :categoricalValue ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger
-    ] , [
-        a owl:Restriction ;
-        owl:onProperty prov:wasDerivedFrom ;
-        owl:allValuesFrom meds:DatasetMetadata
-    ]  .
-
-meds:Subject rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:onProperty prov:wasDerivedFrom ;
-    owl:allValuesFrom meds:DatasetMetadata
-] .
-
-#################################################################
-#    Object Properties
-#################################################################
-:hasSubject a owl:ObjectProperty ;
-    rdfs:label "hasSubject" ;
-    rdfs:domain :Event , :LabelSample ;
-    rdfs:range :Subject ;
-    rdfs:comment "Links a Event or LabelSample to its Subject (maps to subject_id)." .
-
-:hasCode a owl:ObjectProperty ;
-    rdfs:label "hasCode" ;
-    rdfs:domain :Event ;
-    rdfs:range :Code ;
-    rdfs:comment "Link from a Event to a Code metadata entry. If no Code metadata file exists, codeString on Event is used." .
-
-:hasValueModality a owl:ObjectProperty ;
-    rdfs:label "hasValueModality" ;
-    rdfs:domain :Event ;
-    rdfs:range :ValueModality ;
-    rdfs:comment "Attach additional value modalities (image, waveform, etc.) to a Event." .
-
-:assignedSplit a owl:ObjectProperty ;
-    rdfs:label "assignedSplit" ;
-    rdfs:domain :Subject ;
-    rdfs:range :SubjectSplit ;
-    rdfs:comment "Assign a subject to a split (train, tuning, held_out)." .
-
-:parentCode a owl:ObjectProperty ;
-    rdfs:label "parentCode" ;
-    rdfs:domain :Code ;
-    rdfs:range :Code ;
-    rdfs:comment "Ontological/aggregation parent relations between codes (maps to CodeMetadata.parent_codes)." .
-
-#################################################################
-#    Data properties
-#################################################################
-:subjectId a owl:DatatypeProperty , owl:FunctionalProperty ;
-    rdfs:domain :Subject ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Unique identifier for a Subject; functional (= at most one value per Subject)." .
-
-:Subject owl:hasKey ( :subjectId ) .
-
-:codeString a owl:DatatypeProperty , owl:FunctionalProperty ;
-    rdfs:domain [ a owl:Class ;
-                  owl:unionOf ( :Code :Event )
-                ] ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists." .
-
-:Code owl:hasKey ( :codeString ) .
-
-:time a owl:DatatypeProperty ;
-    rdfs:label "time" ;
-    rdfs:domain :Event ;
-    rdfs:range xsd:dateTime ;
-    rdfs:comment "Timestamp of the event. MEDS allows null for static events; modelled as 0..1 cardinality." .
-
-:codeDescription a owl:DatatypeProperty ;
-    rdfs:label "codeDescription" ;
-    rdfs:domain :Code ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Human readable description of the code." .
-
-:numericValue a owl:DatatypeProperty ;
-    rdfs:label "numericValue" ;
-    rdfs:domain :Event ;
-    rdfs:range xsd:double ;
-    rdfs:comment "Numeric event value (optional in MEDS)." .
-
-:textValue a owl:DatatypeProperty ;
-    rdfs:label "textValue" ;
-    rdfs:domain :Event ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Text event value (optional in MEDS)." .
-
-:predictionTime a owl:DatatypeProperty ;
-    rdfs:label "predictionTime" ;
-    rdfs:domain :LabelSample ;
-    rdfs:range xsd:dateTime ;
-    rdfs:comment "Inclusive endpoint of the data usable for predicting the label (required for LabelSample)." .
-
-:booleanValue a owl:DatatypeProperty ;
+meds:booleanValue a owl:DatatypeProperty ;
     rdfs:label "booleanValue" ;
-    rdfs:domain :LabelSample ;
-    rdfs:range xsd:boolean ;
-    rdfs:comment "Boolean label value (if applicable)." .
+    rdfs:comment "Boolean label value (if applicable)." ;
+    rdfs:domain meds:LabelSample ;
+    rdfs:range xsd:boolean .
 
-:integerValue a owl:DatatypeProperty ;
-    rdfs:label "integerValue" ;
-    rdfs:domain :LabelSample ;
-    rdfs:range xsd:integer ;
-    rdfs:comment "Integer label value (e.g., ordinal labels)." .
-
-:floatValue a owl:DatatypeProperty ;
-    rdfs:label "floatValue" ;
-    rdfs:domain :LabelSample ;
-    rdfs:range xsd:double ;
-    rdfs:comment "Float label value (continuous target)." .
-
-:categoricalValue a owl:DatatypeProperty ;
+meds:categoricalValue a owl:DatatypeProperty ;
     rdfs:label "categoricalValue" ;
-    rdfs:domain :LabelSample ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Categorical label encoded as a string." .
+    rdfs:comment "Categorical label encoded as a string." ;
+    rdfs:domain meds:LabelSample ;
+    rdfs:range xsd:string .
 
-:rawSourceIdColumn a owl:DatatypeProperty ;
-    rdfs:label "rawSourceIdColumn" ;
-    rdfs:domain :DatasetMetadata ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Raw source ID column before mapping to subject IDs. OPTIONAL. One triple per column. Matches MEDS: raw_source_id_columns." .
+meds:floatValue a owl:DatatypeProperty ;
+    rdfs:label "floatValue" ;
+    rdfs:comment "Float label value (continuous target)." ;
+    rdfs:domain meds:LabelSample ;
+    rdfs:range xsd:double .
 
-:codeModifierColumn a owl:DatatypeProperty ;
-    rdfs:label "codeModifierColumn" ;
-    rdfs:domain :DatasetMetadata ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Column used to modify/augment code values. OPTIONAL. One triple per column. Matches MEDS: code_modifier_columns." .
+meds:hasCode a owl:ObjectProperty ;
+    rdfs:label "hasCode" ;
+    rdfs:comment "Link from a Event to a Code metadata entry. If no Code metadata file exists, codeString on Event is used." ;
+    rdfs:domain meds:Event ;
+    rdfs:range meds:Code .
 
-:additionalValueModalityColumn a owl:DatatypeProperty ;
-    rdfs:label "additionalValueModalityColumn" ;
-    rdfs:domain :DatasetMetadata ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Column containing additional value modality (image, waveform, etc.). OPTIONAL. One triple per column. Matches MEDS: additional_value_modality_columns." .
+meds:integerValue a owl:DatatypeProperty ;
+    rdfs:label "integerValue" ;
+    rdfs:comment "Integer label value (e.g., ordinal labels)." ;
+    rdfs:domain meds:LabelSample ;
+    rdfs:range xsd:integer .
 
-:siteIdColumn a owl:DatatypeProperty ;
-    rdfs:label "siteIdColumn" ;
-    rdfs:domain :DatasetMetadata ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Column representing a site identifier. OPTIONAL. One triple per column. Previously siteIdColumns." .
-
-:subjectIdColumn a owl:DatatypeProperty ;
-    rdfs:label "subjectIdColumn" ;
-    rdfs:domain :DatasetMetadata ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Column used as a subject identifier. REQUIRED. One triple per column. Previously subjectIdColumns." .
-
-:otherExtensionColumn a owl:DatatypeProperty ;
-    rdfs:label "otherExtensionColumn" ;
-    rdfs:domain :DatasetMetadata ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Other dataset-specific extension column not covered elsewhere. OPTIONAL. One triple per column. Matches MEDS: other_extension_columns." .
-
-:medsVersion a owl:DatatypeProperty ;
+meds:medsVersion a owl:DatatypeProperty ;
     rdfs:label "medsVersion" ;
-    rdfs:domain :DatasetMetadata ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Version of the MEDS schema used to generate the dataset. REQUIRED. Matches MEDS: meds_version." .
+    rdfs:comment "Version of the MEDS schema used to generate the dataset. REQUIRED. Matches MEDS: meds_version." ;
+    rdfs:domain meds:DatasetMetadata ;
+    rdfs:range xsd:string .
 
-################################################################
-# Canonical split individuals
-################################################################
-:trainSplit a :SubjectSplit ; rdfs:label "train"@en .
-:tuningSplit a :SubjectSplit ; rdfs:label "tuning"@en .
-:heldOutSplit a :SubjectSplit ; rdfs:label "held_out"@en .
+meds:numericValue a owl:DatatypeProperty ;
+    rdfs:label "numericValue" ;
+    rdfs:comment "Numeric event value (optional in MEDS)." ;
+    rdfs:domain meds:Event ;
+    rdfs:range xsd:double .
+
+meds:predictionTime a owl:DatatypeProperty ;
+    rdfs:label "predictionTime" ;
+    rdfs:comment "Inclusive endpoint of the data usable for predicting the label (required for LabelSample)." ;
+    rdfs:domain meds:LabelSample ;
+    rdfs:range xsd:dateTime .
+
+meds:subjectId a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:comment "Unique identifier for a Subject; functional (= at most one value per Subject)." ;
+    rdfs:domain meds:Subject ;
+    rdfs:range xsd:string .
+
+meds:textValue a owl:DatatypeProperty ;
+    rdfs:label "textValue" ;
+    rdfs:comment "Text event value (optional in MEDS)." ;
+    rdfs:domain meds:Event ;
+    rdfs:range xsd:string .
+
+meds:time a owl:DatatypeProperty ;
+    rdfs:label "time" ;
+    rdfs:comment "Timestamp of the event. MEDS allows null for static events; modelled as 0..1 cardinality." ;
+    rdfs:domain meds:Event ;
+    rdfs:range xsd:dateTime .
+
+meds:codeString a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:comment "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists." ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( meds:Code meds:Event ) ] ;
+    rdfs:range xsd:string .
+
+meds:hasSubject a owl:ObjectProperty ;
+    rdfs:label "hasSubject" ;
+    rdfs:comment "Links a Event or LabelSample to its Subject (maps to subject_id)." ;
+    rdfs:domain meds:Event,
+        meds:LabelSample ;
+    rdfs:range meds:Subject .
+
+meds:Subject a owl:Class ;
+    rdfs:label "Subject" ;
+    rdfs:comment "Primary entity for which care observations are recorded. Maps to MEDS subject_id (patient or admission-level subject)." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom meds:DatasetMetadata ;
+            owl:onProperty prov:wasDerivedFrom ] ;
+    owl:hasKey ( meds:subjectId ) .
+
+meds:SubjectSplit a owl:Class ;
+    rdfs:label "SubjectSplit" ;
+    rdfs:comment "An assignment of a subject to a named split (train, tuning, held_out)." .
+
+meds:Code a owl:Class ;
+    rdfs:label "Code" ;
+    rdfs:comment "Metadata/vocabulary entry describing a event code (code string, description, parent codes, external links)." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty meds:codeString ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meds:DatasetMetadata ;
+            owl:onProperty prov:wasDerivedFrom ] ;
+    owl:hasKey ( meds:codeString ) .
+
+meds:Event a owl:Class ;
+    rdfs:label "Event" ;
+    rdfs:comment "A single observation/row in MEDS: (subject, time?, code, value modalities...). Time is nullable for static events." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty meds:hasSubject ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty meds:hasCode ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty meds:time ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty meds:numericValue ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty meds:textValue ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meds:DatasetMetadata ;
+            owl:onProperty prov:wasDerivedFrom ] ;
+    owl:disjointWith meds:LabelSample .
+
+meds:LabelSample a owl:Class ;
+    rdfs:label "LabelSample" ;
+    rdfs:comment "A prediction sample row: subject, prediction_time, and one label value (boolean/integer/float/categorical)." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty meds:hasSubject ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty meds:predictionTime ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty meds:booleanValue ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty meds:integerValue ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty meds:floatValue ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty meds:categoricalValue ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meds:DatasetMetadata ;
+            owl:onProperty prov:wasDerivedFrom ] .
+
+meds:DatasetMetadata a owl:Class ;
+    rdfs:label "DatasetMetadata" ;
+    rdfs:comment "High-level provenance and conversion metadata for a MEDS dataset." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty dct:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty dct:created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dcat:Distribution ;
+            owl:onProperty dcat:distribution ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom prov:Activity ;
+            owl:onProperty prov:wasGeneratedBy ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom rdfs:Resource ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dct:hasVersion ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dct:LicenseDocument ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dct:license ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty meds:medsVersion ],
+        dcat:Dataset,
+        prov:Entity .
+

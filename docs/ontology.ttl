@@ -11,7 +11,8 @@
                                             <http://purl.org/dc/terms#creator> "Alberto Marfoglia" ;
                                             <http://purl.org/dc/terms#description> "An OWL ontology encoding the MEDS data model (subjects, events, codes, labels, dataset metadata, splits). This ontology intentionally models open/extendable value modalities and captures MEDS invariants as annotations where OWL cannot enforce them." ;
                                             <http://purl.org/dc/terms#title> "MEDS conceptual ontology (OWL)" ;
-                                            owl:versionInfo "0.1.0" .
+                                            <http://purl.org/dc/terms/modified> "2025-12-15"^^xsd:date ;
+                                            owl:versionInfo "" .
 
 #################################################################
 #    Annotation properties
@@ -23,6 +24,10 @@
 
 ###  http://purl.org/dc/terms#description
 <http://purl.org/dc/terms#description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2002/07/owl#cardinality
@@ -334,15 +339,7 @@ rdfs:Resource rdf:type owl:Class .
                                    owl:onProperty :medsVersion ;
                                    owl:cardinality "1"^^xsd:nonNegativeInteger
                                  ] ;
-                 rdfs:comment """High-level provenance and conversion metadata for a MEDS dataset. 
-         dataset_name → dct:title ;
-         dataset_version → dct:hasVersion ;
-         meds_version → meds:medsVersion ;
-         created_at → dct:created ;
-         license → dct:license ;
-         location_uri/description_uri → dcat:distribution (Distribution with dcat:downloadURL / dcat:accessURL) ;
-         ETL metadata (name, version, notes) are captured via prov:wasGeneratedBy → prov:Activity (rdfs:label, dct:hasVersion, rdfs:comment);
-         column lists → meds:... repeated-literal properties.""" ;
+                 rdfs:comment "High-level provenance and conversion metadata for a MEDS dataset." ;
                  rdfs:label "DatasetMetadata" .
 
 
@@ -457,13 +454,13 @@ rdfs:Resource rdf:type owl:Class .
              rdfs:label "tuning"@en .
 
 
-[ owl:cardinality "1"^^xsd:nonNegativeInteger
+[ owl:maxCardinality 1
 ] .
 
 [ owl:maxCardinality 1
  ] .
 
-[ owl:maxCardinality 1
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:cardinality "1"^^xsd:nonNegativeInteger

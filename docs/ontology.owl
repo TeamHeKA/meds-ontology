@@ -6,13 +6,15 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:terms="http://purl.org/dc/terms#">
+     xmlns:terms="http://purl.org/dc/terms#"
+     xmlns:terms1="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://hekameds.github.io/meds-ontology">
         <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-04</terms:created>
         <terms:creator>Alberto Marfoglia</terms:creator>
         <terms:description>An OWL ontology encoding the MEDS data model (subjects, events, codes, labels, dataset metadata, splits). This ontology intentionally models open/extendable value modalities and captures MEDS invariants as annotations where OWL cannot enforce them.</terms:description>
         <terms:title>MEDS conceptual ontology (OWL)</terms:title>
-        <owl:versionInfo>0.1.0</owl:versionInfo>
+        <terms1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-15</terms1:modified>
+        <owl:versionInfo></owl:versionInfo>
     </owl:Ontology>
     
 
@@ -40,6 +42,13 @@
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms#description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
     
 
 
@@ -546,15 +555,7 @@
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>High-level provenance and conversion metadata for a MEDS dataset. 
-         dataset_name → dct:title ;
-         dataset_version → dct:hasVersion ;
-         meds_version → meds:medsVersion ;
-         created_at → dct:created ;
-         license → dct:license ;
-         location_uri/description_uri → dcat:distribution (Distribution with dcat:downloadURL / dcat:accessURL) ;
-         ETL metadata (name, version, notes) are captured via prov:wasGeneratedBy → prov:Activity (rdfs:label, dct:hasVersion, rdfs:comment);
-         column lists → meds:... repeated-literal properties.</rdfs:comment>
+        <rdfs:comment>High-level provenance and conversion metadata for a MEDS dataset.</rdfs:comment>
         <rdfs:label>DatasetMetadata</rdfs:label>
     </owl:Class>
     
@@ -738,13 +739,13 @@
         <rdfs:label xml:lang="en">tuning</rdfs:label>
     </owl:NamedIndividual>
     <rdf:Description>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    </rdf:Description>
+    <rdf:Description>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
     </rdf:Description>
     <rdf:Description>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>

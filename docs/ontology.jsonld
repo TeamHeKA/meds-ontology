@@ -184,8 +184,8 @@
   } ]
 }, {
   "@id" : "_:genid29",
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
     "@value" : "1"
   } ]
 }, {
@@ -196,8 +196,8 @@
   } ]
 }, {
   "@id" : "_:genid31",
-  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
   } ]
 }, {
@@ -274,6 +274,9 @@
   "@id" : "http://purl.org/dc/terms#title",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
 }, {
+  "@id" : "http://purl.org/dc/terms/modified",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
@@ -322,8 +325,12 @@
   "http://purl.org/dc/terms#title" : [ {
     "@value" : "MEDS conceptual ontology (OWL)"
   } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2025-12-15"
+  } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.1.0"
+    "@value" : ""
   } ]
 }, {
   "@id" : "https://hekameds.github.io/meds-ontology#Code",
@@ -348,7 +355,7 @@
   "@id" : "https://hekameds.github.io/meds-ontology#DatasetMetadata",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "High-level provenance and conversion metadata for a MEDS dataset. \n         dataset_name → dct:title ;\n         dataset_version → dct:hasVersion ;\n         meds_version → meds:medsVersion ;\n         created_at → dct:created ;\n         license → dct:license ;\n         location_uri/description_uri → dcat:distribution (Distribution with dcat:downloadURL / dcat:accessURL) ;\n         ETL metadata (name, version, notes) are captured via prov:wasGeneratedBy → prov:Activity (rdfs:label, dct:hasVersion, rdfs:comment);\n         column lists → meds:... repeated-literal properties."
+    "@value" : "High-level provenance and conversion metadata for a MEDS dataset."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "DatasetMetadata"
