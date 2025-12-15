@@ -1,0 +1,113 @@
+name: Ontology Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    name: Semantic Release + Ontology Update + Widoco Docs
+
+    steps:
+      # 1️⃣ Checkout repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2️⃣ Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      # 3️⃣ Install Python dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install python-semantic-release rdflib
+
+      # 4️⃣ Configure Git
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # 5️⃣ Run semantic-release to determine next version
+      - name: Run semantic-release
+        id: semantic
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          semantic-release version
+        continue-on-error: false
+
+      # 6️⃣ Extract the new version
+      - name: Get new version
+        id: get_version
+        run: echo "VERSION=$(semantic-release show-version)" >> $GITHUB_ENV
+
+      # 7️⃣ Update owl:versionInfo in ontology
+      - name: Update ontology version
+        run: |
+          python - <<EOF
+          from rdflib import Graph, URIRef, Literal
+          from rdflib.namespace import OWL, DCTERMS, XSD
+          from datetime import date
+
+          g = Graph()
+          g.parse("ontology/meds.owl", format="turtle")
+
+          ONTO_URI = URIRef("https://hekameds.github.io/meds-ontology")
+
+          # Remove old versionInfo
+          for s, p, o in g.triples((ONTO_URI, OWL.versionInfo, None)):
+              g.remove((s, p, o))
+
+          # Add new versionInfo
+          new_version = "${{ env.VERSION }}"
+          g.add((ONTO_URI, OWL.versionInfo, Literal(new_version)))
+
+          # Update modified date
+          g.set((ONTO_URI, DCTERMS.modified, Literal(date.today().isoformat(), datatype=XSD.date)))
+
+          g.serialize(destination="ontology/meds.owl", format="turtle")
+          EOF
+
+      # 8️⃣ Generate Widoco docs
+      - name: Install Widoco
+        run: |
+          wget https://github.com/dgarijo/Widoco/releases/download/v1.4.19/Widoco-1.4.19-jar-with-dependencies.jar -O widoco.jar
+
+      - name: Generate docs with Widoco
+        run: |
+          java -jar widoco.jar \
+              -ontFile ./ontology/meds.owl \
+              -outFolder ./docs \
+              -getOntologyMetadata false \
+              -overwrite true
+              -lang en
+
+      - name: Rename index-en.html to index.html
+        run: |
+          mv docs/index-en.html docs/index.html
+
+      # 9️⃣ Commit updated ontology and docs (optional, for GitHub Pages)
+      - name: Commit and push changes
+        run: |
+          git add ontology/meds.owl docs/
+          git commit -m "chore(release): update ontology version to ${{ env.VERSION }} and regenerate docs" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 🔟 Create release with ontology assets
+      - name: Upload ontology files to release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: v${{ env.VERSION }}
+          name: "MEDS Ontology v${{ env.VERSION }}"
+          files: |
+            ontology/meds.owl
+            docs/ontology.ttl
+            docs/ontology.jsonld
