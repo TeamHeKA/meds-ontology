@@ -80,7 +80,7 @@ jobs:
       # 8️⃣ Generate Widoco docs
       - name: Install Widoco
         run: |
-          wget https://github.com/dgarijo/Widoco/releases/download/v1.4.19/Widoco-1.4.19-jar-with-dependencies.jar -O widoco.jar
+          wget https://github.com/dgarijo/Widoco/releases/download/v1.4.25/widoco-1.4.25-jar-with-dependencies_JDK-11.jar -O widoco.jar
 
       - name: Generate docs with Widoco
         run: |
