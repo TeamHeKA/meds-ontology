@@ -2,7 +2,7 @@
 
 <p align="center">
   <!-- Build & Validation -->
-  <img src="https://github.com/hekameds.github.io/meds-ontology/actions/workflows/validate.yml/badge.svg" alt="SHACL Validation"/>
+  <img src="https://github.com/HeKaMEDS/meds-ontology/actions/workflows/validate.yml/badge.svg" alt="SHACL Validation"/>
   <img src="https://img.shields.io/badge/RDF%20syntax-Valid-brightgreen" alt="RDF Syntax Valid"/>
   <img src="https://img.shields.io/badge/OWL%202-✓-blue" alt="OWL 2"/>
   <img src="https://img.shields.io/github/v/release/hekameds.github.io/meds-ontology" alt="Latest Release"/>
