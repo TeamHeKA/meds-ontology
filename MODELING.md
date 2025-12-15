@@ -1,6 +1,5 @@
 # MEDS Ontology — Modeling considerations & design rationale
 
-**Version:** 0.1.0
 **Author:** Alberto Marfoglia (ontology design)
 **Date:** 2025-12-04
 

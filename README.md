@@ -5,9 +5,8 @@
   <img src="https://github.com/HeKaMEDS/meds-ontology/actions/workflows/validate.yml/badge.svg" alt="SHACL Validation"/>
   <img src="https://img.shields.io/badge/RDF%20syntax-Valid-brightgreen" alt="RDF Syntax Valid"/>
   <img src="https://img.shields.io/badge/OWL%202-✓-blue" alt="OWL 2"/>
-  <img src="https://img.shields.io/github/v/release/hekameds.github.io/meds-ontology" alt="Latest Release"/>
-  <img src="https://img.shields.io/badge/Ontology%20version-0.1.0-blueviolet" alt="Ontology Version"/>
-  <img src="https://img.shields.io/github/license/hekameds.github.io/meds-ontology" alt="License"/>
+  <img src="https://img.shields.io/github/v/release/HeKaMEDS/meds-ontology" alt="Latest Release"/>
+  <img src="https://img.shields.io/github/license/HeKaMEDS/meds-ontology" alt="License"/>
     <!-- <a href="https://hekameds.github.io/meds-ontology">
     <img src="https://img.shields.io/badge/docs-GitHub%20Pages-blue" alt="Documentation"/>
   </a>
