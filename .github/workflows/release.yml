@@ -67,7 +67,7 @@ jobs:
           g = Graph()
           g.parse("ontology/meds.owl", format="turtle")
 
-          ONTO_URI = URIRef("https://hekameds.github.io/meds-ontology")
+          ONTO_URI = URIRef("https://teamheka.github.io/meds-ontology")
 
           # Remove old versionInfo
           for s, p, o in g.triples((ONTO_URI, OWL.versionInfo, None)):

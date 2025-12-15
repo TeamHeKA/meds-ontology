@@ -1,13 +1,13 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix meds: <https://hekameds.github.io/meds-ontology#> .
+@prefix meds: <https://teamheka.github.io/meds-ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://hekameds.github.io/meds-ontology> a owl:Ontology ;
+<https://teamheka.github.io/meds-ontology> a owl:Ontology ;
     rdfs:label "MEDS Ontology"@en ;
     dcterms:abstract """The MEDS Ontology is an OWL ontology that formally encodes the
 Medical Event Data Standard (MEDS) conceptual data model.

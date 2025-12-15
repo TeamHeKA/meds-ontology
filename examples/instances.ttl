@@ -1,10 +1,10 @@
-@prefix :   <https://hekameds.github.io/meds-ontology#> .
+@prefix :   <https://teamheka.github.io/meds-ontology#> .
 @prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix prov:   <http://www.w3.org/ns/prov#> .
 @prefix dct:    <http://purl.org/dc/terms/> .
 @prefix dcat:   <http://www.w3.org/ns/dcat#> .
-@base <https://hekameds.github.io/meds/0.1.0/ontology#> .
+@base <https://teamheka.github.io/meds/0.1.0/ontology#> .
 
 ##########################################################
 # Dataset instance
