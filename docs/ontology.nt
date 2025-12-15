@@ -1,9 +1,9 @@
-<https://albertomarfoglia.github.io/meds-ontology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://albertomarfoglia.github.io/meds-ontology> <http://purl.org/dc/terms#created> "2025-12-04"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://albertomarfoglia.github.io/meds-ontology> <http://purl.org/dc/terms#creator> "Alberto Marfoglia" .
-<https://albertomarfoglia.github.io/meds-ontology> <http://purl.org/dc/terms#description> "An OWL ontology encoding the MEDS data model (subjects, events, codes, labels, dataset metadata, splits). This ontology intentionally models open/extendable value modalities and captures MEDS invariants as annotations where OWL cannot enforce them." .
-<https://albertomarfoglia.github.io/meds-ontology> <http://purl.org/dc/terms#title> "MEDS conceptual ontology (OWL)" .
-<https://albertomarfoglia.github.io/meds-ontology> <http://www.w3.org/2002/07/owl#versionInfo> "0.1.0" .
+<https://hekameds.github.io/meds-ontology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://hekameds.github.io/meds-ontology> <http://purl.org/dc/terms#created> "2025-12-04"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://hekameds.github.io/meds-ontology> <http://purl.org/dc/terms#creator> "Alberto Marfoglia" .
+<https://hekameds.github.io/meds-ontology> <http://purl.org/dc/terms#description> "An OWL ontology encoding the MEDS data model (subjects, events, codes, labels, dataset metadata, splits). This ontology intentionally models open/extendable value modalities and captures MEDS invariants as annotations where OWL cannot enforce them." .
+<https://hekameds.github.io/meds-ontology> <http://purl.org/dc/terms#title> "MEDS conceptual ontology (OWL)" .
+<https://hekameds.github.io/meds-ontology> <http://www.w3.org/2002/07/owl#versionInfo> "0.1.0" .
 # 
 # 
 # #################################################################
@@ -61,41 +61,41 @@
 # http://www.w3.org/ns/prov#wasGeneratedBy
 <http://www.w3.org/ns/prov#wasGeneratedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#assignedSplit
-<https://albertomarfoglia.github.io/meds-ontology#assignedSplit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#assignedSplit> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#Subject> .
-<https://albertomarfoglia.github.io/meds-ontology#assignedSplit> <http://www.w3.org/2000/01/rdf-schema#range> <https://albertomarfoglia.github.io/meds-ontology#SubjectSplit> .
-<https://albertomarfoglia.github.io/meds-ontology#assignedSplit> <http://www.w3.org/2000/01/rdf-schema#comment> "Assign a subject to a split (train, tuning, held_out)." .
-<https://albertomarfoglia.github.io/meds-ontology#assignedSplit> <http://www.w3.org/2000/01/rdf-schema#label> "assignedSplit" .
+# https://hekameds.github.io/meds-ontology#assignedSplit
+<https://hekameds.github.io/meds-ontology#assignedSplit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://hekameds.github.io/meds-ontology#assignedSplit> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#Subject> .
+<https://hekameds.github.io/meds-ontology#assignedSplit> <http://www.w3.org/2000/01/rdf-schema#range> <https://hekameds.github.io/meds-ontology#SubjectSplit> .
+<https://hekameds.github.io/meds-ontology#assignedSplit> <http://www.w3.org/2000/01/rdf-schema#comment> "Assign a subject to a split (train, tuning, held_out)." .
+<https://hekameds.github.io/meds-ontology#assignedSplit> <http://www.w3.org/2000/01/rdf-schema#label> "assignedSplit" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#hasCode
-<https://albertomarfoglia.github.io/meds-ontology#hasCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#hasCode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#Event> .
-<https://albertomarfoglia.github.io/meds-ontology#hasCode> <http://www.w3.org/2000/01/rdf-schema#range> <https://albertomarfoglia.github.io/meds-ontology#Code> .
-<https://albertomarfoglia.github.io/meds-ontology#hasCode> <http://www.w3.org/2000/01/rdf-schema#comment> "Link from a Event to a Code metadata entry. If no Code metadata file exists, codeString on Event is used." .
-<https://albertomarfoglia.github.io/meds-ontology#hasCode> <http://www.w3.org/2000/01/rdf-schema#label> "hasCode" .
+# https://hekameds.github.io/meds-ontology#hasCode
+<https://hekameds.github.io/meds-ontology#hasCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://hekameds.github.io/meds-ontology#hasCode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#Event> .
+<https://hekameds.github.io/meds-ontology#hasCode> <http://www.w3.org/2000/01/rdf-schema#range> <https://hekameds.github.io/meds-ontology#Code> .
+<https://hekameds.github.io/meds-ontology#hasCode> <http://www.w3.org/2000/01/rdf-schema#comment> "Link from a Event to a Code metadata entry. If no Code metadata file exists, codeString on Event is used." .
+<https://hekameds.github.io/meds-ontology#hasCode> <http://www.w3.org/2000/01/rdf-schema#label> "hasCode" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#hasSubject
-<https://albertomarfoglia.github.io/meds-ontology#hasSubject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#hasSubject> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#Event> .
-<https://albertomarfoglia.github.io/meds-ontology#hasSubject> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#LabelSample> .
-<https://albertomarfoglia.github.io/meds-ontology#hasSubject> <http://www.w3.org/2000/01/rdf-schema#range> <https://albertomarfoglia.github.io/meds-ontology#Subject> .
-<https://albertomarfoglia.github.io/meds-ontology#hasSubject> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a Event or LabelSample to its Subject (maps to subject_id)." .
-<https://albertomarfoglia.github.io/meds-ontology#hasSubject> <http://www.w3.org/2000/01/rdf-schema#label> "hasSubject" .
+# https://hekameds.github.io/meds-ontology#hasSubject
+<https://hekameds.github.io/meds-ontology#hasSubject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://hekameds.github.io/meds-ontology#hasSubject> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#Event> .
+<https://hekameds.github.io/meds-ontology#hasSubject> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#LabelSample> .
+<https://hekameds.github.io/meds-ontology#hasSubject> <http://www.w3.org/2000/01/rdf-schema#range> <https://hekameds.github.io/meds-ontology#Subject> .
+<https://hekameds.github.io/meds-ontology#hasSubject> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a Event or LabelSample to its Subject (maps to subject_id)." .
+<https://hekameds.github.io/meds-ontology#hasSubject> <http://www.w3.org/2000/01/rdf-schema#label> "hasSubject" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#hasValueModality
-<https://albertomarfoglia.github.io/meds-ontology#hasValueModality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#hasValueModality> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#Event> .
-<https://albertomarfoglia.github.io/meds-ontology#hasValueModality> <http://www.w3.org/2000/01/rdf-schema#range> <https://albertomarfoglia.github.io/meds-ontology#ValueModality> .
-<https://albertomarfoglia.github.io/meds-ontology#hasValueModality> <http://www.w3.org/2000/01/rdf-schema#comment> "Attach additional value modalities (image, waveform, etc.) to a Event." .
-<https://albertomarfoglia.github.io/meds-ontology#hasValueModality> <http://www.w3.org/2000/01/rdf-schema#label> "hasValueModality" .
+# https://hekameds.github.io/meds-ontology#hasValueModality
+<https://hekameds.github.io/meds-ontology#hasValueModality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://hekameds.github.io/meds-ontology#hasValueModality> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#Event> .
+<https://hekameds.github.io/meds-ontology#hasValueModality> <http://www.w3.org/2000/01/rdf-schema#range> <https://hekameds.github.io/meds-ontology#ValueModality> .
+<https://hekameds.github.io/meds-ontology#hasValueModality> <http://www.w3.org/2000/01/rdf-schema#comment> "Attach additional value modalities (image, waveform, etc.) to a Event." .
+<https://hekameds.github.io/meds-ontology#hasValueModality> <http://www.w3.org/2000/01/rdf-schema#label> "hasValueModality" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#parentCode
-<https://albertomarfoglia.github.io/meds-ontology#parentCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#parentCode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#Code> .
-<https://albertomarfoglia.github.io/meds-ontology#parentCode> <http://www.w3.org/2000/01/rdf-schema#range> <https://albertomarfoglia.github.io/meds-ontology#Code> .
-<https://albertomarfoglia.github.io/meds-ontology#parentCode> <http://www.w3.org/2000/01/rdf-schema#comment> "Ontological/aggregation parent relations between codes (maps to CodeMetadata.parent_codes)." .
-<https://albertomarfoglia.github.io/meds-ontology#parentCode> <http://www.w3.org/2000/01/rdf-schema#label> "parentCode" .
+# https://hekameds.github.io/meds-ontology#parentCode
+<https://hekameds.github.io/meds-ontology#parentCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://hekameds.github.io/meds-ontology#parentCode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#Code> .
+<https://hekameds.github.io/meds-ontology#parentCode> <http://www.w3.org/2000/01/rdf-schema#range> <https://hekameds.github.io/meds-ontology#Code> .
+<https://hekameds.github.io/meds-ontology#parentCode> <http://www.w3.org/2000/01/rdf-schema#comment> "Ontological/aggregation parent relations between codes (maps to CodeMetadata.parent_codes)." .
+<https://hekameds.github.io/meds-ontology#parentCode> <http://www.w3.org/2000/01/rdf-schema#label> "parentCode" .
 # 
 # 
 # 
@@ -106,139 +106,139 @@
 # #################################################################
 # 
 # 
-# https://albertomarfoglia.github.io/meds-ontology#additionalValueModalityColumn
-<https://albertomarfoglia.github.io/meds-ontology#additionalValueModalityColumn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#additionalValueModalityColumn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> .
-<https://albertomarfoglia.github.io/meds-ontology#additionalValueModalityColumn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://albertomarfoglia.github.io/meds-ontology#additionalValueModalityColumn> <http://www.w3.org/2000/01/rdf-schema#comment> "Column containing additional value modality (image, waveform, etc.). OPTIONAL. One triple per column. Matches MEDS: additional_value_modality_columns." .
-<https://albertomarfoglia.github.io/meds-ontology#additionalValueModalityColumn> <http://www.w3.org/2000/01/rdf-schema#label> "additionalValueModalityColumn" .
+# https://hekameds.github.io/meds-ontology#additionalValueModalityColumn
+<https://hekameds.github.io/meds-ontology#additionalValueModalityColumn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://hekameds.github.io/meds-ontology#additionalValueModalityColumn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#DatasetMetadata> .
+<https://hekameds.github.io/meds-ontology#additionalValueModalityColumn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://hekameds.github.io/meds-ontology#additionalValueModalityColumn> <http://www.w3.org/2000/01/rdf-schema#comment> "Column containing additional value modality (image, waveform, etc.). OPTIONAL. One triple per column. Matches MEDS: additional_value_modality_columns." .
+<https://hekameds.github.io/meds-ontology#additionalValueModalityColumn> <http://www.w3.org/2000/01/rdf-schema#label> "additionalValueModalityColumn" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#booleanValue
-<https://albertomarfoglia.github.io/meds-ontology#booleanValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#booleanValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#LabelSample> .
-<https://albertomarfoglia.github.io/meds-ontology#booleanValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
-<https://albertomarfoglia.github.io/meds-ontology#booleanValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Boolean label value (if applicable)." .
-<https://albertomarfoglia.github.io/meds-ontology#booleanValue> <http://www.w3.org/2000/01/rdf-schema#label> "booleanValue" .
+# https://hekameds.github.io/meds-ontology#booleanValue
+<https://hekameds.github.io/meds-ontology#booleanValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://hekameds.github.io/meds-ontology#booleanValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#LabelSample> .
+<https://hekameds.github.io/meds-ontology#booleanValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://hekameds.github.io/meds-ontology#booleanValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Boolean label value (if applicable)." .
+<https://hekameds.github.io/meds-ontology#booleanValue> <http://www.w3.org/2000/01/rdf-schema#label> "booleanValue" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#categoricalValue
-<https://albertomarfoglia.github.io/meds-ontology#categoricalValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#categoricalValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#LabelSample> .
-<https://albertomarfoglia.github.io/meds-ontology#categoricalValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://albertomarfoglia.github.io/meds-ontology#categoricalValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Categorical label encoded as a string." .
-<https://albertomarfoglia.github.io/meds-ontology#categoricalValue> <http://www.w3.org/2000/01/rdf-schema#label> "categoricalValue" .
+# https://hekameds.github.io/meds-ontology#categoricalValue
+<https://hekameds.github.io/meds-ontology#categoricalValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://hekameds.github.io/meds-ontology#categoricalValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#LabelSample> .
+<https://hekameds.github.io/meds-ontology#categoricalValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://hekameds.github.io/meds-ontology#categoricalValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Categorical label encoded as a string." .
+<https://hekameds.github.io/meds-ontology#categoricalValue> <http://www.w3.org/2000/01/rdf-schema#label> "categoricalValue" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#codeDescription
-<https://albertomarfoglia.github.io/meds-ontology#codeDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#codeDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#Code> .
-<https://albertomarfoglia.github.io/meds-ontology#codeDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://albertomarfoglia.github.io/meds-ontology#codeDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "Human readable description of the code." .
-<https://albertomarfoglia.github.io/meds-ontology#codeDescription> <http://www.w3.org/2000/01/rdf-schema#label> "codeDescription" .
+# https://hekameds.github.io/meds-ontology#codeDescription
+<https://hekameds.github.io/meds-ontology#codeDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://hekameds.github.io/meds-ontology#codeDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#Code> .
+<https://hekameds.github.io/meds-ontology#codeDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://hekameds.github.io/meds-ontology#codeDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "Human readable description of the code." .
+<https://hekameds.github.io/meds-ontology#codeDescription> <http://www.w3.org/2000/01/rdf-schema#label> "codeDescription" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#codeModifierColumn
-<https://albertomarfoglia.github.io/meds-ontology#codeModifierColumn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#codeModifierColumn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> .
-<https://albertomarfoglia.github.io/meds-ontology#codeModifierColumn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://albertomarfoglia.github.io/meds-ontology#codeModifierColumn> <http://www.w3.org/2000/01/rdf-schema#comment> "Column used to modify/augment code values. OPTIONAL. One triple per column. Matches MEDS: code_modifier_columns." .
-<https://albertomarfoglia.github.io/meds-ontology#codeModifierColumn> <http://www.w3.org/2000/01/rdf-schema#label> "codeModifierColumn" .
+# https://hekameds.github.io/meds-ontology#codeModifierColumn
+<https://hekameds.github.io/meds-ontology#codeModifierColumn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://hekameds.github.io/meds-ontology#codeModifierColumn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#DatasetMetadata> .
+<https://hekameds.github.io/meds-ontology#codeModifierColumn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://hekameds.github.io/meds-ontology#codeModifierColumn> <http://www.w3.org/2000/01/rdf-schema#comment> "Column used to modify/augment code values. OPTIONAL. One triple per column. Matches MEDS: code_modifier_columns." .
+<https://hekameds.github.io/meds-ontology#codeModifierColumn> <http://www.w3.org/2000/01/rdf-schema#label> "codeModifierColumn" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#codeString
-<https://albertomarfoglia.github.io/meds-ontology#codeString> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#codeString> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#codeString> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+# https://hekameds.github.io/meds-ontology#codeString
+<https://hekameds.github.io/meds-ontology#codeString> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://hekameds.github.io/meds-ontology#codeString> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://hekameds.github.io/meds-ontology#codeString> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
 _:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
 _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://albertomarfoglia.github.io/meds-ontology#Event> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://hekameds.github.io/meds-ontology#Event> .
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://albertomarfoglia.github.io/meds-ontology#Code> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://hekameds.github.io/meds-ontology#Code> .
 _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://albertomarfoglia.github.io/meds-ontology#codeString> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://albertomarfoglia.github.io/meds-ontology#codeString> <http://www.w3.org/2000/01/rdf-schema#comment> "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists." .
+<https://hekameds.github.io/meds-ontology#codeString> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://hekameds.github.io/meds-ontology#codeString> <http://www.w3.org/2000/01/rdf-schema#comment> "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists." .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#floatValue
-<https://albertomarfoglia.github.io/meds-ontology#floatValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#floatValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#LabelSample> .
-<https://albertomarfoglia.github.io/meds-ontology#floatValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
-<https://albertomarfoglia.github.io/meds-ontology#floatValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Float label value (continuous target)." .
-<https://albertomarfoglia.github.io/meds-ontology#floatValue> <http://www.w3.org/2000/01/rdf-schema#label> "floatValue" .
+# https://hekameds.github.io/meds-ontology#floatValue
+<https://hekameds.github.io/meds-ontology#floatValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://hekameds.github.io/meds-ontology#floatValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#LabelSample> .
+<https://hekameds.github.io/meds-ontology#floatValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<https://hekameds.github.io/meds-ontology#floatValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Float label value (continuous target)." .
+<https://hekameds.github.io/meds-ontology#floatValue> <http://www.w3.org/2000/01/rdf-schema#label> "floatValue" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#integerValue
-<https://albertomarfoglia.github.io/meds-ontology#integerValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#integerValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#LabelSample> .
-<https://albertomarfoglia.github.io/meds-ontology#integerValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
-<https://albertomarfoglia.github.io/meds-ontology#integerValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Integer label value (e.g., ordinal labels)." .
-<https://albertomarfoglia.github.io/meds-ontology#integerValue> <http://www.w3.org/2000/01/rdf-schema#label> "integerValue" .
+# https://hekameds.github.io/meds-ontology#integerValue
+<https://hekameds.github.io/meds-ontology#integerValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://hekameds.github.io/meds-ontology#integerValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#LabelSample> .
+<https://hekameds.github.io/meds-ontology#integerValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://hekameds.github.io/meds-ontology#integerValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Integer label value (e.g., ordinal labels)." .
+<https://hekameds.github.io/meds-ontology#integerValue> <http://www.w3.org/2000/01/rdf-schema#label> "integerValue" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#medsVersion
-<https://albertomarfoglia.github.io/meds-ontology#medsVersion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#medsVersion> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> .
-<https://albertomarfoglia.github.io/meds-ontology#medsVersion> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://albertomarfoglia.github.io/meds-ontology#medsVersion> <http://www.w3.org/2000/01/rdf-schema#comment> "Version of the MEDS schema used to generate the dataset. REQUIRED. Matches MEDS: meds_version." .
-<https://albertomarfoglia.github.io/meds-ontology#medsVersion> <http://www.w3.org/2000/01/rdf-schema#label> "medsVersion" .
+# https://hekameds.github.io/meds-ontology#medsVersion
+<https://hekameds.github.io/meds-ontology#medsVersion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://hekameds.github.io/meds-ontology#medsVersion> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#DatasetMetadata> .
+<https://hekameds.github.io/meds-ontology#medsVersion> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://hekameds.github.io/meds-ontology#medsVersion> <http://www.w3.org/2000/01/rdf-schema#comment> "Version of the MEDS schema used to generate the dataset. REQUIRED. Matches MEDS: meds_version." .
+<https://hekameds.github.io/meds-ontology#medsVersion> <http://www.w3.org/2000/01/rdf-schema#label> "medsVersion" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#numericValue
-<https://albertomarfoglia.github.io/meds-ontology#numericValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#numericValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#Event> .
-<https://albertomarfoglia.github.io/meds-ontology#numericValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
-<https://albertomarfoglia.github.io/meds-ontology#numericValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Numeric event value (optional in MEDS)." .
-<https://albertomarfoglia.github.io/meds-ontology#numericValue> <http://www.w3.org/2000/01/rdf-schema#label> "numericValue" .
+# https://hekameds.github.io/meds-ontology#numericValue
+<https://hekameds.github.io/meds-ontology#numericValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://hekameds.github.io/meds-ontology#numericValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#Event> .
+<https://hekameds.github.io/meds-ontology#numericValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<https://hekameds.github.io/meds-ontology#numericValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Numeric event value (optional in MEDS)." .
+<https://hekameds.github.io/meds-ontology#numericValue> <http://www.w3.org/2000/01/rdf-schema#label> "numericValue" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#otherExtensionColumn
-<https://albertomarfoglia.github.io/meds-ontology#otherExtensionColumn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#otherExtensionColumn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> .
-<https://albertomarfoglia.github.io/meds-ontology#otherExtensionColumn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://albertomarfoglia.github.io/meds-ontology#otherExtensionColumn> <http://www.w3.org/2000/01/rdf-schema#comment> "Other dataset-specific extension column not covered elsewhere. OPTIONAL. One triple per column. Matches MEDS: other_extension_columns." .
-<https://albertomarfoglia.github.io/meds-ontology#otherExtensionColumn> <http://www.w3.org/2000/01/rdf-schema#label> "otherExtensionColumn" .
+# https://hekameds.github.io/meds-ontology#otherExtensionColumn
+<https://hekameds.github.io/meds-ontology#otherExtensionColumn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://hekameds.github.io/meds-ontology#otherExtensionColumn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#DatasetMetadata> .
+<https://hekameds.github.io/meds-ontology#otherExtensionColumn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://hekameds.github.io/meds-ontology#otherExtensionColumn> <http://www.w3.org/2000/01/rdf-schema#comment> "Other dataset-specific extension column not covered elsewhere. OPTIONAL. One triple per column. Matches MEDS: other_extension_columns." .
+<https://hekameds.github.io/meds-ontology#otherExtensionColumn> <http://www.w3.org/2000/01/rdf-schema#label> "otherExtensionColumn" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#predictionTime
-<https://albertomarfoglia.github.io/meds-ontology#predictionTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#predictionTime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#LabelSample> .
-<https://albertomarfoglia.github.io/meds-ontology#predictionTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
-<https://albertomarfoglia.github.io/meds-ontology#predictionTime> <http://www.w3.org/2000/01/rdf-schema#comment> "Inclusive endpoint of the data usable for predicting the label (required for LabelSample)." .
-<https://albertomarfoglia.github.io/meds-ontology#predictionTime> <http://www.w3.org/2000/01/rdf-schema#label> "predictionTime" .
+# https://hekameds.github.io/meds-ontology#predictionTime
+<https://hekameds.github.io/meds-ontology#predictionTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://hekameds.github.io/meds-ontology#predictionTime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#LabelSample> .
+<https://hekameds.github.io/meds-ontology#predictionTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://hekameds.github.io/meds-ontology#predictionTime> <http://www.w3.org/2000/01/rdf-schema#comment> "Inclusive endpoint of the data usable for predicting the label (required for LabelSample)." .
+<https://hekameds.github.io/meds-ontology#predictionTime> <http://www.w3.org/2000/01/rdf-schema#label> "predictionTime" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#rawSourceIdColumn
-<https://albertomarfoglia.github.io/meds-ontology#rawSourceIdColumn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#rawSourceIdColumn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> .
-<https://albertomarfoglia.github.io/meds-ontology#rawSourceIdColumn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://albertomarfoglia.github.io/meds-ontology#rawSourceIdColumn> <http://www.w3.org/2000/01/rdf-schema#comment> "Raw source ID column before mapping to subject IDs. OPTIONAL. One triple per column. Matches MEDS: raw_source_id_columns." .
-<https://albertomarfoglia.github.io/meds-ontology#rawSourceIdColumn> <http://www.w3.org/2000/01/rdf-schema#label> "rawSourceIdColumn" .
+# https://hekameds.github.io/meds-ontology#rawSourceIdColumn
+<https://hekameds.github.io/meds-ontology#rawSourceIdColumn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://hekameds.github.io/meds-ontology#rawSourceIdColumn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#DatasetMetadata> .
+<https://hekameds.github.io/meds-ontology#rawSourceIdColumn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://hekameds.github.io/meds-ontology#rawSourceIdColumn> <http://www.w3.org/2000/01/rdf-schema#comment> "Raw source ID column before mapping to subject IDs. OPTIONAL. One triple per column. Matches MEDS: raw_source_id_columns." .
+<https://hekameds.github.io/meds-ontology#rawSourceIdColumn> <http://www.w3.org/2000/01/rdf-schema#label> "rawSourceIdColumn" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#siteIdColumn
-<https://albertomarfoglia.github.io/meds-ontology#siteIdColumn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#siteIdColumn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> .
-<https://albertomarfoglia.github.io/meds-ontology#siteIdColumn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://albertomarfoglia.github.io/meds-ontology#siteIdColumn> <http://www.w3.org/2000/01/rdf-schema#comment> "Column representing a site identifier. OPTIONAL. One triple per column. Previously siteIdColumns." .
-<https://albertomarfoglia.github.io/meds-ontology#siteIdColumn> <http://www.w3.org/2000/01/rdf-schema#label> "siteIdColumn" .
+# https://hekameds.github.io/meds-ontology#siteIdColumn
+<https://hekameds.github.io/meds-ontology#siteIdColumn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://hekameds.github.io/meds-ontology#siteIdColumn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#DatasetMetadata> .
+<https://hekameds.github.io/meds-ontology#siteIdColumn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://hekameds.github.io/meds-ontology#siteIdColumn> <http://www.w3.org/2000/01/rdf-schema#comment> "Column representing a site identifier. OPTIONAL. One triple per column. Previously siteIdColumns." .
+<https://hekameds.github.io/meds-ontology#siteIdColumn> <http://www.w3.org/2000/01/rdf-schema#label> "siteIdColumn" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#subjectId
-<https://albertomarfoglia.github.io/meds-ontology#subjectId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#subjectId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#subjectId> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#Subject> .
-<https://albertomarfoglia.github.io/meds-ontology#subjectId> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://albertomarfoglia.github.io/meds-ontology#subjectId> <http://www.w3.org/2000/01/rdf-schema#comment> "Unique identifier for a Subject; functional (= at most one value per Subject)." .
+# https://hekameds.github.io/meds-ontology#subjectId
+<https://hekameds.github.io/meds-ontology#subjectId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://hekameds.github.io/meds-ontology#subjectId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://hekameds.github.io/meds-ontology#subjectId> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#Subject> .
+<https://hekameds.github.io/meds-ontology#subjectId> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://hekameds.github.io/meds-ontology#subjectId> <http://www.w3.org/2000/01/rdf-schema#comment> "Unique identifier for a Subject; functional (= at most one value per Subject)." .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#subjectIdColumn
-<https://albertomarfoglia.github.io/meds-ontology#subjectIdColumn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#subjectIdColumn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> .
-<https://albertomarfoglia.github.io/meds-ontology#subjectIdColumn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://albertomarfoglia.github.io/meds-ontology#subjectIdColumn> <http://www.w3.org/2000/01/rdf-schema#comment> "Column used as a subject identifier. REQUIRED. One triple per column. Previously subjectIdColumns." .
-<https://albertomarfoglia.github.io/meds-ontology#subjectIdColumn> <http://www.w3.org/2000/01/rdf-schema#label> "subjectIdColumn" .
+# https://hekameds.github.io/meds-ontology#subjectIdColumn
+<https://hekameds.github.io/meds-ontology#subjectIdColumn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://hekameds.github.io/meds-ontology#subjectIdColumn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#DatasetMetadata> .
+<https://hekameds.github.io/meds-ontology#subjectIdColumn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://hekameds.github.io/meds-ontology#subjectIdColumn> <http://www.w3.org/2000/01/rdf-schema#comment> "Column used as a subject identifier. REQUIRED. One triple per column. Previously subjectIdColumns." .
+<https://hekameds.github.io/meds-ontology#subjectIdColumn> <http://www.w3.org/2000/01/rdf-schema#label> "subjectIdColumn" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#textValue
-<https://albertomarfoglia.github.io/meds-ontology#textValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#textValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#Event> .
-<https://albertomarfoglia.github.io/meds-ontology#textValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://albertomarfoglia.github.io/meds-ontology#textValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Text event value (optional in MEDS)." .
-<https://albertomarfoglia.github.io/meds-ontology#textValue> <http://www.w3.org/2000/01/rdf-schema#label> "textValue" .
+# https://hekameds.github.io/meds-ontology#textValue
+<https://hekameds.github.io/meds-ontology#textValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://hekameds.github.io/meds-ontology#textValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#Event> .
+<https://hekameds.github.io/meds-ontology#textValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://hekameds.github.io/meds-ontology#textValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Text event value (optional in MEDS)." .
+<https://hekameds.github.io/meds-ontology#textValue> <http://www.w3.org/2000/01/rdf-schema#label> "textValue" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#time
-<https://albertomarfoglia.github.io/meds-ontology#time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://albertomarfoglia.github.io/meds-ontology#time> <http://www.w3.org/2000/01/rdf-schema#domain> <https://albertomarfoglia.github.io/meds-ontology#Event> .
-<https://albertomarfoglia.github.io/meds-ontology#time> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
-<https://albertomarfoglia.github.io/meds-ontology#time> <http://www.w3.org/2000/01/rdf-schema#comment> "Timestamp of the event. MEDS allows null for static events; modelled as 0..1 cardinality." .
-<https://albertomarfoglia.github.io/meds-ontology#time> <http://www.w3.org/2000/01/rdf-schema#label> "time" .
+# https://hekameds.github.io/meds-ontology#time
+<https://hekameds.github.io/meds-ontology#time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://hekameds.github.io/meds-ontology#time> <http://www.w3.org/2000/01/rdf-schema#domain> <https://hekameds.github.io/meds-ontology#Event> .
+<https://hekameds.github.io/meds-ontology#time> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://hekameds.github.io/meds-ontology#time> <http://www.w3.org/2000/01/rdf-schema#comment> "Timestamp of the event. MEDS allows null for static events; modelled as 0..1 cardinality." .
+<https://hekameds.github.io/meds-ontology#time> <http://www.w3.org/2000/01/rdf-schema#label> "time" .
 # 
 # 
 # 
@@ -267,151 +267,145 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://www.w3.org/ns/prov#Entity
 <http://www.w3.org/ns/prov#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#Code
-<https://albertomarfoglia.github.io/meds-ontology#Code> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://albertomarfoglia.github.io/meds-ontology#Code> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
-_:genid4 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> .
+# https://hekameds.github.io/meds-ontology#Code
+<https://hekameds.github.io/meds-ontology#Code> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://hekameds.github.io/meds-ontology#Code> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://hekameds.github.io/meds-ontology#DatasetMetadata> .
 _:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasDerivedFrom> .
 _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#Code> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+<https://hekameds.github.io/meds-ontology#Code> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
 _:genid5 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <https://albertomarfoglia.github.io/meds-ontology#codeString> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <https://hekameds.github.io/meds-ontology#codeString> .
 _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#Code> <http://www.w3.org/2002/07/owl#hasKey> _:genid6 .
+<https://hekameds.github.io/meds-ontology#Code> <http://www.w3.org/2002/07/owl#hasKey> _:genid6 .
 _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://albertomarfoglia.github.io/meds-ontology#codeString> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://hekameds.github.io/meds-ontology#codeString> .
 _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-<https://albertomarfoglia.github.io/meds-ontology#Code> <http://www.w3.org/2000/01/rdf-schema#comment> "Metadata/vocabulary entry describing a event code (code string, description, parent codes, external links)." .
-<https://albertomarfoglia.github.io/meds-ontology#Code> <http://www.w3.org/2000/01/rdf-schema#label> "Code" .
+<https://hekameds.github.io/meds-ontology#Code> <http://www.w3.org/2000/01/rdf-schema#comment> "Metadata/vocabulary entry describing a event code (code string, description, parent codes, external links)." .
+<https://hekameds.github.io/meds-ontology#Code> <http://www.w3.org/2000/01/rdf-schema#label> "Code" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata
-<https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Dataset> .
-<https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Entity> .
-<https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
+# https://hekameds.github.io/meds-ontology#DatasetMetadata
+<https://hekameds.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://hekameds.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Dataset> .
+<https://hekameds.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Entity> .
+<https://hekameds.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
 _:genid7 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2000/01/rdf-schema#Resource> .
 _:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms#hasVersion> .
 _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+<https://hekameds.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
 _:genid8 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://purl.org/dc/terms#LicenseDocument> .
 _:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms#license> .
 _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+<https://hekameds.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
 _:genid9 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/dcat#Distribution> .
 _:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/dcat#distribution> .
 _:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+<https://hekameds.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
 _:genid10 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/prov#Activity> .
 _:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasGeneratedBy> .
 _:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+<https://hekameds.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
 _:genid11 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
 _:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms#created> .
 <http://purl.org/dc/terms#created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+<https://hekameds.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
 _:genid12 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
 _:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms#title> .
 <http://purl.org/dc/terms#title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 _:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+<https://hekameds.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
 _:genid13 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <https://albertomarfoglia.github.io/meds-ontology#medsVersion> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <https://hekameds.github.io/meds-ontology#medsVersion> .
 _:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#comment> "High-level provenance and conversion metadata for a MEDS dataset. \n         dataset_name → dct:title ;\n         dataset_version → dct:hasVersion ;\n         meds_version → meds:medsVersion ;\n         created_at → dct:created ;\n         license → dct:license ;\n         location_uri/description_uri → dcat:distribution (Distribution with dcat:downloadURL / dcat:accessURL) ;\n         ETL metadata (name, version, notes) are captured via prov:wasGeneratedBy → prov:Activity (rdfs:label, dct:hasVersion, rdfs:comment);\n         column lists → meds:... repeated-literal properties." .
-<https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#label> "DatasetMetadata" .
+<https://hekameds.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#comment> "High-level provenance and conversion metadata for a MEDS dataset. \n         dataset_name → dct:title ;\n         dataset_version → dct:hasVersion ;\n         meds_version → meds:medsVersion ;\n         created_at → dct:created ;\n         license → dct:license ;\n         location_uri/description_uri → dcat:distribution (Distribution with dcat:downloadURL / dcat:accessURL) ;\n         ETL metadata (name, version, notes) are captured via prov:wasGeneratedBy → prov:Activity (rdfs:label, dct:hasVersion, rdfs:comment);\n         column lists → meds:... repeated-literal properties." .
+<https://hekameds.github.io/meds-ontology#DatasetMetadata> <http://www.w3.org/2000/01/rdf-schema#label> "DatasetMetadata" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#Event
-<https://albertomarfoglia.github.io/meds-ontology#Event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://albertomarfoglia.github.io/meds-ontology#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
-_:genid14 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> .
+# https://hekameds.github.io/meds-ontology#Event
+<https://hekameds.github.io/meds-ontology#Event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://hekameds.github.io/meds-ontology#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://hekameds.github.io/meds-ontology#DatasetMetadata> .
 _:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasDerivedFrom> .
 _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+<https://hekameds.github.io/meds-ontology#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
 _:genid15 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <https://albertomarfoglia.github.io/meds-ontology#hasCode> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <https://hekameds.github.io/meds-ontology#hasCode> .
 _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+<https://hekameds.github.io/meds-ontology#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
 _:genid16 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <https://albertomarfoglia.github.io/meds-ontology#hasSubject> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <https://hekameds.github.io/meds-ontology#hasSubject> .
 _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+<https://hekameds.github.io/meds-ontology#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
 _:genid17 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <https://albertomarfoglia.github.io/meds-ontology#numericValue> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <https://hekameds.github.io/meds-ontology#numericValue> .
 _:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+<https://hekameds.github.io/meds-ontology#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
 _:genid18 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <https://albertomarfoglia.github.io/meds-ontology#textValue> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <https://hekameds.github.io/meds-ontology#textValue> .
 _:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+<https://hekameds.github.io/meds-ontology#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
 _:genid19 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <https://albertomarfoglia.github.io/meds-ontology#time> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <https://hekameds.github.io/meds-ontology#time> .
 _:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#Event> <http://www.w3.org/2002/07/owl#disjointWith> <https://albertomarfoglia.github.io/meds-ontology#LabelSample> .
-<https://albertomarfoglia.github.io/meds-ontology#Event> <http://www.w3.org/2000/01/rdf-schema#comment> "A single observation/row in MEDS: (subject, time?, code, value modalities...). Time is nullable for static events." .
-<https://albertomarfoglia.github.io/meds-ontology#Event> <http://www.w3.org/2000/01/rdf-schema#label> "Event" .
+<https://hekameds.github.io/meds-ontology#Event> <http://www.w3.org/2002/07/owl#disjointWith> <https://hekameds.github.io/meds-ontology#LabelSample> .
+<https://hekameds.github.io/meds-ontology#Event> <http://www.w3.org/2000/01/rdf-schema#comment> "A single observation/row in MEDS: (subject, time?, code, value modalities...). Time is nullable for static events." .
+<https://hekameds.github.io/meds-ontology#Event> <http://www.w3.org/2000/01/rdf-schema#label> "Event" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#ImageValue
-<https://albertomarfoglia.github.io/meds-ontology#ImageValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://albertomarfoglia.github.io/meds-ontology#ImageValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://albertomarfoglia.github.io/meds-ontology#ValueModality> .
-<https://albertomarfoglia.github.io/meds-ontology#ImageValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Value modality pointing to an image path/uri." .
-<https://albertomarfoglia.github.io/meds-ontology#ImageValue> <http://www.w3.org/2000/01/rdf-schema#label> "ImageValue" .
-# 
-# https://albertomarfoglia.github.io/meds-ontology#LabelSample
-<https://albertomarfoglia.github.io/meds-ontology#LabelSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://albertomarfoglia.github.io/meds-ontology#LabelSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
-_:genid20 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> .
+# https://hekameds.github.io/meds-ontology#LabelSample
+<https://hekameds.github.io/meds-ontology#LabelSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://hekameds.github.io/meds-ontology#LabelSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://hekameds.github.io/meds-ontology#DatasetMetadata> .
 _:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasDerivedFrom> .
 _:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#LabelSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+<https://hekameds.github.io/meds-ontology#LabelSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
 _:genid21 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <https://albertomarfoglia.github.io/meds-ontology#hasSubject> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <https://hekameds.github.io/meds-ontology#hasSubject> .
 _:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#LabelSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+<https://hekameds.github.io/meds-ontology#LabelSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
 _:genid22 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <https://albertomarfoglia.github.io/meds-ontology#predictionTime> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <https://hekameds.github.io/meds-ontology#predictionTime> .
 _:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#LabelSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+<https://hekameds.github.io/meds-ontology#LabelSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
 _:genid23 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <https://albertomarfoglia.github.io/meds-ontology#booleanValue> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <https://hekameds.github.io/meds-ontology#booleanValue> .
 _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#LabelSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
+<https://hekameds.github.io/meds-ontology#LabelSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
 _:genid24 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <https://albertomarfoglia.github.io/meds-ontology#categoricalValue> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <https://hekameds.github.io/meds-ontology#categoricalValue> .
 _:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#LabelSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid25 .
+<https://hekameds.github.io/meds-ontology#LabelSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid25 .
 _:genid25 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <https://albertomarfoglia.github.io/meds-ontology#floatValue> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <https://hekameds.github.io/meds-ontology#floatValue> .
 _:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#LabelSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid26 .
+<https://hekameds.github.io/meds-ontology#LabelSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid26 .
 _:genid26 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <https://albertomarfoglia.github.io/meds-ontology#integerValue> .
+_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <https://hekameds.github.io/meds-ontology#integerValue> .
 _:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#LabelSample> <http://www.w3.org/2000/01/rdf-schema#comment> "A prediction sample row: subject, prediction_time, and one label value (boolean/integer/float/categorical)." .
-<https://albertomarfoglia.github.io/meds-ontology#LabelSample> <http://www.w3.org/2000/01/rdf-schema#label> "LabelSample" .
+<https://hekameds.github.io/meds-ontology#LabelSample> <http://www.w3.org/2000/01/rdf-schema#comment> "A prediction sample row: subject, prediction_time, and one label value (boolean/integer/float/categorical)." .
+<https://hekameds.github.io/meds-ontology#LabelSample> <http://www.w3.org/2000/01/rdf-schema#label> "LabelSample" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#Subject
-<https://albertomarfoglia.github.io/meds-ontology#Subject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://albertomarfoglia.github.io/meds-ontology#Subject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid27 .
-_:genid27 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata> .
+# https://hekameds.github.io/meds-ontology#Subject
+<https://hekameds.github.io/meds-ontology#Subject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://hekameds.github.io/meds-ontology#Subject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid27 .
+_:genid27 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://hekameds.github.io/meds-ontology#DatasetMetadata> .
 _:genid27 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasDerivedFrom> .
 _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://albertomarfoglia.github.io/meds-ontology#Subject> <http://www.w3.org/2002/07/owl#hasKey> _:genid28 .
+<https://hekameds.github.io/meds-ontology#Subject> <http://www.w3.org/2002/07/owl#hasKey> _:genid28 .
 _:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://albertomarfoglia.github.io/meds-ontology#subjectId> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://hekameds.github.io/meds-ontology#subjectId> .
 _:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-<https://albertomarfoglia.github.io/meds-ontology#Subject> <http://www.w3.org/2000/01/rdf-schema#comment> "Primary entity for which care observations are recorded. Maps to MEDS subject_id (patient or admission-level subject)." .
-<https://albertomarfoglia.github.io/meds-ontology#Subject> <http://www.w3.org/2000/01/rdf-schema#label> "Subject" .
+<https://hekameds.github.io/meds-ontology#Subject> <http://www.w3.org/2000/01/rdf-schema#comment> "Primary entity for which care observations are recorded. Maps to MEDS subject_id (patient or admission-level subject)." .
+<https://hekameds.github.io/meds-ontology#Subject> <http://www.w3.org/2000/01/rdf-schema#label> "Subject" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#SubjectSplit
-<https://albertomarfoglia.github.io/meds-ontology#SubjectSplit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://albertomarfoglia.github.io/meds-ontology#SubjectSplit> <http://www.w3.org/2000/01/rdf-schema#comment> "An assignment of a subject to a named split (train, tuning, held_out)." .
-<https://albertomarfoglia.github.io/meds-ontology#SubjectSplit> <http://www.w3.org/2000/01/rdf-schema#label> "SubjectSplit" .
+# https://hekameds.github.io/meds-ontology#SubjectSplit
+<https://hekameds.github.io/meds-ontology#SubjectSplit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://hekameds.github.io/meds-ontology#SubjectSplit> <http://www.w3.org/2000/01/rdf-schema#comment> "An assignment of a subject to a named split (train, tuning, held_out)." .
+<https://hekameds.github.io/meds-ontology#SubjectSplit> <http://www.w3.org/2000/01/rdf-schema#label> "SubjectSplit" .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#ValueModality
-<https://albertomarfoglia.github.io/meds-ontology#ValueModality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://albertomarfoglia.github.io/meds-ontology#ValueModality> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic holder for additional value modalities (image path, waveform id, etc.). Instances may contain modality-specific properties." .
-<https://albertomarfoglia.github.io/meds-ontology#ValueModality> <http://www.w3.org/2000/01/rdf-schema#label> "ValueModality" .
+# https://hekameds.github.io/meds-ontology#ValueModality
+<https://hekameds.github.io/meds-ontology#ValueModality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://hekameds.github.io/meds-ontology#ValueModality> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic holder for additional value modalities (image path, waveform id, etc.). Instances may contain modality-specific properties." .
+<https://hekameds.github.io/meds-ontology#ValueModality> <http://www.w3.org/2000/01/rdf-schema#label> "ValueModality" .
 # 
 # 
 # 
@@ -422,20 +416,20 @@ _:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 # #################################################################
 # 
 # 
-# https://albertomarfoglia.github.io/meds-ontology#heldOutSplit
-<https://albertomarfoglia.github.io/meds-ontology#heldOutSplit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://albertomarfoglia.github.io/meds-ontology#heldOutSplit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://albertomarfoglia.github.io/meds-ontology#SubjectSplit> .
-<https://albertomarfoglia.github.io/meds-ontology#heldOutSplit> <http://www.w3.org/2000/01/rdf-schema#label> "held_out"@en .
+# https://hekameds.github.io/meds-ontology#heldOutSplit
+<https://hekameds.github.io/meds-ontology#heldOutSplit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://hekameds.github.io/meds-ontology#heldOutSplit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://hekameds.github.io/meds-ontology#SubjectSplit> .
+<https://hekameds.github.io/meds-ontology#heldOutSplit> <http://www.w3.org/2000/01/rdf-schema#label> "held_out"@en .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#trainSplit
-<https://albertomarfoglia.github.io/meds-ontology#trainSplit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://albertomarfoglia.github.io/meds-ontology#trainSplit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://albertomarfoglia.github.io/meds-ontology#SubjectSplit> .
-<https://albertomarfoglia.github.io/meds-ontology#trainSplit> <http://www.w3.org/2000/01/rdf-schema#label> "train"@en .
+# https://hekameds.github.io/meds-ontology#trainSplit
+<https://hekameds.github.io/meds-ontology#trainSplit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://hekameds.github.io/meds-ontology#trainSplit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://hekameds.github.io/meds-ontology#SubjectSplit> .
+<https://hekameds.github.io/meds-ontology#trainSplit> <http://www.w3.org/2000/01/rdf-schema#label> "train"@en .
 # 
-# https://albertomarfoglia.github.io/meds-ontology#tuningSplit
-<https://albertomarfoglia.github.io/meds-ontology#tuningSplit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://albertomarfoglia.github.io/meds-ontology#tuningSplit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://albertomarfoglia.github.io/meds-ontology#SubjectSplit> .
-<https://albertomarfoglia.github.io/meds-ontology#tuningSplit> <http://www.w3.org/2000/01/rdf-schema#label> "tuning"@en .
+# https://hekameds.github.io/meds-ontology#tuningSplit
+<https://hekameds.github.io/meds-ontology#tuningSplit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://hekameds.github.io/meds-ontology#tuningSplit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://hekameds.github.io/meds-ontology#SubjectSplit> .
+<https://hekameds.github.io/meds-ontology#tuningSplit> <http://www.w3.org/2000/01/rdf-schema#label> "tuning"@en .
 # 
 _:genid29 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 _:genid30 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .

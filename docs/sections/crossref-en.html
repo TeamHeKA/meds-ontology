@@ -3,18 +3,17 @@ This section provides details for each class and property defined by [Ontology N
 <div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
  <h3 id="classes-headline" class="list">Classes</h3>
  <ul class="hlist">
-  <li><a href="#Code" title="https://albertomarfoglia.github.io/meds-ontology#Code">Code</a></li>
-  <li><a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata">DatasetMetadata</a></li>
-  <li><a href="#Event" title="https://albertomarfoglia.github.io/meds-ontology#Event">Event</a></li>
-  <li><a href="#ImageValue" title="https://albertomarfoglia.github.io/meds-ontology#ImageValue">ImageValue</a></li>
-  <li><a href="#LabelSample" title="https://albertomarfoglia.github.io/meds-ontology#LabelSample">LabelSample</a></li>
-  <li><a href="#Subject" title="https://albertomarfoglia.github.io/meds-ontology#Subject">Subject</a></li>
-  <li><a href="#SubjectSplit" title="https://albertomarfoglia.github.io/meds-ontology#SubjectSplit">SubjectSplit</a></li>
-  <li><a href="#ValueModality" title="https://albertomarfoglia.github.io/meds-ontology#ValueModality">ValueModality</a></li>
+  <li><a href="#Code" title="https://hekameds.github.io/meds-ontology#Code">Code</a></li>
+  <li><a href="#DatasetMetadata" title="https://hekameds.github.io/meds-ontology#DatasetMetadata">DatasetMetadata</a></li>
+  <li><a href="#Event" title="https://hekameds.github.io/meds-ontology#Event">Event</a></li>
+  <li><a href="#LabelSample" title="https://hekameds.github.io/meds-ontology#LabelSample">LabelSample</a></li>
+  <li><a href="#Subject" title="https://hekameds.github.io/meds-ontology#Subject">Subject</a></li>
+  <li><a href="#SubjectSplit" title="https://hekameds.github.io/meds-ontology#SubjectSplit">SubjectSplit</a></li>
+  <li><a href="#ValueModality" title="https://hekameds.github.io/meds-ontology#ValueModality">ValueModality</a></li>
  </ul>
  <div class="entity" id="Code">
   <h3>Code<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#Code</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#Code</p>
   <div class="comment">
    <span class="markdown">Metadata/vocabulary entry describing a event code (code string, description, parent codes, external links).</span>
   </div>
@@ -27,25 +26,25 @@ This section provides details for each class and property defined by [Ontology N
     is in domain of
    </dt>
    <dd>
-    <a href="#codeString" title="https://albertomarfoglia.github.io/meds-ontology#codeString">code String</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#codeDescription" title="https://albertomarfoglia.github.io/meds-ontology#codeDescription">codeDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#parentCode" title="https://albertomarfoglia.github.io/meds-ontology#parentCode">parentCode</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#codeString" title="https://hekameds.github.io/meds-ontology#codeString">code String</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#codeDescription" title="https://hekameds.github.io/meds-ontology#codeDescription">codeDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#parentCode" title="https://hekameds.github.io/meds-ontology#parentCode">parentCode</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#hasCode" title="https://albertomarfoglia.github.io/meds-ontology#hasCode">hasCode</a> <sup class="type-op" title="object property">op</sup>, <a href="#parentCode" title="https://albertomarfoglia.github.io/meds-ontology#parentCode">parentCode</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasCode" title="https://hekameds.github.io/meds-ontology#hasCode">hasCode</a> <sup class="type-op" title="object property">op</sup>, <a href="#parentCode" title="https://hekameds.github.io/meds-ontology#parentCode">parentCode</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     has keys
    </dt>
    <dd>
-    <a href="#codeString" title="https://albertomarfoglia.github.io/meds-ontology#codeString">code String</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#codeString" title="https://hekameds.github.io/meds-ontology#codeString">code String</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="DatasetMetadata">
   <h3>DatasetMetadata<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#DatasetMetadata</p>
   <div class="comment">
    <span class="markdown">High-level provenance and conversion metadata for a MEDS dataset. dataset_name → dct:title ; dataset_version → dct:hasVersion ; meds_version → meds:medsVersion ; created_at → dct:created ; license → dct:license ; location_uri/description_uri → dcat:distribution (Distribution with dcat:downloadURL / dcat:accessURL) ; ETL metadata (name, version, notes) are captured via prov:wasGeneratedBy → prov:Activity (rdfs:label, dct:hasVersion, rdfs:comment); column lists → meds:... repeated-literal properties.</span>
   </div>
@@ -60,13 +59,13 @@ This section provides details for each class and property defined by [Ontology N
     is in domain of
    </dt>
    <dd>
-    <a href="#additionalValueModalityColumn" title="https://albertomarfoglia.github.io/meds-ontology#additionalValueModalityColumn">additionalValueModalityColumn</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#codeModifierColumn" title="https://albertomarfoglia.github.io/meds-ontology#codeModifierColumn">codeModifierColumn</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#medsVersion" title="https://albertomarfoglia.github.io/meds-ontology#medsVersion">medsVersion</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#otherExtensionColumn" title="https://albertomarfoglia.github.io/meds-ontology#otherExtensionColumn">otherExtensionColumn</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#rawSourceIdColumn" title="https://albertomarfoglia.github.io/meds-ontology#rawSourceIdColumn">rawSourceIdColumn</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#siteIdColumn" title="https://albertomarfoglia.github.io/meds-ontology#siteIdColumn">siteIdColumn</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#subjectIdColumn" title="https://albertomarfoglia.github.io/meds-ontology#subjectIdColumn">subjectIdColumn</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#additionalValueModalityColumn" title="https://hekameds.github.io/meds-ontology#additionalValueModalityColumn">additionalValueModalityColumn</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#codeModifierColumn" title="https://hekameds.github.io/meds-ontology#codeModifierColumn">codeModifierColumn</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#medsVersion" title="https://hekameds.github.io/meds-ontology#medsVersion">medsVersion</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#otherExtensionColumn" title="https://hekameds.github.io/meds-ontology#otherExtensionColumn">otherExtensionColumn</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#rawSourceIdColumn" title="https://hekameds.github.io/meds-ontology#rawSourceIdColumn">rawSourceIdColumn</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#siteIdColumn" title="https://hekameds.github.io/meds-ontology#siteIdColumn">siteIdColumn</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#subjectIdColumn" title="https://hekameds.github.io/meds-ontology#subjectIdColumn">subjectIdColumn</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="Event">
   <h3>Event<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#Event</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#Event</p>
   <div class="comment">
    <span class="markdown">A single observation/row in MEDS: (subject, time?, code, value modalities...). Time is nullable for static events.</span>
   </div>
@@ -79,34 +78,19 @@ This section provides details for each class and property defined by [Ontology N
     is in domain of
    </dt>
    <dd>
-    <a href="#codeString" title="https://albertomarfoglia.github.io/meds-ontology#codeString">code String</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasCode" title="https://albertomarfoglia.github.io/meds-ontology#hasCode">hasCode</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasSubject" title="https://albertomarfoglia.github.io/meds-ontology#hasSubject">hasSubject</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasValueModality" title="https://albertomarfoglia.github.io/meds-ontology#hasValueModality">hasValueModality</a> <sup class="type-op" title="object property">op</sup>, <a href="#numericValue" title="https://albertomarfoglia.github.io/meds-ontology#numericValue">numericValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#textValue" title="https://albertomarfoglia.github.io/meds-ontology#textValue">textValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#time" title="https://albertomarfoglia.github.io/meds-ontology#time">time</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#codeString" title="https://hekameds.github.io/meds-ontology#codeString">code String</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasCode" title="https://hekameds.github.io/meds-ontology#hasCode">hasCode</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasSubject" title="https://hekameds.github.io/meds-ontology#hasSubject">hasSubject</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasValueModality" title="https://hekameds.github.io/meds-ontology#hasValueModality">hasValueModality</a> <sup class="type-op" title="object property">op</sup>, <a href="#numericValue" title="https://hekameds.github.io/meds-ontology#numericValue">numericValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#textValue" title="https://hekameds.github.io/meds-ontology#textValue">textValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#time" title="https://hekameds.github.io/meds-ontology#time">time</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is disjoint with
    </dt>
    <dd>
-    <a href="#LabelSample" title="https://albertomarfoglia.github.io/meds-ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="ImageValue">
-  <h3>ImageValue<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#ImageValue</p>
-  <div class="comment">
-   <span class="markdown">Value modality pointing to an image path/uri.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="#ValueModality" title="https://albertomarfoglia.github.io/meds-ontology#ValueModality">ValueModality</a> <sup class="type-c" title="class">c</sup>
+    <a href="#LabelSample" title="https://hekameds.github.io/meds-ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="LabelSample">
   <h3>LabelSample<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#LabelSample</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#LabelSample</p>
   <div class="comment">
    <span class="markdown">A prediction sample row: subject, prediction_time, and one label value (boolean/integer/float/categorical).</span>
   </div>
@@ -119,19 +103,19 @@ This section provides details for each class and property defined by [Ontology N
     is in domain of
    </dt>
    <dd>
-    <a href="#booleanValue" title="https://albertomarfoglia.github.io/meds-ontology#booleanValue">booleanValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#categoricalValue" title="https://albertomarfoglia.github.io/meds-ontology#categoricalValue">categoricalValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#floatValue" title="https://albertomarfoglia.github.io/meds-ontology#floatValue">floatValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasSubject" title="https://albertomarfoglia.github.io/meds-ontology#hasSubject">hasSubject</a> <sup class="type-op" title="object property">op</sup>, <a href="#integerValue" title="https://albertomarfoglia.github.io/meds-ontology#integerValue">integerValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#predictionTime" title="https://albertomarfoglia.github.io/meds-ontology#predictionTime">predictionTime</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#booleanValue" title="https://hekameds.github.io/meds-ontology#booleanValue">booleanValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#categoricalValue" title="https://hekameds.github.io/meds-ontology#categoricalValue">categoricalValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#floatValue" title="https://hekameds.github.io/meds-ontology#floatValue">floatValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasSubject" title="https://hekameds.github.io/meds-ontology#hasSubject">hasSubject</a> <sup class="type-op" title="object property">op</sup>, <a href="#integerValue" title="https://hekameds.github.io/meds-ontology#integerValue">integerValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#predictionTime" title="https://hekameds.github.io/meds-ontology#predictionTime">predictionTime</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is disjoint with
    </dt>
    <dd>
-    <a href="#Event" title="https://albertomarfoglia.github.io/meds-ontology#Event">Event</a> <sup class="type-c" title="class">c</sup>
+    <a href="#Event" title="https://hekameds.github.io/meds-ontology#Event">Event</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="Subject">
   <h3>Subject<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#Subject</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#Subject</p>
   <div class="comment">
    <span class="markdown">Primary entity for which care observations are recorded. Maps to MEDS subject_id (patient or admission-level subject).</span>
   </div>
@@ -144,25 +128,25 @@ This section provides details for each class and property defined by [Ontology N
     is in domain of
    </dt>
    <dd>
-    <a href="#assignedSplit" title="https://albertomarfoglia.github.io/meds-ontology#assignedSplit">assignedSplit</a> <sup class="type-op" title="object property">op</sup>, <a href="#subjectId" title="https://albertomarfoglia.github.io/meds-ontology#subjectId">subject Id</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#assignedSplit" title="https://hekameds.github.io/meds-ontology#assignedSplit">assignedSplit</a> <sup class="type-op" title="object property">op</sup>, <a href="#subjectId" title="https://hekameds.github.io/meds-ontology#subjectId">subject Id</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#hasSubject" title="https://albertomarfoglia.github.io/meds-ontology#hasSubject">hasSubject</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasSubject" title="https://hekameds.github.io/meds-ontology#hasSubject">hasSubject</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     has keys
    </dt>
    <dd>
-    <a href="#subjectId" title="https://albertomarfoglia.github.io/meds-ontology#subjectId">subject Id</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#subjectId" title="https://hekameds.github.io/meds-ontology#subjectId">subject Id</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="SubjectSplit">
   <h3>SubjectSplit<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#SubjectSplit</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#SubjectSplit</p>
   <div class="comment">
    <span class="markdown">An assignment of a subject to a named split (train, tuning, held_out).</span>
   </div>
@@ -171,49 +155,43 @@ This section provides details for each class and property defined by [Ontology N
     is in range of
    </dt>
    <dd>
-    <a href="#assignedSplit" title="https://albertomarfoglia.github.io/meds-ontology#assignedSplit">assignedSplit</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#assignedSplit" title="https://hekameds.github.io/meds-ontology#assignedSplit">assignedSplit</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     has members
    </dt>
    <dd>
-    <a href="#heldOutSplit" title="https://albertomarfoglia.github.io/meds-ontology#heldOutSplit">held_out</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#trainSplit" title="https://albertomarfoglia.github.io/meds-ontology#trainSplit">train</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#tuningSplit" title="https://albertomarfoglia.github.io/meds-ontology#tuningSplit">tuning</a> <sup class="type-ni" title="named individual">ni</sup>
+    <a href="#heldOutSplit" title="https://hekameds.github.io/meds-ontology#heldOutSplit">held_out</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#trainSplit" title="https://hekameds.github.io/meds-ontology#trainSplit">train</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#tuningSplit" title="https://hekameds.github.io/meds-ontology#tuningSplit">tuning</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="ValueModality">
   <h3>ValueModality<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#ValueModality</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#ValueModality</p>
   <div class="comment">
    <span class="markdown">Generic holder for additional value modalities (image path, waveform id, etc.). Instances may contain modality-specific properties.</span>
   </div>
   <dl class="description">
    <dt>
-    has sub-classes
-   </dt>
-   <dd>
-    <a href="#ImageValue" title="https://albertomarfoglia.github.io/meds-ontology#ImageValue">ImageValue</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#hasValueModality" title="https://albertomarfoglia.github.io/meds-ontology#hasValueModality">hasValueModality</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasValueModality" title="https://hekameds.github.io/meds-ontology#hasValueModality">hasValueModality</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
  <h3 id="properties" class="list">Object Properties</h3>
  <ul class="hlist">
-  <li><a href="#assignedSplit" title="https://albertomarfoglia.github.io/meds-ontology#assignedSplit">assignedSplit</a></li>
-  <li><a href="#hasCode" title="https://albertomarfoglia.github.io/meds-ontology#hasCode">hasCode</a></li>
-  <li><a href="#hasSubject" title="https://albertomarfoglia.github.io/meds-ontology#hasSubject">hasSubject</a></li>
-  <li><a href="#hasValueModality" title="https://albertomarfoglia.github.io/meds-ontology#hasValueModality">hasValueModality</a></li>
-  <li><a href="#parentCode" title="https://albertomarfoglia.github.io/meds-ontology#parentCode">parentCode</a></li>
+  <li><a href="#assignedSplit" title="https://hekameds.github.io/meds-ontology#assignedSplit">assignedSplit</a></li>
+  <li><a href="#hasCode" title="https://hekameds.github.io/meds-ontology#hasCode">hasCode</a></li>
+  <li><a href="#hasSubject" title="https://hekameds.github.io/meds-ontology#hasSubject">hasSubject</a></li>
+  <li><a href="#hasValueModality" title="https://hekameds.github.io/meds-ontology#hasValueModality">hasValueModality</a></li>
+  <li><a href="#parentCode" title="https://hekameds.github.io/meds-ontology#parentCode">parentCode</a></li>
  </ul>
  <div class="entity" id="assignedSplit">
   <h3>assignedSplit<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#assignedSplit</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#assignedSplit</p>
   <div class="comment">
    <span class="markdown">Assign a subject to a split (train, tuning, held_out).</span>
   </div>
@@ -223,20 +201,20 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#Subject" title="https://albertomarfoglia.github.io/meds-ontology#Subject">Subject</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Subject" title="https://hekameds.github.io/meds-ontology#Subject">Subject</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#SubjectSplit" title="https://albertomarfoglia.github.io/meds-ontology#SubjectSplit">SubjectSplit</a> <sup class="type-c" title="class">c</sup>
+     <a href="#SubjectSplit" title="https://hekameds.github.io/meds-ontology#SubjectSplit">SubjectSplit</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="hasCode">
   <h3>hasCode<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#hasCode</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#hasCode</p>
   <div class="comment">
    <span class="markdown">Link from a Event to a Code metadata entry. If no Code metadata file exists, codeString on Event is used.</span>
   </div>
@@ -246,20 +224,20 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#Event" title="https://albertomarfoglia.github.io/meds-ontology#Event">Event</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Event" title="https://hekameds.github.io/meds-ontology#Event">Event</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#Code" title="https://albertomarfoglia.github.io/meds-ontology#Code">Code</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Code" title="https://hekameds.github.io/meds-ontology#Code">Code</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="hasSubject">
   <h3>hasSubject<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#hasSubject</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#hasSubject</p>
   <div class="comment">
    <span class="markdown">Links a Event or LabelSample to its Subject (maps to subject_id).</span>
   </div>
@@ -269,23 +247,23 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#Event" title="https://albertomarfoglia.github.io/meds-ontology#Event">Event</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Event" title="https://hekameds.github.io/meds-ontology#Event">Event</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dd>
-     <a href="#LabelSample" title="https://albertomarfoglia.github.io/meds-ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
+     <a href="#LabelSample" title="https://hekameds.github.io/meds-ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#Subject" title="https://albertomarfoglia.github.io/meds-ontology#Subject">Subject</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Subject" title="https://hekameds.github.io/meds-ontology#Subject">Subject</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="hasValueModality">
   <h3>hasValueModality<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#hasValueModality</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#hasValueModality</p>
   <div class="comment">
    <span class="markdown">Attach additional value modalities (image, waveform, etc.) to a Event.</span>
   </div>
@@ -295,20 +273,20 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#Event" title="https://albertomarfoglia.github.io/meds-ontology#Event">Event</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Event" title="https://hekameds.github.io/meds-ontology#Event">Event</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#ValueModality" title="https://albertomarfoglia.github.io/meds-ontology#ValueModality">ValueModality</a> <sup class="type-c" title="class">c</sup>
+     <a href="#ValueModality" title="https://hekameds.github.io/meds-ontology#ValueModality">ValueModality</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="parentCode">
   <h3>parentCode<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#parentCode</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#parentCode</p>
   <div class="comment">
    <span class="markdown">Ontological/aggregation parent relations between codes (maps to CodeMetadata.parent_codes).</span>
   </div>
@@ -318,13 +296,13 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#Code" title="https://albertomarfoglia.github.io/meds-ontology#Code">Code</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Code" title="https://hekameds.github.io/meds-ontology#Code">Code</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#Code" title="https://albertomarfoglia.github.io/meds-ontology#Code">Code</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Code" title="https://hekameds.github.io/meds-ontology#Code">Code</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -332,28 +310,28 @@ This section provides details for each class and property defined by [Ontology N
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
  <h3 id="dataproperties-headline" class="list">Data Properties</h3>
  <ul class="hlist">
-  <li><a href="#additionalValueModalityColumn" title="https://albertomarfoglia.github.io/meds-ontology#additionalValueModalityColumn">additionalValueModalityColumn</a></li>
-  <li><a href="#booleanValue" title="https://albertomarfoglia.github.io/meds-ontology#booleanValue">booleanValue</a></li>
-  <li><a href="#categoricalValue" title="https://albertomarfoglia.github.io/meds-ontology#categoricalValue">categoricalValue</a></li>
-  <li><a href="#codeString" title="https://albertomarfoglia.github.io/meds-ontology#codeString"> <span>code String</span> </a></li>
-  <li><a href="#codeDescription" title="https://albertomarfoglia.github.io/meds-ontology#codeDescription">codeDescription</a></li>
-  <li><a href="#codeModifierColumn" title="https://albertomarfoglia.github.io/meds-ontology#codeModifierColumn">codeModifierColumn</a></li>
-  <li><a href="#floatValue" title="https://albertomarfoglia.github.io/meds-ontology#floatValue">floatValue</a></li>
-  <li><a href="#integerValue" title="https://albertomarfoglia.github.io/meds-ontology#integerValue">integerValue</a></li>
-  <li><a href="#medsVersion" title="https://albertomarfoglia.github.io/meds-ontology#medsVersion">medsVersion</a></li>
-  <li><a href="#numericValue" title="https://albertomarfoglia.github.io/meds-ontology#numericValue">numericValue</a></li>
-  <li><a href="#otherExtensionColumn" title="https://albertomarfoglia.github.io/meds-ontology#otherExtensionColumn">otherExtensionColumn</a></li>
-  <li><a href="#predictionTime" title="https://albertomarfoglia.github.io/meds-ontology#predictionTime">predictionTime</a></li>
-  <li><a href="#rawSourceIdColumn" title="https://albertomarfoglia.github.io/meds-ontology#rawSourceIdColumn">rawSourceIdColumn</a></li>
-  <li><a href="#siteIdColumn" title="https://albertomarfoglia.github.io/meds-ontology#siteIdColumn">siteIdColumn</a></li>
-  <li><a href="#subjectId" title="https://albertomarfoglia.github.io/meds-ontology#subjectId"> <span>subject Id</span> </a></li>
-  <li><a href="#subjectIdColumn" title="https://albertomarfoglia.github.io/meds-ontology#subjectIdColumn">subjectIdColumn</a></li>
-  <li><a href="#textValue" title="https://albertomarfoglia.github.io/meds-ontology#textValue">textValue</a></li>
-  <li><a href="#time" title="https://albertomarfoglia.github.io/meds-ontology#time">time</a></li>
+  <li><a href="#additionalValueModalityColumn" title="https://hekameds.github.io/meds-ontology#additionalValueModalityColumn">additionalValueModalityColumn</a></li>
+  <li><a href="#booleanValue" title="https://hekameds.github.io/meds-ontology#booleanValue">booleanValue</a></li>
+  <li><a href="#categoricalValue" title="https://hekameds.github.io/meds-ontology#categoricalValue">categoricalValue</a></li>
+  <li><a href="#codeString" title="https://hekameds.github.io/meds-ontology#codeString"> <span>code String</span> </a></li>
+  <li><a href="#codeDescription" title="https://hekameds.github.io/meds-ontology#codeDescription">codeDescription</a></li>
+  <li><a href="#codeModifierColumn" title="https://hekameds.github.io/meds-ontology#codeModifierColumn">codeModifierColumn</a></li>
+  <li><a href="#floatValue" title="https://hekameds.github.io/meds-ontology#floatValue">floatValue</a></li>
+  <li><a href="#integerValue" title="https://hekameds.github.io/meds-ontology#integerValue">integerValue</a></li>
+  <li><a href="#medsVersion" title="https://hekameds.github.io/meds-ontology#medsVersion">medsVersion</a></li>
+  <li><a href="#numericValue" title="https://hekameds.github.io/meds-ontology#numericValue">numericValue</a></li>
+  <li><a href="#otherExtensionColumn" title="https://hekameds.github.io/meds-ontology#otherExtensionColumn">otherExtensionColumn</a></li>
+  <li><a href="#predictionTime" title="https://hekameds.github.io/meds-ontology#predictionTime">predictionTime</a></li>
+  <li><a href="#rawSourceIdColumn" title="https://hekameds.github.io/meds-ontology#rawSourceIdColumn">rawSourceIdColumn</a></li>
+  <li><a href="#siteIdColumn" title="https://hekameds.github.io/meds-ontology#siteIdColumn">siteIdColumn</a></li>
+  <li><a href="#subjectId" title="https://hekameds.github.io/meds-ontology#subjectId"> <span>subject Id</span> </a></li>
+  <li><a href="#subjectIdColumn" title="https://hekameds.github.io/meds-ontology#subjectIdColumn">subjectIdColumn</a></li>
+  <li><a href="#textValue" title="https://hekameds.github.io/meds-ontology#textValue">textValue</a></li>
+  <li><a href="#time" title="https://hekameds.github.io/meds-ontology#time">time</a></li>
  </ul>
  <div class="entity" id="additionalValueModalityColumn">
   <h3>additionalValueModalityColumn<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#additionalValueModalityColumn</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#additionalValueModalityColumn</p>
   <div class="comment">
    <span class="markdown">Column containing additional value modality (image, waveform, etc.). OPTIONAL. One triple per column. Matches MEDS: additional_value_modality_columns.</span>
   </div>
@@ -363,7 +341,7 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
+     <a href="#DatasetMetadata" title="https://hekameds.github.io/meds-ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -376,7 +354,7 @@ This section provides details for each class and property defined by [Ontology N
  </div>
  <div class="entity" id="booleanValue">
   <h3>booleanValue<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#booleanValue</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#booleanValue</p>
   <div class="comment">
    <span class="markdown">Boolean label value (if applicable).</span>
   </div>
@@ -386,7 +364,7 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#LabelSample" title="https://albertomarfoglia.github.io/meds-ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
+     <a href="#LabelSample" title="https://hekameds.github.io/meds-ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -399,7 +377,7 @@ This section provides details for each class and property defined by [Ontology N
  </div>
  <div class="entity" id="categoricalValue">
   <h3>categoricalValue<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#categoricalValue</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#categoricalValue</p>
   <div class="comment">
    <span class="markdown">Categorical label encoded as a string.</span>
   </div>
@@ -409,7 +387,7 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#LabelSample" title="https://albertomarfoglia.github.io/meds-ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
+     <a href="#LabelSample" title="https://hekameds.github.io/meds-ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -422,7 +400,7 @@ This section provides details for each class and property defined by [Ontology N
  </div>
  <div class="entity" id="codeString">
   <h3>code String<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#codeString</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#codeString</p>
   <div class="comment">
    <span class="markdown">Canonical textual code; functional for Code. Also present on Event when no Code metadata exists.</span>
   </div>
@@ -433,7 +411,7 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#Code" title="https://albertomarfoglia.github.io/meds-ontology#Code">Code</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Event" title="https://albertomarfoglia.github.io/meds-ontology#Event">Event</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Code" title="https://hekameds.github.io/meds-ontology#Code">Code</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Event" title="https://hekameds.github.io/meds-ontology#Event">Event</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -446,7 +424,7 @@ This section provides details for each class and property defined by [Ontology N
  </div>
  <div class="entity" id="codeDescription">
   <h3>codeDescription<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#codeDescription</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#codeDescription</p>
   <div class="comment">
    <span class="markdown">Human readable description of the code.</span>
   </div>
@@ -456,7 +434,7 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#Code" title="https://albertomarfoglia.github.io/meds-ontology#Code">Code</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Code" title="https://hekameds.github.io/meds-ontology#Code">Code</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -469,7 +447,7 @@ This section provides details for each class and property defined by [Ontology N
  </div>
  <div class="entity" id="codeModifierColumn">
   <h3>codeModifierColumn<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#codeModifierColumn</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#codeModifierColumn</p>
   <div class="comment">
    <span class="markdown">Column used to modify/augment code values. OPTIONAL. One triple per column. Matches MEDS: code_modifier_columns.</span>
   </div>
@@ -479,7 +457,7 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
+     <a href="#DatasetMetadata" title="https://hekameds.github.io/meds-ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -492,7 +470,7 @@ This section provides details for each class and property defined by [Ontology N
  </div>
  <div class="entity" id="floatValue">
   <h3>floatValue<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#floatValue</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#floatValue</p>
   <div class="comment">
    <span class="markdown">Float label value (continuous target).</span>
   </div>
@@ -502,7 +480,7 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#LabelSample" title="https://albertomarfoglia.github.io/meds-ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
+     <a href="#LabelSample" title="https://hekameds.github.io/meds-ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -515,7 +493,7 @@ This section provides details for each class and property defined by [Ontology N
  </div>
  <div class="entity" id="integerValue">
   <h3>integerValue<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#integerValue</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#integerValue</p>
   <div class="comment">
    <span class="markdown">Integer label value (e.g., ordinal labels).</span>
   </div>
@@ -525,7 +503,7 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#LabelSample" title="https://albertomarfoglia.github.io/meds-ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
+     <a href="#LabelSample" title="https://hekameds.github.io/meds-ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -538,7 +516,7 @@ This section provides details for each class and property defined by [Ontology N
  </div>
  <div class="entity" id="medsVersion">
   <h3>medsVersion<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#medsVersion</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#medsVersion</p>
   <div class="comment">
    <span class="markdown">Version of the MEDS schema used to generate the dataset. REQUIRED. Matches MEDS: meds_version.</span>
   </div>
@@ -548,7 +526,7 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
+     <a href="#DatasetMetadata" title="https://hekameds.github.io/meds-ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -561,7 +539,7 @@ This section provides details for each class and property defined by [Ontology N
  </div>
  <div class="entity" id="numericValue">
   <h3>numericValue<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#numericValue</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#numericValue</p>
   <div class="comment">
    <span class="markdown">Numeric event value (optional in MEDS).</span>
   </div>
@@ -571,7 +549,7 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#Event" title="https://albertomarfoglia.github.io/meds-ontology#Event">Event</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Event" title="https://hekameds.github.io/meds-ontology#Event">Event</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -584,7 +562,7 @@ This section provides details for each class and property defined by [Ontology N
  </div>
  <div class="entity" id="otherExtensionColumn">
   <h3>otherExtensionColumn<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#otherExtensionColumn</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#otherExtensionColumn</p>
   <div class="comment">
    <span class="markdown">Other dataset-specific extension column not covered elsewhere. OPTIONAL. One triple per column. Matches MEDS: other_extension_columns.</span>
   </div>
@@ -594,7 +572,7 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
+     <a href="#DatasetMetadata" title="https://hekameds.github.io/meds-ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -607,7 +585,7 @@ This section provides details for each class and property defined by [Ontology N
  </div>
  <div class="entity" id="predictionTime">
   <h3>predictionTime<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#predictionTime</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#predictionTime</p>
   <div class="comment">
    <span class="markdown">Inclusive endpoint of the data usable for predicting the label (required for LabelSample).</span>
   </div>
@@ -617,7 +595,7 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#LabelSample" title="https://albertomarfoglia.github.io/meds-ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
+     <a href="#LabelSample" title="https://hekameds.github.io/meds-ontology#LabelSample">LabelSample</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -630,7 +608,7 @@ This section provides details for each class and property defined by [Ontology N
  </div>
  <div class="entity" id="rawSourceIdColumn">
   <h3>rawSourceIdColumn<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#rawSourceIdColumn</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#rawSourceIdColumn</p>
   <div class="comment">
    <span class="markdown">Raw source ID column before mapping to subject IDs. OPTIONAL. One triple per column. Matches MEDS: raw_source_id_columns.</span>
   </div>
@@ -640,7 +618,7 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
+     <a href="#DatasetMetadata" title="https://hekameds.github.io/meds-ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -653,7 +631,7 @@ This section provides details for each class and property defined by [Ontology N
  </div>
  <div class="entity" id="siteIdColumn">
   <h3>siteIdColumn<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#siteIdColumn</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#siteIdColumn</p>
   <div class="comment">
    <span class="markdown">Column representing a site identifier. OPTIONAL. One triple per column. Previously siteIdColumns.</span>
   </div>
@@ -663,7 +641,7 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
+     <a href="#DatasetMetadata" title="https://hekameds.github.io/meds-ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -676,7 +654,7 @@ This section provides details for each class and property defined by [Ontology N
  </div>
  <div class="entity" id="subjectId">
   <h3>subject Id<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#subjectId</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#subjectId</p>
   <div class="comment">
    <span class="markdown">Unique identifier for a Subject; functional (= at most one value per Subject).</span>
   </div>
@@ -687,7 +665,7 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#Subject" title="https://albertomarfoglia.github.io/meds-ontology#Subject">Subject</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Subject" title="https://hekameds.github.io/meds-ontology#Subject">Subject</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -700,7 +678,7 @@ This section provides details for each class and property defined by [Ontology N
  </div>
  <div class="entity" id="subjectIdColumn">
   <h3>subjectIdColumn<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#subjectIdColumn</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#subjectIdColumn</p>
   <div class="comment">
    <span class="markdown">Column used as a subject identifier. REQUIRED. One triple per column. Previously subjectIdColumns.</span>
   </div>
@@ -710,7 +688,7 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#DatasetMetadata" title="https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
+     <a href="#DatasetMetadata" title="https://hekameds.github.io/meds-ontology#DatasetMetadata">DatasetMetadata</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -723,7 +701,7 @@ This section provides details for each class and property defined by [Ontology N
  </div>
  <div class="entity" id="textValue">
   <h3>textValue<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#textValue</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#textValue</p>
   <div class="comment">
    <span class="markdown">Text event value (optional in MEDS).</span>
   </div>
@@ -733,7 +711,7 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#Event" title="https://albertomarfoglia.github.io/meds-ontology#Event">Event</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Event" title="https://hekameds.github.io/meds-ontology#Event">Event</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -746,7 +724,7 @@ This section provides details for each class and property defined by [Ontology N
  </div>
  <div class="entity" id="time">
   <h3>time<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#time</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#time</p>
   <div class="comment">
    <span class="markdown">Timestamp of the event. MEDS allows null for static events; modelled as 0..1 cardinality.</span>
   </div>
@@ -756,7 +734,7 @@ This section provides details for each class and property defined by [Ontology N
      has domain
     </dt>
     <dd>
-     <a href="#Event" title="https://albertomarfoglia.github.io/meds-ontology#Event">Event</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Event" title="https://hekameds.github.io/meds-ontology#Event">Event</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -770,43 +748,43 @@ This section provides details for each class and property defined by [Ontology N
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
  <h3 id="namedindividuals" class="list">Named Individuals</h3>
  <ul class="hlist">
-  <li><a href="#heldOutSplit" title="https://albertomarfoglia.github.io/meds-ontology#heldOutSplit">held_out</a></li>
-  <li><a href="#trainSplit" title="https://albertomarfoglia.github.io/meds-ontology#trainSplit">train</a></li>
-  <li><a href="#tuningSplit" title="https://albertomarfoglia.github.io/meds-ontology#tuningSplit">tuning</a></li>
+  <li><a href="#heldOutSplit" title="https://hekameds.github.io/meds-ontology#heldOutSplit">held_out</a></li>
+  <li><a href="#trainSplit" title="https://hekameds.github.io/meds-ontology#trainSplit">train</a></li>
+  <li><a href="#tuningSplit" title="https://hekameds.github.io/meds-ontology#tuningSplit">tuning</a></li>
  </ul>
  <div class="entity" id="heldOutSplit">
   <h3>held_out<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#heldOutSplit</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#heldOutSplit</p>
   <dl class="description">
    <dt>
     belongs to
    </dt>
    <dd>
-    <a href="#SubjectSplit" title="https://albertomarfoglia.github.io/meds-ontology#SubjectSplit">SubjectSplit</a> <sup class="type-c" title="class">c</sup>
+    <a href="#SubjectSplit" title="https://hekameds.github.io/meds-ontology#SubjectSplit">SubjectSplit</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="trainSplit">
   <h3>train<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#trainSplit</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#trainSplit</p>
   <dl class="description">
    <dt>
     belongs to
    </dt>
    <dd>
-    <a href="#SubjectSplit" title="https://albertomarfoglia.github.io/meds-ontology#SubjectSplit">SubjectSplit</a> <sup class="type-c" title="class">c</sup>
+    <a href="#SubjectSplit" title="https://hekameds.github.io/meds-ontology#SubjectSplit">SubjectSplit</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="tuningSplit">
   <h3>tuning<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://albertomarfoglia.github.io/meds-ontology#tuningSplit</p>
+  <p><strong>IRI:</strong> https://hekameds.github.io/meds-ontology#tuningSplit</p>
   <dl class="description">
    <dt>
     belongs to
    </dt>
    <dd>
-    <a href="#SubjectSplit" title="https://albertomarfoglia.github.io/meds-ontology#SubjectSplit">SubjectSplit</a> <sup class="type-c" title="class">c</sup>
+    <a href="#SubjectSplit" title="https://hekameds.github.io/meds-ontology#SubjectSplit">SubjectSplit</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>

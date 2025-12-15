@@ -1,10 +1,10 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix meds: <https://albertomarfoglia.github.io/meds-ontology#> .
+@prefix meds: <https://hekameds.github.io/meds-ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@base <https://albertomarfoglia.github.io/meds-ontology#> .
+@base <https://hekameds.github.io/meds-ontology#> .
 
 ##########################################################
 # Subject shape

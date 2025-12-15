@@ -1,16 +1,16 @@
-@prefix : <https://albertomarfoglia.github.io/meds-ontology#> .
+@prefix : <https://hekameds.github.io/meds-ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix meds: <https://albertomarfoglia.github.io/meds-ontology#> .
+@prefix meds: <https://hekameds.github.io/meds-ontology#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dct:    <http://purl.org/dc/terms#> .
 @prefix dcat:   <http://www.w3.org/ns/dcat#> .
 @prefix prov:   <http://www.w3.org/ns/prov#> .
-@base <https://albertomarfoglia.github.io/meds-ontology#> .
+@base <https://hekameds.github.io/meds-ontology#> .
 
-<https://albertomarfoglia.github.io/meds-ontology> a owl:Ontology ;
+<https://hekameds.github.io/meds-ontology> a owl:Ontology ;
     dct:title "MEDS conceptual ontology (OWL)" ;
     dct:creator "Alberto Marfoglia" ;
     dct:description "An OWL ontology encoding the MEDS data model (subjects, events, codes, labels, dataset metadata, splits). This ontology intentionally models open/extendable value modalities and captures MEDS invariants as annotations where OWL cannot enforce them." ;
@@ -20,7 +20,7 @@
 #################################################################
 #    Classes
 #################################################################
-###  https://albertomarfoglia.github.io/meds-ontology#Code
+###  https://hekameds.github.io/meds-ontology#Code
 :Code a owl:Class ;
     rdfs:label "Code" ;
     rdfs:comment "Metadata/vocabulary entry describing a event code (code string, description, parent codes, external links)." .
@@ -41,25 +41,25 @@ meds:DatasetMetadata
     rdfs:subClassOf prov:Entity , dcat:Dataset .
 
     
-###  https://albertomarfoglia.github.io/meds-ontology#LabelSample
+###  https://hekameds.github.io/meds-ontology#LabelSample
 :LabelSample rdf:type owl:Class ;
                 rdfs:comment "A prediction sample row: subject, prediction_time, and one label value (boolean/integer/float/categorical)." ;
                 rdfs:label "LabelSample" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#Event
+###  https://hekameds.github.io/meds-ontology#Event
 :Event rdf:type owl:Class ;
                 rdfs:label "Event" ;
                 rdfs:comment "A single observation/row in MEDS: (subject, time?, code, value modalities...). Time is nullable for static events." ;
                 owl:disjointWith :LabelSample .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#Subject
+###  https://hekameds.github.io/meds-ontology#Subject
 :Subject a owl:Class ;
     rdfs:label "Subject" ;
     rdfs:comment "Primary entity for which care observations are recorded. Maps to MEDS subject_id (patient or admission-level subject)." .
 
-###  https://albertomarfoglia.github.io/meds-ontology#SubjectSplit
+###  https://hekameds.github.io/meds-ontology#SubjectSplit
 :SubjectSplit a owl:Class ;
     rdfs:label "SubjectSplit" ;
     rdfs:comment "An assignment of a subject to a named split (train, tuning, held_out)." .
@@ -67,12 +67,6 @@ meds:DatasetMetadata
 :ValueModality a owl:Class ;
     rdfs:label "ValueModality" ;
     rdfs:comment "Generic holder for additional value modalities (image path, waveform id, etc.). Instances may contain modality-specific properties." .
-
-:ImageValue a owl:Class ;
-    rdfs:subClassOf :ValueModality ;
-    rdfs:label "ImageValue" ;
-    rdfs:comment "Value modality pointing to an image path/uri." .
-
 
 ################################################################
 # Class restrictions (cardinalities & guidance)

@@ -1,17 +1,17 @@
-@prefix : <https://albertomarfoglia.github.io/meds-ontology#> .
+@prefix : <https://hekameds.github.io/meds-ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://albertomarfoglia.github.io/meds-ontology#> .
+@base <https://hekameds.github.io/meds-ontology#> .
 
-<https://albertomarfoglia.github.io/meds-ontology> rdf:type owl:Ontology ;
-                                                    <http://purl.org/dc/terms#created> "2025-12-04"^^xsd:date ;
-                                                    <http://purl.org/dc/terms#creator> "Alberto Marfoglia" ;
-                                                    <http://purl.org/dc/terms#description> "An OWL ontology encoding the MEDS data model (subjects, events, codes, labels, dataset metadata, splits). This ontology intentionally models open/extendable value modalities and captures MEDS invariants as annotations where OWL cannot enforce them." ;
-                                                    <http://purl.org/dc/terms#title> "MEDS conceptual ontology (OWL)" ;
-                                                    owl:versionInfo "0.1.0" .
+<https://hekameds.github.io/meds-ontology> rdf:type owl:Ontology ;
+                                            <http://purl.org/dc/terms#created> "2025-12-04"^^xsd:date ;
+                                            <http://purl.org/dc/terms#creator> "Alberto Marfoglia" ;
+                                            <http://purl.org/dc/terms#description> "An OWL ontology encoding the MEDS data model (subjects, events, codes, labels, dataset metadata, splits). This ontology intentionally models open/extendable value modalities and captures MEDS invariants as annotations where OWL cannot enforce them." ;
+                                            <http://purl.org/dc/terms#title> "MEDS conceptual ontology (OWL)" ;
+                                            owl:versionInfo "0.1.0" .
 
 #################################################################
 #    Annotation properties
@@ -65,7 +65,7 @@ xsd:date rdf:type rdfs:Datatype .
 <http://www.w3.org/ns/prov#wasGeneratedBy> rdf:type owl:ObjectProperty .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#assignedSplit
+###  https://hekameds.github.io/meds-ontology#assignedSplit
 :assignedSplit rdf:type owl:ObjectProperty ;
                rdfs:domain :Subject ;
                rdfs:range :SubjectSplit ;
@@ -73,7 +73,7 @@ xsd:date rdf:type rdfs:Datatype .
                rdfs:label "assignedSplit" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#hasCode
+###  https://hekameds.github.io/meds-ontology#hasCode
 :hasCode rdf:type owl:ObjectProperty ;
          rdfs:domain :Event ;
          rdfs:range :Code ;
@@ -81,7 +81,7 @@ xsd:date rdf:type rdfs:Datatype .
          rdfs:label "hasCode" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#hasSubject
+###  https://hekameds.github.io/meds-ontology#hasSubject
 :hasSubject rdf:type owl:ObjectProperty ;
             rdfs:domain :Event ,
                         :LabelSample ;
@@ -90,7 +90,7 @@ xsd:date rdf:type rdfs:Datatype .
             rdfs:label "hasSubject" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#hasValueModality
+###  https://hekameds.github.io/meds-ontology#hasValueModality
 :hasValueModality rdf:type owl:ObjectProperty ;
                   rdfs:domain :Event ;
                   rdfs:range :ValueModality ;
@@ -98,7 +98,7 @@ xsd:date rdf:type rdfs:Datatype .
                   rdfs:label "hasValueModality" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#parentCode
+###  https://hekameds.github.io/meds-ontology#parentCode
 :parentCode rdf:type owl:ObjectProperty ;
             rdfs:domain :Code ;
             rdfs:range :Code ;
@@ -110,7 +110,7 @@ xsd:date rdf:type rdfs:Datatype .
 #    Data properties
 #################################################################
 
-###  https://albertomarfoglia.github.io/meds-ontology#additionalValueModalityColumn
+###  https://hekameds.github.io/meds-ontology#additionalValueModalityColumn
 :additionalValueModalityColumn rdf:type owl:DatatypeProperty ;
                                rdfs:domain :DatasetMetadata ;
                                rdfs:range xsd:string ;
@@ -118,7 +118,7 @@ xsd:date rdf:type rdfs:Datatype .
                                rdfs:label "additionalValueModalityColumn" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#booleanValue
+###  https://hekameds.github.io/meds-ontology#booleanValue
 :booleanValue rdf:type owl:DatatypeProperty ;
               rdfs:domain :LabelSample ;
               rdfs:range xsd:boolean ;
@@ -126,7 +126,7 @@ xsd:date rdf:type rdfs:Datatype .
               rdfs:label "booleanValue" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#categoricalValue
+###  https://hekameds.github.io/meds-ontology#categoricalValue
 :categoricalValue rdf:type owl:DatatypeProperty ;
                   rdfs:domain :LabelSample ;
                   rdfs:range xsd:string ;
@@ -134,7 +134,7 @@ xsd:date rdf:type rdfs:Datatype .
                   rdfs:label "categoricalValue" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#codeDescription
+###  https://hekameds.github.io/meds-ontology#codeDescription
 :codeDescription rdf:type owl:DatatypeProperty ;
                  rdfs:domain :Code ;
                  rdfs:range xsd:string ;
@@ -142,7 +142,7 @@ xsd:date rdf:type rdfs:Datatype .
                  rdfs:label "codeDescription" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#codeModifierColumn
+###  https://hekameds.github.io/meds-ontology#codeModifierColumn
 :codeModifierColumn rdf:type owl:DatatypeProperty ;
                     rdfs:domain :DatasetMetadata ;
                     rdfs:range xsd:string ;
@@ -150,7 +150,7 @@ xsd:date rdf:type rdfs:Datatype .
                     rdfs:label "codeModifierColumn" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#codeString
+###  https://hekameds.github.io/meds-ontology#codeString
 :codeString rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
             rdfs:domain [ rdf:type owl:Class ;
@@ -162,7 +162,7 @@ xsd:date rdf:type rdfs:Datatype .
             rdfs:comment "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists." .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#floatValue
+###  https://hekameds.github.io/meds-ontology#floatValue
 :floatValue rdf:type owl:DatatypeProperty ;
             rdfs:domain :LabelSample ;
             rdfs:range xsd:double ;
@@ -170,7 +170,7 @@ xsd:date rdf:type rdfs:Datatype .
             rdfs:label "floatValue" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#integerValue
+###  https://hekameds.github.io/meds-ontology#integerValue
 :integerValue rdf:type owl:DatatypeProperty ;
               rdfs:domain :LabelSample ;
               rdfs:range xsd:integer ;
@@ -178,7 +178,7 @@ xsd:date rdf:type rdfs:Datatype .
               rdfs:label "integerValue" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#medsVersion
+###  https://hekameds.github.io/meds-ontology#medsVersion
 :medsVersion rdf:type owl:DatatypeProperty ;
              rdfs:domain :DatasetMetadata ;
              rdfs:range xsd:string ;
@@ -186,7 +186,7 @@ xsd:date rdf:type rdfs:Datatype .
              rdfs:label "medsVersion" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#numericValue
+###  https://hekameds.github.io/meds-ontology#numericValue
 :numericValue rdf:type owl:DatatypeProperty ;
               rdfs:domain :Event ;
               rdfs:range xsd:double ;
@@ -194,7 +194,7 @@ xsd:date rdf:type rdfs:Datatype .
               rdfs:label "numericValue" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#otherExtensionColumn
+###  https://hekameds.github.io/meds-ontology#otherExtensionColumn
 :otherExtensionColumn rdf:type owl:DatatypeProperty ;
                       rdfs:domain :DatasetMetadata ;
                       rdfs:range xsd:string ;
@@ -202,7 +202,7 @@ xsd:date rdf:type rdfs:Datatype .
                       rdfs:label "otherExtensionColumn" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#predictionTime
+###  https://hekameds.github.io/meds-ontology#predictionTime
 :predictionTime rdf:type owl:DatatypeProperty ;
                 rdfs:domain :LabelSample ;
                 rdfs:range xsd:dateTime ;
@@ -210,7 +210,7 @@ xsd:date rdf:type rdfs:Datatype .
                 rdfs:label "predictionTime" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#rawSourceIdColumn
+###  https://hekameds.github.io/meds-ontology#rawSourceIdColumn
 :rawSourceIdColumn rdf:type owl:DatatypeProperty ;
                    rdfs:domain :DatasetMetadata ;
                    rdfs:range xsd:string ;
@@ -218,7 +218,7 @@ xsd:date rdf:type rdfs:Datatype .
                    rdfs:label "rawSourceIdColumn" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#siteIdColumn
+###  https://hekameds.github.io/meds-ontology#siteIdColumn
 :siteIdColumn rdf:type owl:DatatypeProperty ;
               rdfs:domain :DatasetMetadata ;
               rdfs:range xsd:string ;
@@ -226,7 +226,7 @@ xsd:date rdf:type rdfs:Datatype .
               rdfs:label "siteIdColumn" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#subjectId
+###  https://hekameds.github.io/meds-ontology#subjectId
 :subjectId rdf:type owl:DatatypeProperty ,
                     owl:FunctionalProperty ;
            rdfs:domain :Subject ;
@@ -234,7 +234,7 @@ xsd:date rdf:type rdfs:Datatype .
            rdfs:comment "Unique identifier for a Subject; functional (= at most one value per Subject)." .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#subjectIdColumn
+###  https://hekameds.github.io/meds-ontology#subjectIdColumn
 :subjectIdColumn rdf:type owl:DatatypeProperty ;
                  rdfs:domain :DatasetMetadata ;
                  rdfs:range xsd:string ;
@@ -242,7 +242,7 @@ xsd:date rdf:type rdfs:Datatype .
                  rdfs:label "subjectIdColumn" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#textValue
+###  https://hekameds.github.io/meds-ontology#textValue
 :textValue rdf:type owl:DatatypeProperty ;
            rdfs:domain :Event ;
            rdfs:range xsd:string ;
@@ -250,7 +250,7 @@ xsd:date rdf:type rdfs:Datatype .
            rdfs:label "textValue" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#time
+###  https://hekameds.github.io/meds-ontology#time
 :time rdf:type owl:DatatypeProperty ;
       rdfs:domain :Event ;
       rdfs:range xsd:dateTime ;
@@ -286,7 +286,7 @@ rdfs:Resource rdf:type owl:Class .
 <http://www.w3.org/ns/prov#Entity> rdf:type owl:Class .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#Code
+###  https://hekameds.github.io/meds-ontology#Code
 :Code rdf:type owl:Class ;
       rdfs:subClassOf [ rdf:type owl:Restriction ;
                         owl:onProperty <http://www.w3.org/ns/prov#wasDerivedFrom> ;
@@ -302,7 +302,7 @@ rdfs:Resource rdf:type owl:Class .
       rdfs:label "Code" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata
+###  https://hekameds.github.io/meds-ontology#DatasetMetadata
 :DatasetMetadata rdf:type owl:Class ;
                  rdfs:subClassOf <http://www.w3.org/ns/dcat#Dataset> ,
                                  <http://www.w3.org/ns/prov#Entity> ,
@@ -346,7 +346,7 @@ rdfs:Resource rdf:type owl:Class .
                  rdfs:label "DatasetMetadata" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#Event
+###  https://hekameds.github.io/meds-ontology#Event
 :Event rdf:type owl:Class ;
        rdfs:subClassOf [ rdf:type owl:Restriction ;
                          owl:onProperty <http://www.w3.org/ns/prov#wasDerivedFrom> ;
@@ -377,14 +377,7 @@ rdfs:Resource rdf:type owl:Class .
        rdfs:label "Event" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#ImageValue
-:ImageValue rdf:type owl:Class ;
-            rdfs:subClassOf :ValueModality ;
-            rdfs:comment "Value modality pointing to an image path/uri." ;
-            rdfs:label "ImageValue" .
-
-
-###  https://albertomarfoglia.github.io/meds-ontology#LabelSample
+###  https://hekameds.github.io/meds-ontology#LabelSample
 :LabelSample rdf:type owl:Class ;
              rdfs:subClassOf [ rdf:type owl:Restriction ;
                                owl:onProperty <http://www.w3.org/ns/prov#wasDerivedFrom> ;
@@ -418,7 +411,7 @@ rdfs:Resource rdf:type owl:Class .
              rdfs:label "LabelSample" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#Subject
+###  https://hekameds.github.io/meds-ontology#Subject
 :Subject rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
                            owl:onProperty <http://www.w3.org/ns/prov#wasDerivedFrom> ;
@@ -430,13 +423,13 @@ rdfs:Resource rdf:type owl:Class .
          rdfs:label "Subject" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#SubjectSplit
+###  https://hekameds.github.io/meds-ontology#SubjectSplit
 :SubjectSplit rdf:type owl:Class ;
               rdfs:comment "An assignment of a subject to a named split (train, tuning, held_out)." ;
               rdfs:label "SubjectSplit" .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#ValueModality
+###  https://hekameds.github.io/meds-ontology#ValueModality
 :ValueModality rdf:type owl:Class ;
                rdfs:comment "Generic holder for additional value modalities (image path, waveform id, etc.). Instances may contain modality-specific properties." ;
                rdfs:label "ValueModality" .
@@ -446,19 +439,19 @@ rdfs:Resource rdf:type owl:Class .
 #    Individuals
 #################################################################
 
-###  https://albertomarfoglia.github.io/meds-ontology#heldOutSplit
+###  https://hekameds.github.io/meds-ontology#heldOutSplit
 :heldOutSplit rdf:type owl:NamedIndividual ,
                        :SubjectSplit ;
               rdfs:label "held_out"@en .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#trainSplit
+###  https://hekameds.github.io/meds-ontology#trainSplit
 :trainSplit rdf:type owl:NamedIndividual ,
                      :SubjectSplit ;
             rdfs:label "train"@en .
 
 
-###  https://albertomarfoglia.github.io/meds-ontology#tuningSplit
+###  https://hekameds.github.io/meds-ontology#tuningSplit
 :tuningSplit rdf:type owl:NamedIndividual ,
                       :SubjectSplit ;
              rdfs:label "tuning"@en .

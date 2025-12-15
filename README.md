@@ -2,13 +2,13 @@
 
 <p align="center">
   <!-- Build & Validation -->
-  <img src="https://github.com/albertomarfoglia/meds-ontology/actions/workflows/validate.yml/badge.svg" alt="SHACL Validation"/>
+  <img src="https://github.com/hekameds.github.io/meds-ontology/actions/workflows/validate.yml/badge.svg" alt="SHACL Validation"/>
   <img src="https://img.shields.io/badge/RDF%20syntax-Valid-brightgreen" alt="RDF Syntax Valid"/>
   <img src="https://img.shields.io/badge/OWL%202-✓-blue" alt="OWL 2"/>
-  <img src="https://img.shields.io/github/v/release/albertomarfoglia/meds-ontology" alt="Latest Release"/>
+  <img src="https://img.shields.io/github/v/release/hekameds.github.io/meds-ontology" alt="Latest Release"/>
   <img src="https://img.shields.io/badge/Ontology%20version-0.1.0-blueviolet" alt="Ontology Version"/>
-  <img src="https://img.shields.io/github/license/albertomarfoglia/meds-ontology" alt="License"/>
-    <!-- <a href="https://albertomarfoglia.github.io/meds-ontology">
+  <img src="https://img.shields.io/github/license/hekameds.github.io/meds-ontology" alt="License"/>
+    <!-- <a href="https://hekameds.github.io/meds-ontology">
     <img src="https://img.shields.io/badge/docs-GitHub%20Pages-blue" alt="Documentation"/>
   </a>
   <a href="https://github.com/dgarijo/Widoco">
@@ -52,11 +52,11 @@ This ontology provides multiple ways to explore and understand its structure:
 
 - **Interactive Visualization (WebVOWL):**  
   Explore the ontology graphically, including classes, properties, and hierarchy.  
-  [Open in WebVOWL](https://service.tib.eu/webvowl/#iri=https://albertomarfoglia.github.io/meds-ontology/ontology.owl)
+  [Open in WebVOWL](https://service.tib.eu/webvowl/#iri=https://hekameds.github.io/meds-ontology/ontology.owl)
 
 - **Full Ontology Documentation (Widoco):**  
   Access comprehensive class/property descriptions, annotations, and usage examples.  
-  [View the documentation](https://albertomarfoglia.github.io/meds-ontology)
+  [View the documentation](https://hekameds.github.io/meds-ontology)
 
 - **Modeling Rationale:**  
   For a rigorous discussion of design decisions, alignment with MEDS schemas, and adherence to *Ontology Development 101*, see [`MODELING.md`](MODELING.md).  

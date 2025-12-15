@@ -3,9 +3,9 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "https://albertomarfoglia.github.io/meds-ontology#Code"
+      "@id" : "https://hekameds.github.io/meds-ontology#Code"
     }, {
-      "@id" : "https://albertomarfoglia.github.io/meds-ontology#Event"
+      "@id" : "https://hekameds.github.io/meds-ontology#Event"
     } ]
   } ]
 }, {
@@ -43,13 +43,13 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#medsVersion"
+    "@id" : "https://hekameds.github.io/meds-ontology#medsVersion"
   } ]
 }, {
   "@id" : "_:genid14",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"
+    "@id" : "https://hekameds.github.io/meds-ontology#DatasetMetadata"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom"
@@ -62,7 +62,7 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#hasCode"
+    "@id" : "https://hekameds.github.io/meds-ontology#hasCode"
   } ]
 }, {
   "@id" : "_:genid16",
@@ -72,7 +72,7 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#hasSubject"
+    "@id" : "https://hekameds.github.io/meds-ontology#hasSubject"
   } ]
 }, {
   "@id" : "_:genid17",
@@ -82,7 +82,7 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#numericValue"
+    "@id" : "https://hekameds.github.io/meds-ontology#numericValue"
   } ]
 }, {
   "@id" : "_:genid18",
@@ -92,7 +92,7 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#textValue"
+    "@id" : "https://hekameds.github.io/meds-ontology#textValue"
   } ]
 }, {
   "@id" : "_:genid19",
@@ -102,13 +102,13 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#time"
+    "@id" : "https://hekameds.github.io/meds-ontology#time"
   } ]
 }, {
   "@id" : "_:genid20",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"
+    "@id" : "https://hekameds.github.io/meds-ontology#DatasetMetadata"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom"
@@ -121,7 +121,7 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#hasSubject"
+    "@id" : "https://hekameds.github.io/meds-ontology#hasSubject"
   } ]
 }, {
   "@id" : "_:genid22",
@@ -131,7 +131,7 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#predictionTime"
+    "@id" : "https://hekameds.github.io/meds-ontology#predictionTime"
   } ]
 }, {
   "@id" : "_:genid23",
@@ -141,7 +141,7 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#booleanValue"
+    "@id" : "https://hekameds.github.io/meds-ontology#booleanValue"
   } ]
 }, {
   "@id" : "_:genid24",
@@ -151,7 +151,7 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#categoricalValue"
+    "@id" : "https://hekameds.github.io/meds-ontology#categoricalValue"
   } ]
 }, {
   "@id" : "_:genid25",
@@ -161,7 +161,7 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#floatValue"
+    "@id" : "https://hekameds.github.io/meds-ontology#floatValue"
   } ]
 }, {
   "@id" : "_:genid26",
@@ -171,13 +171,13 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#integerValue"
+    "@id" : "https://hekameds.github.io/meds-ontology#integerValue"
   } ]
 }, {
   "@id" : "_:genid27",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"
+    "@id" : "https://hekameds.github.io/meds-ontology#DatasetMetadata"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom"
@@ -210,7 +210,7 @@
   "@id" : "_:genid4",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"
+    "@id" : "https://hekameds.github.io/meds-ontology#DatasetMetadata"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom"
@@ -223,7 +223,7 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#codeString"
+    "@id" : "https://hekameds.github.io/meds-ontology#codeString"
   } ]
 }, {
   "@id" : "_:genid7",
@@ -307,7 +307,7 @@
   "@id" : "http://www.w3.org/ns/prov#wasGeneratedBy",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology",
+  "@id" : "https://hekameds.github.io/meds-ontology",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://purl.org/dc/terms#created" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#date",
@@ -326,7 +326,7 @@
     "@value" : "0.1.0"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#Code",
+  "@id" : "https://hekameds.github.io/meds-ontology#Code",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Metadata/vocabulary entry describing a event code (code string, description, parent codes, external links)."
@@ -341,11 +341,11 @@
   } ],
   "http://www.w3.org/2002/07/owl#hasKey" : [ {
     "@list" : [ {
-      "@id" : "https://albertomarfoglia.github.io/meds-ontology#codeString"
+      "@id" : "https://hekameds.github.io/meds-ontology#codeString"
     } ]
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata",
+  "@id" : "https://hekameds.github.io/meds-ontology#DatasetMetadata",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "High-level provenance and conversion metadata for a MEDS dataset. \n         dataset_name → dct:title ;\n         dataset_version → dct:hasVersion ;\n         meds_version → meds:medsVersion ;\n         created_at → dct:created ;\n         license → dct:license ;\n         location_uri/description_uri → dcat:distribution (Distribution with dcat:downloadURL / dcat:accessURL) ;\n         ETL metadata (name, version, notes) are captured via prov:wasGeneratedBy → prov:Activity (rdfs:label, dct:hasVersion, rdfs:comment);\n         column lists → meds:... repeated-literal properties."
@@ -373,7 +373,7 @@
     "@id" : "_:genid13"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#Event",
+  "@id" : "https://hekameds.github.io/meds-ontology#Event",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A single observation/row in MEDS: (subject, time?, code, value modalities...). Time is nullable for static events."
@@ -395,22 +395,10 @@
     "@id" : "_:genid19"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#LabelSample"
+    "@id" : "https://hekameds.github.io/meds-ontology#LabelSample"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#ImageValue",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Value modality pointing to an image path/uri."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "ImageValue"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#ValueModality"
-  } ]
-}, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#LabelSample",
+  "@id" : "https://hekameds.github.io/meds-ontology#LabelSample",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A prediction sample row: subject, prediction_time, and one label value (boolean/integer/float/categorical)."
@@ -434,7 +422,7 @@
     "@id" : "_:genid26"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#Subject",
+  "@id" : "https://hekameds.github.io/meds-ontology#Subject",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Primary entity for which care observations are recorded. Maps to MEDS subject_id (patient or admission-level subject)."
@@ -447,11 +435,11 @@
   } ],
   "http://www.w3.org/2002/07/owl#hasKey" : [ {
     "@list" : [ {
-      "@id" : "https://albertomarfoglia.github.io/meds-ontology#subjectId"
+      "@id" : "https://hekameds.github.io/meds-ontology#subjectId"
     } ]
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#SubjectSplit",
+  "@id" : "https://hekameds.github.io/meds-ontology#SubjectSplit",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "An assignment of a subject to a named split (train, tuning, held_out)."
@@ -460,7 +448,7 @@
     "@value" : "SubjectSplit"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#ValueModality",
+  "@id" : "https://hekameds.github.io/meds-ontology#ValueModality",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Generic holder for additional value modalities (image path, waveform id, etc.). Instances may contain modality-specific properties."
@@ -469,13 +457,13 @@
     "@value" : "ValueModality"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#additionalValueModalityColumn",
+  "@id" : "https://hekameds.github.io/meds-ontology#additionalValueModalityColumn",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Column containing additional value modality (image, waveform, etc.). OPTIONAL. One triple per column. Matches MEDS: additional_value_modality_columns."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"
+    "@id" : "https://hekameds.github.io/meds-ontology#DatasetMetadata"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "additionalValueModalityColumn"
@@ -484,28 +472,28 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#assignedSplit",
+  "@id" : "https://hekameds.github.io/meds-ontology#assignedSplit",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Assign a subject to a split (train, tuning, held_out)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#Subject"
+    "@id" : "https://hekameds.github.io/meds-ontology#Subject"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "assignedSplit"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#SubjectSplit"
+    "@id" : "https://hekameds.github.io/meds-ontology#SubjectSplit"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#booleanValue",
+  "@id" : "https://hekameds.github.io/meds-ontology#booleanValue",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Boolean label value (if applicable)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#LabelSample"
+    "@id" : "https://hekameds.github.io/meds-ontology#LabelSample"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "booleanValue"
@@ -514,13 +502,13 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#categoricalValue",
+  "@id" : "https://hekameds.github.io/meds-ontology#categoricalValue",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Categorical label encoded as a string."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#LabelSample"
+    "@id" : "https://hekameds.github.io/meds-ontology#LabelSample"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "categoricalValue"
@@ -529,13 +517,13 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#codeDescription",
+  "@id" : "https://hekameds.github.io/meds-ontology#codeDescription",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Human readable description of the code."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#Code"
+    "@id" : "https://hekameds.github.io/meds-ontology#Code"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "codeDescription"
@@ -544,13 +532,13 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#codeModifierColumn",
+  "@id" : "https://hekameds.github.io/meds-ontology#codeModifierColumn",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Column used to modify/augment code values. OPTIONAL. One triple per column. Matches MEDS: code_modifier_columns."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"
+    "@id" : "https://hekameds.github.io/meds-ontology#DatasetMetadata"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "codeModifierColumn"
@@ -559,7 +547,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#codeString",
+  "@id" : "https://hekameds.github.io/meds-ontology#codeString",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists."
@@ -571,13 +559,13 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#floatValue",
+  "@id" : "https://hekameds.github.io/meds-ontology#floatValue",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Float label value (continuous target)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#LabelSample"
+    "@id" : "https://hekameds.github.io/meds-ontology#LabelSample"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "floatValue"
@@ -586,70 +574,70 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#double"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#hasCode",
+  "@id" : "https://hekameds.github.io/meds-ontology#hasCode",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Link from a Event to a Code metadata entry. If no Code metadata file exists, codeString on Event is used."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#Event"
+    "@id" : "https://hekameds.github.io/meds-ontology#Event"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "hasCode"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#Code"
+    "@id" : "https://hekameds.github.io/meds-ontology#Code"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#hasSubject",
+  "@id" : "https://hekameds.github.io/meds-ontology#hasSubject",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Links a Event or LabelSample to its Subject (maps to subject_id)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#Event"
+    "@id" : "https://hekameds.github.io/meds-ontology#Event"
   }, {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#LabelSample"
+    "@id" : "https://hekameds.github.io/meds-ontology#LabelSample"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "hasSubject"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#Subject"
+    "@id" : "https://hekameds.github.io/meds-ontology#Subject"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#hasValueModality",
+  "@id" : "https://hekameds.github.io/meds-ontology#hasValueModality",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Attach additional value modalities (image, waveform, etc.) to a Event."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#Event"
+    "@id" : "https://hekameds.github.io/meds-ontology#Event"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "hasValueModality"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#ValueModality"
+    "@id" : "https://hekameds.github.io/meds-ontology#ValueModality"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#heldOutSplit",
+  "@id" : "https://hekameds.github.io/meds-ontology#heldOutSplit",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#SubjectSplit"
+    "@id" : "https://hekameds.github.io/meds-ontology#SubjectSplit"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "held_out"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#integerValue",
+  "@id" : "https://hekameds.github.io/meds-ontology#integerValue",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Integer label value (e.g., ordinal labels)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#LabelSample"
+    "@id" : "https://hekameds.github.io/meds-ontology#LabelSample"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "integerValue"
@@ -658,13 +646,13 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#medsVersion",
+  "@id" : "https://hekameds.github.io/meds-ontology#medsVersion",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Version of the MEDS schema used to generate the dataset. REQUIRED. Matches MEDS: meds_version."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"
+    "@id" : "https://hekameds.github.io/meds-ontology#DatasetMetadata"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "medsVersion"
@@ -673,13 +661,13 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#numericValue",
+  "@id" : "https://hekameds.github.io/meds-ontology#numericValue",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Numeric event value (optional in MEDS)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#Event"
+    "@id" : "https://hekameds.github.io/meds-ontology#Event"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "numericValue"
@@ -688,13 +676,13 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#double"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#otherExtensionColumn",
+  "@id" : "https://hekameds.github.io/meds-ontology#otherExtensionColumn",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Other dataset-specific extension column not covered elsewhere. OPTIONAL. One triple per column. Matches MEDS: other_extension_columns."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"
+    "@id" : "https://hekameds.github.io/meds-ontology#DatasetMetadata"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "otherExtensionColumn"
@@ -703,28 +691,28 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#parentCode",
+  "@id" : "https://hekameds.github.io/meds-ontology#parentCode",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Ontological/aggregation parent relations between codes (maps to CodeMetadata.parent_codes)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#Code"
+    "@id" : "https://hekameds.github.io/meds-ontology#Code"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "parentCode"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#Code"
+    "@id" : "https://hekameds.github.io/meds-ontology#Code"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#predictionTime",
+  "@id" : "https://hekameds.github.io/meds-ontology#predictionTime",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Inclusive endpoint of the data usable for predicting the label (required for LabelSample)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#LabelSample"
+    "@id" : "https://hekameds.github.io/meds-ontology#LabelSample"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "predictionTime"
@@ -733,13 +721,13 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#rawSourceIdColumn",
+  "@id" : "https://hekameds.github.io/meds-ontology#rawSourceIdColumn",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Raw source ID column before mapping to subject IDs. OPTIONAL. One triple per column. Matches MEDS: raw_source_id_columns."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"
+    "@id" : "https://hekameds.github.io/meds-ontology#DatasetMetadata"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "rawSourceIdColumn"
@@ -748,13 +736,13 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#siteIdColumn",
+  "@id" : "https://hekameds.github.io/meds-ontology#siteIdColumn",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Column representing a site identifier. OPTIONAL. One triple per column. Previously siteIdColumns."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"
+    "@id" : "https://hekameds.github.io/meds-ontology#DatasetMetadata"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "siteIdColumn"
@@ -763,25 +751,25 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#subjectId",
+  "@id" : "https://hekameds.github.io/meds-ontology#subjectId",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Unique identifier for a Subject; functional (= at most one value per Subject)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#Subject"
+    "@id" : "https://hekameds.github.io/meds-ontology#Subject"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#subjectIdColumn",
+  "@id" : "https://hekameds.github.io/meds-ontology#subjectIdColumn",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Column used as a subject identifier. REQUIRED. One triple per column. Previously subjectIdColumns."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#DatasetMetadata"
+    "@id" : "https://hekameds.github.io/meds-ontology#DatasetMetadata"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "subjectIdColumn"
@@ -790,13 +778,13 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#textValue",
+  "@id" : "https://hekameds.github.io/meds-ontology#textValue",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Text event value (optional in MEDS)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#Event"
+    "@id" : "https://hekameds.github.io/meds-ontology#Event"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "textValue"
@@ -805,13 +793,13 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#time",
+  "@id" : "https://hekameds.github.io/meds-ontology#time",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Timestamp of the event. MEDS allows null for static events; modelled as 0..1 cardinality."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#Event"
+    "@id" : "https://hekameds.github.io/meds-ontology#Event"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "time"
@@ -820,20 +808,20 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#trainSplit",
+  "@id" : "https://hekameds.github.io/meds-ontology#trainSplit",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#SubjectSplit"
+    "@id" : "https://hekameds.github.io/meds-ontology#SubjectSplit"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "train"
   } ]
 }, {
-  "@id" : "https://albertomarfoglia.github.io/meds-ontology#tuningSplit",
+  "@id" : "https://hekameds.github.io/meds-ontology#tuningSplit",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://albertomarfoglia.github.io/meds-ontology#SubjectSplit"
+    "@id" : "https://hekameds.github.io/meds-ontology#SubjectSplit"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
