@@ -88,8 +88,10 @@ jobs:
               -ontFile ./ontology/meds.owl \
               -outFolder ./docs \
               -getOntologyMetadata false \
-              -overwrite true \
-              -lang en
+              -webVowl \
+              -rewriteAll \
+              -oops \
+              -includeImportedOntologies
 
       - name: Rename index-en.html to index.html
         run: |
