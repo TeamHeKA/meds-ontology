@@ -211,9 +211,6 @@ meds:Event a owl:Class ;
     rdfs:label "Event" ;
     rdfs:comment "A single observation/row in MEDS: (subject, time?, code, value modalities...). Time is nullable for static events." ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty meds:textValue ],
-        [ a owl:Restriction ;
             owl:allValuesFrom meds:DatasetMetadata ;
             owl:onProperty prov:wasDerivedFrom ],
         [ a owl:Restriction ;
@@ -227,7 +224,10 @@ meds:Event a owl:Class ;
             owl:onProperty meds:time ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty meds:numericValue ] ;
+            owl:onProperty meds:numericValue ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty meds:textValue ] ;
     owl:disjointWith meds:LabelSample .
 
 meds:LabelSample a owl:Class ;
