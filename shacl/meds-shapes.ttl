@@ -64,16 +64,10 @@ meds:DatasetMetadataShape
     ] ;
     sh:property [
         sh:path dcat:distribution ;
-        sh:minCount 1 ;
+        sh:maxCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:class dcat:Distribution ;
-        sh:message "DatasetMetadata must have at least one dcat:distribution." ;
-    ] ;
-    sh:property [
-        sh:path meds:tableName ;
-        sh:minCount 0 ;
-        sh:datatype xsd:string ;
-        sh:message "tableName may be repeated (one triple per table)." ;
+        sh:message "DatasetMetadata may have at maximum one dcat:distribution." ;
     ] ;
     sh:property [
         sh:path meds:rawSourceIdColumn ;
