@@ -7,17 +7,7 @@
   <img src="https://img.shields.io/badge/OWL%202-✓-blue" alt="OWL 2"/>
   <img src="https://img.shields.io/github/v/release/TeamHeKA/meds-ontology" alt="Latest Release"/>
   <img src="https://img.shields.io/github/license/TeamHeKA/meds-ontology" alt="License"/>
-    <!-- <a href="https://teamheka.github.io/meds-ontology">
-    <img src="https://img.shields.io/badge/docs-GitHub%20Pages-blue" alt="Documentation"/>
-  </a>
-  <a href="https://github.com/dgarijo/Widoco">
-    <img src="https://img.shields.io/badge/docs-Widoco%20generated-9cf" alt="Widoco"/>
-  </a> -->
-
-  <!-- DOI placeholder (update when minted)
-  <a href="https://zenodo.org/">
-    <img src="https://img.shields.io/badge/DOI-Zenodo-grey" alt="DOI"/>
-  </a> -->
+  <a href="https://doi.org/10.5281/zenodo.17953577"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17953577.svg" alt="DOI"></a>
 </p>
 
 This repository contains an OWL ontology and SHACL shapes that formally encode the **Medical Event Data Standard (MEDS)** conceptual data model.  
