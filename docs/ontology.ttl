@@ -24,7 +24,7 @@ and validate data according to the MEDS conceptual model,
 enabling consistent data representation and quality control
 across implementations."""@en ;
                                             <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
-                                            <http://purl.org/dc/terms/modified> "2025-12-15"^^xsd:date ;
+                                            <http://purl.org/dc/terms/modified> "2025-12-16"^^xsd:date ;
                                             <http://purl.org/dc/terms/publisher> "HeKa Team"@en ;
                                             <http://purl.org/dc/terms/title> "MEDS Ontology"@en ;
                                             rdfs:label "MEDS Ontology"@en ;

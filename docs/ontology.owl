@@ -25,7 +25,7 @@ and validate data according to the MEDS conceptual model,
 enabling consistent data representation and quality control
 across implementations.</terms:description>
         <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-15</terms:modified>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-16</terms:modified>
         <terms:publisher xml:lang="en">HeKa Team</terms:publisher>
         <terms:title xml:lang="en">MEDS Ontology</terms:title>
         <rdfs:label xml:lang="en">MEDS Ontology</rdfs:label>

@@ -26,7 +26,7 @@ and validate data according to the MEDS conceptual model,
 enabling consistent data representation and quality control
 across implementations."""@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2025-12-15"^^xsd:date ;
+    dcterms:modified "2025-12-16"^^xsd:date ;
     dcterms:publisher "HeKa Team"@en ;
     dcterms:title "MEDS Ontology"@en ;
     owl:versionInfo "1.0.0" .
@@ -212,9 +212,6 @@ meds:Event a owl:Class ;
     rdfs:comment "A single observation/row in MEDS: (subject, time?, code, value modalities...). Time is nullable for static events." ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty meds:time ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty meds:numericValue ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -227,7 +224,10 @@ meds:Event a owl:Class ;
             owl:onProperty meds:hasSubject ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty meds:hasCode ] ;
+            owl:onProperty meds:hasCode ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty meds:time ] ;
     owl:disjointWith meds:LabelSample .
 
 meds:LabelSample a owl:Class ;
