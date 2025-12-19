@@ -71,5 +71,17 @@ pyshacl -s shacl/meds-shapes.ttl -i examples/examples.ttl -f ttl
 
 ## Citation
 
-If you use this ontology, please cite the MEDS project and this repository (citation block TBD).
+If you use this ontology, please cite the MEDS project and this repository.
+```bibtex
+@software{alberto_marfoglia_2025_17953577,
+  author       = {Alberto Marfoglia},
+  title        = {TeamHeKA/meds-ontology: v1.0.1},
+  month        = dec,
+  year         = 2025,
+  publisher    = {Zenodo},
+  version      = {v1.0.1},
+  doi          = {10.5281/zenodo.17953577},
+  url          = {https://doi.org/10.5281/zenodo.17953577},
+}
+```
 
