@@ -80,13 +80,10 @@
     "id" : "9",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "21",
+    "id" : "23",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "20",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "24",
+    "id" : "25",
     "type" : "owl:Class"
   }, {
     "id" : "3",
@@ -95,22 +92,25 @@
     "id" : "6",
     "type" : "owl:Class"
   }, {
-    "id" : "36",
+    "id" : "31",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "33",
     "type" : "owl:Class"
   }, {
-    "id" : "45",
+    "id" : "27",
     "type" : "owl:Thing"
   }, {
-    "id" : "46",
+    "id" : "47",
     "type" : "rdfs:Datatype"
+  }, {
+    "id" : "49",
+    "type" : "owl:Thing"
   }, {
     "id" : "12",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "4",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "49",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "50",
@@ -122,14 +122,14 @@
     "id" : "52",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "54",
+    "id" : "53",
     "type" : "rdfs:Datatype"
-  }, {
-    "id" : "26",
-    "type" : "owl:Class"
   }, {
     "id" : "55",
     "type" : "rdfs:Datatype"
+  }, {
+    "id" : "44",
+    "type" : "owl:Class"
   }, {
     "id" : "56",
     "type" : "rdfs:Datatype"
@@ -137,25 +137,25 @@
     "id" : "57",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "44",
+    "id" : "58",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "58",
+    "id" : "46",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "59",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "27",
+    "id" : "60",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "28",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "20",
+    "id" : "22",
     "type" : "owl:Class"
   }, {
-    "id" : "60",
+    "id" : "61",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "17",
@@ -164,13 +164,13 @@
     "id" : "14",
     "type" : "owl:Class"
   }, {
-    "id" : "36",
+    "id" : "20",
     "type" : "owl:Class"
   }, {
     "id" : "7",
     "type" : "owl:Class"
   }, {
-    "id" : "28",
+    "id" : "29",
     "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
@@ -209,7 +209,7 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "21",
+    "id" : "23",
     "label" : {
       "IRI-based" : "string"
     }
@@ -224,7 +224,7 @@
     "comment" : {
       "undefined" : "Generic holder for additional value modalities (image path, waveform id, etc.). Instances may contain modality-specific properties."
     },
-    "id" : "24"
+    "id" : "25"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#DatasetMetadata",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
@@ -237,7 +237,7 @@
       "undefined" : "High-level provenance and conversion metadata for a MEDS dataset."
     },
     "id" : "3",
-    "superClasses" : [ "8", "28" ]
+    "superClasses" : [ "8", "29" ]
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#Subject",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
@@ -251,6 +251,13 @@
     },
     "id" : "6"
   }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "31",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
     "iri" : "http://www.w3.org/ns/dcat#Distribution",
     "baseIri" : "http://www.w3.org/ns/dcat",
     "instances" : 0,
@@ -258,20 +265,27 @@
       "IRI-based" : "Distribution"
     },
     "attributes" : [ "external" ],
-    "id" : "36"
+    "id" : "33"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
-    "id" : "45",
+    "id" : "27",
     "label" : {
       "undefined" : "Thing"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "46",
+    "id" : "47",
     "label" : {
       "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "49",
+    "label" : {
+      "undefined" : "Thing"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
@@ -290,13 +304,6 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "49",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
     "id" : "50",
     "label" : {
       "IRI-based" : "string"
@@ -309,16 +316,23 @@
       "IRI-based" : "string"
     }
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
     "id" : "52",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "53",
     "label" : {
       "IRI-based" : "dateTime"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "54",
+    "id" : "55",
     "label" : {
       "IRI-based" : "string"
     }
@@ -333,20 +347,13 @@
     "comment" : {
       "undefined" : "Metadata/vocabulary entry describing a event code (code string, description, parent codes, external links)."
     },
-    "id" : "26"
+    "id" : "44"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#integer",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "55",
-    "label" : {
-      "IRI-based" : "integer"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#double",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
     "id" : "56",
     "label" : {
-      "IRI-based" : "double"
+      "IRI-based" : "integer"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#double",
@@ -356,16 +363,16 @@
       "IRI-based" : "double"
     }
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "iri" : "http://www.w3.org/2001/XMLSchema#double",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "44",
+    "id" : "58",
     "label" : {
-      "IRI-based" : "string"
+      "IRI-based" : "double"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "58",
+    "id" : "46",
     "label" : {
       "IRI-based" : "string"
     }
@@ -379,7 +386,14 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "27",
+    "id" : "60",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "28",
     "label" : {
       "IRI-based" : "string"
     }
@@ -391,11 +405,11 @@
       "IRI-based" : "Resource"
     },
     "attributes" : [ "external" ],
-    "id" : "20"
+    "id" : "22"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "60",
+    "id" : "61",
     "label" : {
       "IRI-based" : "string"
     }
@@ -431,7 +445,7 @@
       "IRI-based" : "LicenseDocument"
     },
     "attributes" : [ "external" ],
-    "id" : "36"
+    "id" : "20"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#SubjectSplit",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
@@ -475,7 +489,7 @@
     },
     "subClasses" : [ "3" ],
     "attributes" : [ "external" ],
-    "id" : "28"
+    "id" : "29"
   } ],
   "property" : [ {
     "id" : "2",
@@ -505,28 +519,28 @@
     "id" : "19",
     "type" : "owl:allValuesFrom"
   }, {
-    "id" : "22",
+    "id" : "21",
     "type" : "owl:allValuesFrom"
   }, {
-    "id" : "25",
+    "id" : "24",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "26",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "29",
-    "type" : "owl:allValuesFrom"
-  }, {
-    "id" : "31",
+    "id" : "30",
     "type" : "owl:allValuesFrom"
   }, {
     "id" : "32",
     "type" : "owl:allValuesFrom"
   }, {
-    "id" : "33",
-    "type" : "owl:disjointWith"
-  }, {
     "id" : "34",
     "type" : "owl:disjointWith"
   }, {
     "id" : "35",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "36",
     "type" : "owl:allValuesFrom"
   }, {
     "id" : "37",
@@ -545,22 +559,19 @@
     "type" : "owl:objectProperty"
   }, {
     "id" : "42",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "43",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
-    "id" : "47",
-    "type" : "rdfs:SubClassOf"
+    "id" : "45",
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "48",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "53",
+    "id" : "54",
     "type" : "owl:objectProperty"
-  }, {
-    "id" : "61",
-    "type" : "owl:datatypeProperty"
   }, {
     "id" : "62",
     "type" : "owl:datatypeProperty"
@@ -587,13 +598,13 @@
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "70",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "71",
     "type" : "owl:datatypeProperty"
   }, {
+    "id" : "71",
+    "type" : "owl:objectProperty"
+  }, {
     "id" : "72",
-    "type" : "owl:disjointWith"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "73",
     "type" : "owl:disjointWith"
@@ -617,13 +628,13 @@
     "type" : "owl:disjointWith"
   }, {
     "id" : "80",
-    "type" : "owl:allValuesFrom"
-  }, {
-    "id" : "81",
     "type" : "owl:disjointWith"
   }, {
+    "id" : "81",
+    "type" : "owl:allValuesFrom"
+  }, {
     "id" : "82",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "83",
     "type" : "owl:datatypeProperty"
@@ -632,6 +643,9 @@
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "85",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "86",
     "type" : "owl:datatypeProperty"
   } ],
   "propertyAttribute" : [ {
@@ -670,7 +684,7 @@
       "IRI-based" : "wasDerivedFrom"
     },
     "domain" : "6",
-    "attributes" : [ "object", "external", "allValues" ],
+    "attributes" : [ "external", "allValues", "object" ],
     "id" : "10"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#subjectId",
@@ -693,7 +707,7 @@
       "IRI-based" : "wasDerivedFrom"
     },
     "domain" : "14",
-    "attributes" : [ "object", "allValues", "external" ],
+    "attributes" : [ "external", "allValues", "object" ],
     "id" : "13"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#hasSubject",
@@ -704,7 +718,10 @@
       "undefined" : "hasSubject"
     },
     "domain" : "14",
-    "attributes" : [ "object", "external", "allValues" ],
+    "comment" : {
+      "undefined" : "Links a Event or LabelSample to its Subject (maps to subject_id)."
+    },
+    "attributes" : [ "functional", "allValues", "object" ],
     "id" : "15"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#hasSubject",
@@ -718,7 +735,7 @@
     "comment" : {
       "undefined" : "Links a Event or LabelSample to its Subject (maps to subject_id)."
     },
-    "attributes" : [ "functional", "object", "allValues" ],
+    "attributes" : [ "functional", "allValues", "object" ],
     "id" : "16"
   }, {
     "iri" : "http://www.w3.org/ns/prov#wasDerivedFrom",
@@ -728,18 +745,53 @@
       "IRI-based" : "wasDerivedFrom"
     },
     "domain" : "17",
-    "attributes" : [ "object", "external", "allValues" ],
+    "attributes" : [ "external", "allValues", "object" ],
     "id" : "18"
+  }, {
+    "iri" : "http://purl.org/dc/terms/license",
+    "baseIri" : "http://purl.org/dc/terms",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "license"
+    },
+    "domain" : "3",
+    "attributes" : [ "external", "allValues", "object" ],
+    "id" : "19"
   }, {
     "iri" : "http://purl.org/dc/terms/hasVersion",
     "baseIri" : "http://purl.org/dc/terms",
-    "range" : "20",
+    "range" : "22",
     "label" : {
       "IRI-based" : "hasVersion"
     },
     "domain" : "3",
-    "attributes" : [ "object", "external", "allValues" ],
-    "id" : "19"
+    "attributes" : [ "external", "allValues", "object" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://purl.org/dc/terms/title",
+    "baseIri" : "http://purl.org/dc/terms",
+    "range" : "23",
+    "label" : {
+      "IRI-based" : "title"
+    },
+    "domain" : "3",
+    "attributes" : [ "datatype", "external", "allValues" ],
+    "id" : "24"
+  }, {
+    "iri" : "https://teamheka.github.io/meds-ontology#codeString",
+    "baseIri" : "https://teamheka.github.io/meds-ontology",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "codeString",
+      "undefined" : "codeString"
+    },
+    "cardinality" : "1",
+    "domain" : "27",
+    "comment" : {
+      "undefined" : "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "26"
   }, {
     "iri" : "http://www.w3.org/ns/prov#wasGeneratedBy",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -748,127 +800,62 @@
       "IRI-based" : "wasGeneratedBy"
     },
     "domain" : "3",
-    "attributes" : [ "object", "external", "allValues" ],
-    "id" : "22"
+    "attributes" : [ "external", "allValues", "object" ],
+    "id" : "30"
   }, {
     "iri" : "http://www.w3.org/ns/dcat#distribution",
     "baseIri" : "http://www.w3.org/ns/dcat",
-    "range" : "24",
+    "range" : "33",
     "label" : {
       "IRI-based" : "distribution"
     },
     "domain" : "3",
-    "attributes" : [ "object", "external", "allValues" ],
-    "id" : "23"
-  }, {
-    "iri" : "https://teamheka.github.io/meds-ontology#codeString",
-    "baseIri" : "https://teamheka.github.io/meds-ontology",
-    "range" : "27",
-    "label" : {
-      "IRI-based" : "codeString",
-      "undefined" : "codeString"
-    },
-    "cardinality" : "1",
-    "domain" : "26",
-    "comment" : {
-      "undefined" : "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "25"
-  }, {
-    "iri" : "http://purl.org/dc/terms/license",
-    "baseIri" : "http://purl.org/dc/terms",
-    "range" : "30",
-    "label" : {
-      "IRI-based" : "license"
-    },
-    "domain" : "3",
-    "attributes" : [ "datatype", "external", "allValues" ],
-    "id" : "31"
-  }, {
-    "iri" : "http://purl.org/dc/terms/created",
-    "baseIri" : "http://purl.org/dc/terms",
-    "range" : "21",
-    "label" : {
-      "IRI-based" : "created"
-    },
-    "domain" : "3",
-    "attributes" : [ "datatype", "external", "allValues" ],
+    "attributes" : [ "external", "allValues", "object" ],
     "id" : "32"
   }, {
     "range" : "25",
     "domain" : "6",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "33"
+    "id" : "34"
   }, {
     "range" : "7",
     "domain" : "6",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "34"
-  }, {
-    "iri" : "http://purl.org/dc/terms/license",
-    "baseIri" : "http://purl.org/dc/terms",
-    "range" : "36",
-    "label" : {
-      "IRI-based" : "license"
-    },
-    "domain" : "3",
-    "attributes" : [ "object", "external", "allValues" ],
     "id" : "35"
   }, {
     "iri" : "http://purl.org/dc/terms/created",
     "baseIri" : "http://purl.org/dc/terms",
-    "range" : "21",
+    "range" : "31",
     "label" : {
       "IRI-based" : "created"
     },
     "domain" : "3",
-    "attributes" : [ "allValues", "external", "datatype" ],
-    "id" : "32"
+    "attributes" : [ "datatype", "external", "allValues" ],
+    "id" : "36"
   }, {
-    "range" : "24",
-    "domain" : "6",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "33"
-  }, {
-    "range" : "7",
-    "domain" : "6",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "34"
-  }, {
-    "iri" : "http://www.w3.org/ns/dcat#distribution",
-    "baseIri" : "http://www.w3.org/ns/dcat",
-    "range" : "36",
-    "label" : {
-      "IRI-based" : "distribution"
-    },
-    "domain" : "3",
-    "attributes" : [ "object", "allValues", "external" ],
-    "id" : "35"
-  }, {
-    "range" : "24",
+    "range" : "25",
     "domain" : "7",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "37"
   }, {
     "range" : "6",
     "domain" : "17",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "38"
   }, {
-    "range" : "24",
+    "range" : "25",
     "domain" : "17",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "39"
   }, {
     "range" : "7",
     "domain" : "17",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "40"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#hasValueModality",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
-    "range" : "24",
+    "range" : "25",
     "label" : {
       "IRI-based" : "hasValueModality",
       "undefined" : "hasValueModality"
@@ -880,23 +867,28 @@
     "attributes" : [ "object" ],
     "id" : "41"
   }, {
+    "range" : "29",
+    "domain" : "3",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "42"
+  }, {
     "iri" : "https://teamheka.github.io/meds-ontology#parentCode",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
-    "range" : "26",
+    "range" : "44",
     "label" : {
       "IRI-based" : "parentCode",
       "undefined" : "parentCode"
     },
-    "domain" : "26",
+    "domain" : "44",
     "comment" : {
       "undefined" : "Ontological/aggregation parent relations between codes (maps to CodeMetadata.parent_codes)."
     },
     "attributes" : [ "object" ],
-    "id" : "42"
+    "id" : "43"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#medsVersion",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
-    "range" : "44",
+    "range" : "46",
     "label" : {
       "IRI-based" : "medsVersion",
       "undefined" : "medsVersion"
@@ -907,21 +899,16 @@
       "undefined" : "Version of the MEDS schema used to generate the dataset. REQUIRED. Matches MEDS: meds_version."
     },
     "attributes" : [ "datatype" ],
-    "id" : "43"
-  }, {
-    "range" : "28",
-    "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "47"
+    "id" : "45"
   }, {
     "range" : "8",
     "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "48"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#hasCode",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
-    "range" : "26",
+    "range" : "44",
     "label" : {
       "IRI-based" : "hasCode",
       "undefined" : "hasCode"
@@ -931,11 +918,11 @@
       "undefined" : "Link from a Event to a Code metadata entry. If no Code metadata file exists, codeString on Event is used."
     },
     "attributes" : [ "object" ],
-    "id" : "53"
+    "id" : "54"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#otherExtensionColumn",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
-    "range" : "54",
+    "range" : "55",
     "label" : {
       "IRI-based" : "otherExtensionColumn",
       "undefined" : "otherExtensionColumn"
@@ -945,7 +932,7 @@
       "undefined" : "Other dataset-specific extension column not covered elsewhere. OPTIONAL. One triple per column. Matches MEDS: other_extension_columns."
     },
     "attributes" : [ "datatype" ],
-    "id" : "61"
+    "id" : "62"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#booleanValue",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
@@ -960,11 +947,11 @@
       "undefined" : "Boolean label value (if applicable)."
     },
     "attributes" : [ "datatype" ],
-    "id" : "62"
+    "id" : "63"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#time",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
-    "range" : "46",
+    "range" : "47",
     "label" : {
       "IRI-based" : "time",
       "undefined" : "time"
@@ -975,11 +962,11 @@
       "undefined" : "Timestamp of the event. MEDS allows null for static events; modelled as 0..1 cardinality."
     },
     "attributes" : [ "datatype" ],
-    "id" : "63"
+    "id" : "64"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#textValue",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
-    "range" : "49",
+    "range" : "50",
     "label" : {
       "IRI-based" : "textValue",
       "undefined" : "textValue"
@@ -990,11 +977,11 @@
       "undefined" : "Text event value (optional in MEDS)."
     },
     "attributes" : [ "datatype" ],
-    "id" : "64"
+    "id" : "65"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#categoricalValue",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
-    "range" : "59",
+    "range" : "60",
     "label" : {
       "IRI-based" : "categoricalValue",
       "undefined" : "categoricalValue"
@@ -1005,11 +992,11 @@
       "undefined" : "Categorical label encoded as a string."
     },
     "attributes" : [ "datatype" ],
-    "id" : "65"
+    "id" : "66"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#integerValue",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
-    "range" : "55",
+    "range" : "56",
     "label" : {
       "IRI-based" : "integerValue",
       "undefined" : "integerValue"
@@ -1020,11 +1007,11 @@
       "undefined" : "Integer label value (e.g., ordinal labels)."
     },
     "attributes" : [ "datatype" ],
-    "id" : "66"
+    "id" : "67"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#floatValue",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
-    "range" : "56",
+    "range" : "57",
     "label" : {
       "IRI-based" : "floatValue",
       "undefined" : "floatValue"
@@ -1035,11 +1022,11 @@
       "undefined" : "Float label value (continuous target)."
     },
     "attributes" : [ "datatype" ],
-    "id" : "67"
+    "id" : "68"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#numericValue",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
-    "range" : "57",
+    "range" : "58",
     "label" : {
       "IRI-based" : "numericValue",
       "undefined" : "numericValue"
@@ -1050,11 +1037,11 @@
       "undefined" : "Numeric event value (optional in MEDS)."
     },
     "attributes" : [ "datatype" ],
-    "id" : "68"
+    "id" : "69"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#codeModifierColumn",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
-    "range" : "60",
+    "range" : "61",
     "label" : {
       "IRI-based" : "codeModifierColumn",
       "undefined" : "codeModifierColumn"
@@ -1064,7 +1051,7 @@
       "undefined" : "Column used to modify/augment code values. OPTIONAL. One triple per column. Matches MEDS: code_modifier_columns."
     },
     "attributes" : [ "datatype" ],
-    "id" : "69"
+    "id" : "70"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#hasSubject",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
@@ -1073,16 +1060,16 @@
       "IRI-based" : "hasSubject",
       "undefined" : "hasSubject"
     },
-    "domain" : "45",
+    "domain" : "49",
     "comment" : {
       "undefined" : "Links a Event or LabelSample to its Subject (maps to subject_id)."
     },
-    "attributes" : [ "object", "functional" ],
-    "id" : "70"
+    "attributes" : [ "functional", "object" ],
+    "id" : "71"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#predictionTime",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
-    "range" : "52",
+    "range" : "53",
     "label" : {
       "IRI-based" : "predictionTime",
       "undefined" : "predictionTime"
@@ -1093,47 +1080,47 @@
       "undefined" : "Inclusive endpoint of the data usable for predicting the label (required for LabelSample)."
     },
     "attributes" : [ "datatype" ],
-    "id" : "71"
-  }, {
-    "range" : "17",
-    "domain" : "26",
-    "attributes" : [ "object", "anonymous" ],
     "id" : "72"
   }, {
-    "range" : "6",
-    "domain" : "26",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "17",
+    "domain" : "44",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "73"
   }, {
-    "range" : "7",
-    "domain" : "26",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "6",
+    "domain" : "44",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "74"
   }, {
-    "range" : "24",
-    "domain" : "26",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "7",
+    "domain" : "44",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "75"
+  }, {
+    "range" : "25",
+    "domain" : "44",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "76"
   }, {
     "range" : "17",
     "domain" : "14",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "76"
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "77"
   }, {
     "range" : "6",
     "domain" : "14",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "77"
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "78"
   }, {
     "range" : "7",
     "domain" : "14",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "78"
-  }, {
-    "range" : "24",
-    "domain" : "14",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "79"
+  }, {
+    "range" : "25",
+    "domain" : "14",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "80"
   }, {
     "iri" : "http://www.w3.org/ns/prov#wasDerivedFrom",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -1142,17 +1129,17 @@
       "IRI-based" : "wasDerivedFrom"
     },
     "domain" : "44",
-    "attributes" : [ "object", "external", "allValues" ],
+    "attributes" : [ "external", "allValues", "object" ],
     "id" : "81"
   }, {
     "range" : "14",
-    "domain" : "26",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "81"
+    "domain" : "44",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "82"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#rawSourceIdColumn",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
-    "range" : "51",
+    "range" : "52",
     "label" : {
       "IRI-based" : "rawSourceIdColumn",
       "undefined" : "rawSourceIdColumn"
@@ -1162,21 +1149,21 @@
       "undefined" : "Raw source ID column before mapping to subject IDs. OPTIONAL. One triple per column. Matches MEDS: raw_source_id_columns."
     },
     "attributes" : [ "datatype" ],
-    "id" : "82"
+    "id" : "83"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#codeDescription",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
-    "range" : "58",
+    "range" : "59",
     "label" : {
       "IRI-based" : "codeDescription",
       "undefined" : "codeDescription"
     },
-    "domain" : "26",
+    "domain" : "44",
     "comment" : {
       "undefined" : "Human readable description of the code."
     },
     "attributes" : [ "datatype" ],
-    "id" : "83"
+    "id" : "84"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#additionalValueModalityColumn",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
@@ -1190,11 +1177,11 @@
       "undefined" : "Column containing additional value modality (image, waveform, etc.). OPTIONAL. One triple per column. Matches MEDS: additional_value_modality_columns."
     },
     "attributes" : [ "datatype" ],
-    "id" : "84"
+    "id" : "85"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#subjectIdColumn",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
-    "range" : "50",
+    "range" : "51",
     "label" : {
       "IRI-based" : "subjectIdColumn",
       "undefined" : "subjectIdColumn"
@@ -1204,6 +1191,6 @@
       "undefined" : "Column used as a subject identifier. REQUIRED. One triple per column. Previously subjectIdColumns."
     },
     "attributes" : [ "datatype" ],
-    "id" : "85"
+    "id" : "86"
   } ]
 }

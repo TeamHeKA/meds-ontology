@@ -177,7 +177,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://teamheka.github.io/meds-ontology#codeString
 :codeString rdf:type owl:DatatypeProperty ;
-            rdfs:domain :Code ;
             rdfs:range xsd:string ;
             rdfs:comment "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists." ;
             rdfs:label "codeString" .

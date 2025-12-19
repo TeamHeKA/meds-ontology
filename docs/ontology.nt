@@ -154,7 +154,6 @@
 # 
 # https://teamheka.github.io/meds-ontology#codeString
 <https://teamheka.github.io/meds-ontology#codeString> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://teamheka.github.io/meds-ontology#codeString> <http://www.w3.org/2000/01/rdf-schema#domain> <https://teamheka.github.io/meds-ontology#Code> .
 <https://teamheka.github.io/meds-ontology#codeString> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://teamheka.github.io/meds-ontology#codeString> <http://www.w3.org/2000/01/rdf-schema#comment> "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists." .
 <https://teamheka.github.io/meds-ontology#codeString> <http://www.w3.org/2000/01/rdf-schema#label> "codeString" .
