@@ -210,8 +210,8 @@ meds:ValueModality a owl:Class ;
 
 meds:codeString a owl:DatatypeProperty ;
     rdfs:label "codeString" ;
-    rdfs:domain meds:Code ;
     rdfs:comment "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists." ;
+    rdfs:domain meds:Code ;
     rdfs:range xsd:string .
 
 meds:hasSubject a owl:FunctionalProperty,
@@ -225,17 +225,6 @@ prov:wasDerivedFrom a owl:ObjectProperty .
 meds:SubjectSplit a owl:Class ;
     rdfs:label "SubjectSplit" ;
     rdfs:comment "An assignment of a subject to a named split (train, tuning, held_out)." .
-
-meds:Code a owl:Class ;
-    rdfs:label "Code" ;
-    rdfs:comment "Metadata/vocabulary entry describing a event code (code string, description, parent codes, external links)." ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom meds:DatasetMetadata ;
-            owl:onProperty prov:wasDerivedFrom ],
-        [ a owl:Restriction ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty meds:codeString ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
 
 meds:Event a owl:Class ;
     rdfs:label "Event" ;
@@ -275,6 +264,17 @@ meds:Subject a owl:Class ;
             owl:allValuesFrom meds:DatasetMetadata ;
             owl:onProperty prov:wasDerivedFrom ] ;
     owl:hasKey ( meds:subjectId ) .
+
+meds:Code a owl:Class ;
+    rdfs:label "Code" ;
+    rdfs:comment "Metadata/vocabulary entry describing a event code (code string, description, parent codes, external links)." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom meds:DatasetMetadata ;
+            owl:onProperty prov:wasDerivedFrom ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty meds:codeString ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
 
 meds:LabelSample a owl:Class ;
     rdfs:label "LabelSample" ;
