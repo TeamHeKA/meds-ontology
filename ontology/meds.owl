@@ -210,6 +210,7 @@ meds:ValueModality a owl:Class ;
 
 meds:codeString a owl:DatatypeProperty ;
     rdfs:label "codeString" ;
+    rdfs:domain meds:Code ;
     rdfs:comment "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists." ;
     rdfs:range xsd:string .
 
