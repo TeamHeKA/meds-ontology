@@ -203,11 +203,6 @@ meds:time a owl:DatatypeProperty ;
     rdfs:domain meds:Event ;
     rdfs:range xsd:dateTime .
 
-meds:codeString a owl:DatatypeProperty;
-    rdfs:label "codeString" ;
-    rdfs:comment "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists." ;
-    rdfs:range xsd:string .
-
 meds:ValueModality a owl:Class ;
     rdfs:label "ValueModality" ;
     rdfs:comment "Generic holder for additional value modalities (image path, waveform id, etc.). Instances may contain modality-specific properties." .
@@ -217,6 +212,11 @@ meds:hasSubject a owl:FunctionalProperty,
     rdfs:label "hasSubject" ;
     rdfs:comment "Links a Event or LabelSample to its Subject (maps to subject_id)." ;
     rdfs:range meds:Subject .
+
+meds:codeString a owl:DatatypeProperty ;
+    rdfs:label "codeString" ;
+    rdfs:comment "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists." ;
+    rdfs:range xsd:string .
 
 prov:wasDerivedFrom a owl:ObjectProperty .
 
@@ -241,6 +241,10 @@ meds:Event a owl:Class ;
     rdfs:comment "A single observation/row in MEDS: (subject, time?, code, value modalities...). Time is nullable for static events." ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty meds:textValue ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onDataRange xsd:dateTime ;
             owl:onProperty meds:time ],
         [ a owl:Restriction ;
@@ -260,11 +264,7 @@ meds:Event a owl:Class ;
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onDataRange xsd:double ;
-            owl:onProperty meds:numericValue ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty meds:textValue ] ;
+            owl:onProperty meds:numericValue ] ;
     owl:disjointWith meds:LabelSample .
 
 meds:Subject a owl:Class ;
