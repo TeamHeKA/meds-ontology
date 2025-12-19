@@ -34,16 +34,16 @@
         "value" : "2025-12-04",
         "type" : "label"
       } ],
-      "publisher" : [ {
-        "identifier" : "publisher",
-        "language" : "en",
-        "value" : "HeKa Team",
-        "type" : "label"
-      } ],
       "modified" : [ {
         "identifier" : "modified",
         "language" : "undefined",
         "value" : "2025-12-19",
+        "type" : "label"
+      } ],
+      "publisher" : [ {
+        "identifier" : "publisher",
+        "language" : "en",
+        "value" : "HeKa Team",
         "type" : "label"
       } ],
       "abstract" : [ {
@@ -83,7 +83,7 @@
     "id" : "10",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "19",
+    "id" : "22",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "24",
@@ -95,10 +95,10 @@
     "id" : "6",
     "type" : "owl:Class"
   }, {
-    "id" : "30",
+    "id" : "29",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "36",
+    "id" : "32",
     "type" : "owl:Class"
   }, {
     "id" : "46",
@@ -152,7 +152,7 @@
     "id" : "60",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "23",
+    "id" : "21",
     "type" : "owl:Class"
   }, {
     "id" : "27",
@@ -164,7 +164,7 @@
     "id" : "16",
     "type" : "owl:Class"
   }, {
-    "id" : "32",
+    "id" : "36",
     "type" : "owl:Class"
   }, {
     "id" : "7",
@@ -216,7 +216,7 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "19",
+    "id" : "22",
     "label" : {
       "IRI-based" : "string"
     }
@@ -260,7 +260,7 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "30",
+    "id" : "29",
     "label" : {
       "IRI-based" : "string"
     }
@@ -272,7 +272,7 @@
       "IRI-based" : "Distribution"
     },
     "attributes" : [ "external" ],
-    "id" : "36"
+    "id" : "32"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
@@ -405,7 +405,7 @@
       "IRI-based" : "Resource"
     },
     "attributes" : [ "external" ],
-    "id" : "23"
+    "id" : "21"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
@@ -445,7 +445,7 @@
       "IRI-based" : "LicenseDocument"
     },
     "attributes" : [ "external" ],
-    "id" : "32"
+    "id" : "36"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#SubjectSplit",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
@@ -513,19 +513,19 @@
     "id" : "18",
     "type" : "owl:allValuesFrom"
   }, {
+    "id" : "19",
+    "type" : "owl:allValuesFrom"
+  }, {
     "id" : "20",
     "type" : "owl:allValuesFrom"
   }, {
-    "id" : "21",
-    "type" : "owl:allValuesFrom"
-  }, {
-    "id" : "22",
+    "id" : "23",
     "type" : "owl:allValuesFrom"
   }, {
     "id" : "25",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "29",
+    "id" : "30",
     "type" : "owl:allValuesFrom"
   }, {
     "id" : "31",
@@ -684,8 +684,38 @@
     "comment" : {
       "undefined" : "Unique identifier for a Subject; functional (= at most one value per Subject)."
     },
-    "attributes" : [ "key", "datatype", "functional" ],
+    "attributes" : [ "functional", "key", "datatype" ],
     "id" : "11"
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#wasDerivedFrom",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "wasDerivedFrom"
+    },
+    "domain" : "14",
+    "attributes" : [ "allValues", "object", "external" ],
+    "id" : "13"
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#wasDerivedFrom",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "wasDerivedFrom"
+    },
+    "domain" : "16",
+    "attributes" : [ "allValues", "object", "external" ],
+    "id" : "15"
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#wasDerivedFrom",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "wasDerivedFrom"
+    },
+    "domain" : "6",
+    "attributes" : [ "allValues", "object", "external" ],
+    "id" : "17"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#hasSubject",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
@@ -699,47 +729,7 @@
       "undefined" : "Links a Event or LabelSample to its Subject (maps to subject_id)."
     },
     "attributes" : [ "allValues", "functional", "object" ],
-    "id" : "13"
-  }, {
-    "iri" : "http://www.w3.org/ns/prov#wasDerivedFrom",
-    "baseIri" : "http://www.w3.org/ns/prov",
-    "range" : "3",
-    "label" : {
-      "IRI-based" : "wasDerivedFrom"
-    },
-    "domain" : "16",
-    "attributes" : [ "external", "allValues", "object" ],
-    "id" : "15"
-  }, {
-    "iri" : "http://www.w3.org/ns/prov#wasDerivedFrom",
-    "baseIri" : "http://www.w3.org/ns/prov",
-    "range" : "3",
-    "label" : {
-      "IRI-based" : "wasDerivedFrom"
-    },
-    "domain" : "6",
-    "attributes" : [ "external", "allValues", "object" ],
-    "id" : "17"
-  }, {
-    "iri" : "http://www.w3.org/ns/prov#wasDerivedFrom",
-    "baseIri" : "http://www.w3.org/ns/prov",
-    "range" : "3",
-    "label" : {
-      "IRI-based" : "wasDerivedFrom"
-    },
-    "domain" : "14",
-    "attributes" : [ "external", "allValues", "object" ],
     "id" : "18"
-  }, {
-    "iri" : "http://purl.org/dc/terms/title",
-    "baseIri" : "http://purl.org/dc/terms",
-    "range" : "19",
-    "label" : {
-      "IRI-based" : "title"
-    },
-    "domain" : "3",
-    "attributes" : [ "datatype", "external", "allValues" ],
-    "id" : "20"
   }, {
     "iri" : "http://www.w3.org/ns/prov#wasGeneratedBy",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -748,18 +738,28 @@
       "IRI-based" : "wasGeneratedBy"
     },
     "domain" : "3",
-    "attributes" : [ "external", "allValues", "object" ],
-    "id" : "21"
+    "attributes" : [ "allValues", "object", "external" ],
+    "id" : "19"
   }, {
     "iri" : "http://purl.org/dc/terms/hasVersion",
     "baseIri" : "http://purl.org/dc/terms",
-    "range" : "23",
+    "range" : "21",
     "label" : {
       "IRI-based" : "hasVersion"
     },
     "domain" : "3",
-    "attributes" : [ "external", "allValues", "object" ],
-    "id" : "22"
+    "attributes" : [ "allValues", "object", "external" ],
+    "id" : "20"
+  }, {
+    "iri" : "http://purl.org/dc/terms/title",
+    "baseIri" : "http://purl.org/dc/terms",
+    "range" : "22",
+    "label" : {
+      "IRI-based" : "title"
+    },
+    "domain" : "3",
+    "attributes" : [ "allValues", "datatype", "external" ],
+    "id" : "23"
   }, {
     "iri" : "https://teamheka.github.io/meds-ontology#codeString",
     "baseIri" : "https://teamheka.github.io/meds-ontology",
@@ -772,27 +772,27 @@
     "comment" : {
       "undefined" : "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists."
     },
-    "attributes" : [ "key", "datatype", "functional" ],
+    "attributes" : [ "functional", "key", "datatype" ],
     "id" : "25"
   }, {
     "iri" : "http://purl.org/dc/terms/created",
     "baseIri" : "http://purl.org/dc/terms",
-    "range" : "30",
+    "range" : "29",
     "label" : {
       "IRI-based" : "created"
     },
     "domain" : "3",
-    "attributes" : [ "datatype", "external", "allValues" ],
-    "id" : "29"
+    "attributes" : [ "allValues", "datatype", "external" ],
+    "id" : "30"
   }, {
-    "iri" : "http://purl.org/dc/terms/license",
-    "baseIri" : "http://purl.org/dc/terms",
+    "iri" : "http://www.w3.org/ns/dcat#distribution",
+    "baseIri" : "http://www.w3.org/ns/dcat",
     "range" : "32",
     "label" : {
-      "IRI-based" : "license"
+      "IRI-based" : "distribution"
     },
     "domain" : "3",
-    "attributes" : [ "external", "allValues", "object" ],
+    "attributes" : [ "allValues", "object", "external" ],
     "id" : "31"
   }, {
     "range" : "24",
@@ -805,14 +805,14 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "34"
   }, {
-    "iri" : "http://www.w3.org/ns/dcat#distribution",
-    "baseIri" : "http://www.w3.org/ns/dcat",
+    "iri" : "http://purl.org/dc/terms/license",
+    "baseIri" : "http://purl.org/dc/terms",
     "range" : "36",
     "label" : {
-      "IRI-based" : "distribution"
+      "IRI-based" : "license"
     },
     "domain" : "3",
-    "attributes" : [ "external", "allValues", "object" ],
+    "attributes" : [ "allValues", "object", "external" ],
     "id" : "35"
   }, {
     "range" : "24",
@@ -1111,7 +1111,7 @@
       "IRI-based" : "wasDerivedFrom"
     },
     "domain" : "43",
-    "attributes" : [ "external", "allValues", "object" ],
+    "attributes" : [ "allValues", "object", "external" ],
     "id" : "80"
   }, {
     "range" : "16",
