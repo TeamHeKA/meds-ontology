@@ -73,9 +73,13 @@ jobs:
           for s, p, o in g.triples((ONTO_URI, OWL.versionInfo, None)):
               g.remove((s, p, o))
 
+          for s, p, o in g.triples((ONTO_URI, OWL.versionIRI, None)):
+              g.remove((s, p, o))
+
           # Add new versionInfo
           new_version = "${{ env.VERSION }}"
-          g.add((ONTO_URI, OWL.versionInfo, Literal(new_version)))
+          g.add((ONTO_URI, OWL.versionInfo, Literal(new_version)))      
+          g.add((ONTO_URI, OWL.versionIRI, URIRef(f"https://teamheka.github.io/meds-ontology/{new_version}")))
 
           # Update modified date
           g.set((ONTO_URI, DCTERMS.modified, Literal(date.today().isoformat(), datatype=XSD.date)))
@@ -115,9 +119,8 @@ jobs:
       - name: Upload ontology files to release
         uses: ncipollo/release-action@v1
         with:
-          tag: v${{ env.VERSION }}
-          name: "MEDS Ontology v${{ env.VERSION }}"
-          files: |
-            ontology/meds.owl
-            docs/ontology.ttl
-            docs/ontology.jsonld
+            tag: v${{ env.VERSION }}
+            name: "MEDS Ontology v${{ env.VERSION }}"
+            allowUpdates: true
+            artifacts: "ontology/meds.owl,docs/ontology.ttl,docs/ontology.jsonld"
+            token: ${{ secrets.GITHUB_TOKEN }}

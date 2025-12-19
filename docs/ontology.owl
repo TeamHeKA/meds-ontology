@@ -8,6 +8,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://teamheka.github.io/meds-ontology">
+        <owl:versionIRI rdf:resource="https://teamheka.github.io/meds-ontology/1.0.2"/>
         <terms:abstract xml:lang="en">The MEDS Ontology is an OWL ontology that formally encodes the
 Medical Event Data Standard (MEDS) conceptual data model.
 It provides a semantic representation of medical event data
@@ -512,9 +513,6 @@ across implementations.</terms:description>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:hasKey rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://teamheka.github.io/meds-ontology#codeString"/>
-        </owl:hasKey>
         <rdfs:comment>Metadata/vocabulary entry describing a event code (code string, description, parent codes, external links).</rdfs:comment>
         <rdfs:label>Code</rdfs:label>
     </owl:Class>

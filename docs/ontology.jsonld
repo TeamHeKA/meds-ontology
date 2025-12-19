@@ -10,19 +10,6 @@
 }, {
   "@id" : "_:genid10",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onDataRange" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://teamheka.github.io/meds-ontology#medsVersion"
-  } ],
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ]
-}, {
-  "@id" : "_:genid11",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://teamheka.github.io/meds-ontology#DatasetMetadata"
   } ],
@@ -30,7 +17,7 @@
     "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom"
   } ]
 }, {
-  "@id" : "_:genid12",
+  "@id" : "_:genid11",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://teamheka.github.io/meds-ontology#Subject"
@@ -39,7 +26,7 @@
     "@id" : "https://teamheka.github.io/meds-ontology#hasSubject"
   } ]
 }, {
-  "@id" : "_:genid13",
+  "@id" : "_:genid12",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#maxQualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -52,7 +39,7 @@
     "@id" : "https://teamheka.github.io/meds-ontology#hasCode"
   } ]
 }, {
-  "@id" : "_:genid14",
+  "@id" : "_:genid13",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onDataRange" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
@@ -65,7 +52,7 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid15",
+  "@id" : "_:genid14",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#maxQualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -78,7 +65,7 @@
     "@id" : "https://teamheka.github.io/meds-ontology#numericValue"
   } ]
 }, {
-  "@id" : "_:genid16",
+  "@id" : "_:genid15",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#maxQualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -91,7 +78,7 @@
     "@id" : "https://teamheka.github.io/meds-ontology#textValue"
   } ]
 }, {
-  "@id" : "_:genid17",
+  "@id" : "_:genid16",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#maxQualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -104,7 +91,7 @@
     "@id" : "https://teamheka.github.io/meds-ontology#time"
   } ]
 }, {
-  "@id" : "_:genid18",
+  "@id" : "_:genid17",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://teamheka.github.io/meds-ontology#DatasetMetadata"
@@ -113,13 +100,26 @@
     "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom"
   } ]
 }, {
-  "@id" : "_:genid19",
+  "@id" : "_:genid18",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://teamheka.github.io/meds-ontology#Subject"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://teamheka.github.io/meds-ontology#hasSubject"
+  } ]
+}, {
+  "@id" : "_:genid19",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onDataRange" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://teamheka.github.io/meds-ontology#predictionTime"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
   } ]
 }, {
   "@id" : "_:genid2",
@@ -137,19 +137,6 @@
 }, {
   "@id" : "_:genid20",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onDataRange" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://teamheka.github.io/meds-ontology#predictionTime"
-  } ],
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ]
-}, {
-  "@id" : "_:genid21",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#maxQualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
@@ -161,7 +148,7 @@
     "@id" : "https://teamheka.github.io/meds-ontology#booleanValue"
   } ]
 }, {
-  "@id" : "_:genid22",
+  "@id" : "_:genid21",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#maxQualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -174,7 +161,7 @@
     "@id" : "https://teamheka.github.io/meds-ontology#categoricalValue"
   } ]
 }, {
-  "@id" : "_:genid23",
+  "@id" : "_:genid22",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#maxQualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -187,7 +174,7 @@
     "@id" : "https://teamheka.github.io/meds-ontology#floatValue"
   } ]
 }, {
-  "@id" : "_:genid24",
+  "@id" : "_:genid23",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#maxQualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -200,7 +187,7 @@
     "@id" : "https://teamheka.github.io/meds-ontology#integerValue"
   } ]
 }, {
-  "@id" : "_:genid25",
+  "@id" : "_:genid24",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://teamheka.github.io/meds-ontology#DatasetMetadata"
@@ -209,7 +196,7 @@
     "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom"
   } ]
 }, {
-  "@id" : "_:genid27",
+  "@id" : "_:genid26",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -227,7 +214,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid4",
+  "@id" : "_:genid3",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
@@ -236,7 +223,7 @@
     "@id" : "http://purl.org/dc/terms/hasVersion"
   } ]
 }, {
-  "@id" : "_:genid5",
+  "@id" : "_:genid4",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "http://purl.org/dc/terms/LicenseDocument"
@@ -245,7 +232,7 @@
     "@id" : "http://purl.org/dc/terms/license"
   } ]
 }, {
-  "@id" : "_:genid6",
+  "@id" : "_:genid5",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "http://www.w3.org/ns/dcat#Distribution"
@@ -254,7 +241,7 @@
     "@id" : "http://www.w3.org/ns/dcat#distribution"
   } ]
 }, {
-  "@id" : "_:genid7",
+  "@id" : "_:genid6",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "http://www.w3.org/ns/prov#Activity"
@@ -263,7 +250,7 @@
     "@id" : "http://www.w3.org/ns/prov#wasGeneratedBy"
   } ]
 }, {
-  "@id" : "_:genid8",
+  "@id" : "_:genid7",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
@@ -272,13 +259,26 @@
     "@id" : "http://purl.org/dc/terms/created"
   } ]
 }, {
-  "@id" : "_:genid9",
+  "@id" : "_:genid8",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.org/dc/terms/title"
+  } ]
+}, {
+  "@id" : "_:genid9",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onDataRange" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://teamheka.github.io/meds-ontology#medsVersion"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
   } ]
 }, {
   "@id" : "http://purl.org/dc/terms/LicenseDocument",
@@ -380,6 +380,9 @@
     "@language" : "en",
     "@value" : "MEDS Ontology"
   } ],
+  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
+    "@id" : "https://teamheka.github.io/meds-ontology/1.0.2"
+  } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@value" : "1.0.2"
   } ]
@@ -396,11 +399,6 @@
     "@id" : "_:genid1"
   }, {
     "@id" : "_:genid2"
-  } ],
-  "http://www.w3.org/2002/07/owl#hasKey" : [ {
-    "@list" : [ {
-      "@id" : "https://teamheka.github.io/meds-ontology#codeString"
-    } ]
   } ]
 }, {
   "@id" : "https://teamheka.github.io/meds-ontology#DatasetMetadata",
@@ -416,6 +414,8 @@
   }, {
     "@id" : "http://www.w3.org/ns/prov#Entity"
   }, {
+    "@id" : "_:genid3"
+  }, {
     "@id" : "_:genid4"
   }, {
     "@id" : "_:genid5"
@@ -427,8 +427,6 @@
     "@id" : "_:genid8"
   }, {
     "@id" : "_:genid9"
-  }, {
-    "@id" : "_:genid10"
   } ]
 }, {
   "@id" : "https://teamheka.github.io/meds-ontology#Event",
@@ -440,6 +438,8 @@
     "@value" : "Event"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "_:genid10"
+  }, {
     "@id" : "_:genid11"
   }, {
     "@id" : "_:genid12"
@@ -451,8 +451,6 @@
     "@id" : "_:genid15"
   }, {
     "@id" : "_:genid16"
-  }, {
-    "@id" : "_:genid17"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://teamheka.github.io/meds-ontology#LabelSample"
@@ -467,6 +465,8 @@
     "@value" : "LabelSample"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "_:genid17"
+  }, {
     "@id" : "_:genid18"
   }, {
     "@id" : "_:genid19"
@@ -478,8 +478,6 @@
     "@id" : "_:genid22"
   }, {
     "@id" : "_:genid23"
-  }, {
-    "@id" : "_:genid24"
   } ]
 }, {
   "@id" : "https://teamheka.github.io/meds-ontology#Subject",
@@ -491,7 +489,7 @@
     "@value" : "Subject"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid25"
+    "@id" : "_:genid24"
   } ],
   "http://www.w3.org/2002/07/owl#hasKey" : [ {
     "@list" : [ {
