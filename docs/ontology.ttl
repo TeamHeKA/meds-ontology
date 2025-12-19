@@ -24,11 +24,11 @@ and validate data according to the MEDS conceptual model,
 enabling consistent data representation and quality control
 across implementations."""@en ;
                                             <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
-                                            <http://purl.org/dc/terms/modified> "2025-12-16"^^xsd:date ;
+                                            <http://purl.org/dc/terms/modified> "2025-12-19"^^xsd:date ;
                                             <http://purl.org/dc/terms/publisher> "HeKa Team"@en ;
                                             <http://purl.org/dc/terms/title> "MEDS Ontology"@en ;
                                             rdfs:label "MEDS Ontology"@en ;
-                                            owl:versionInfo "1.0.1" .
+                                            owl:versionInfo "1.0.2" .
 
 #################################################################
 #    Annotation properties
@@ -107,9 +107,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://teamheka.github.io/meds-ontology#hasSubject
-:hasSubject rdf:type owl:ObjectProperty ;
-            rdfs:domain :Event ,
-                        :LabelSample ;
+:hasSubject rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty ;
             rdfs:range :Subject ;
             rdfs:comment "Links a Event or LabelSample to its Subject (maps to subject_id)." ;
             rdfs:label "hasSubject" .
@@ -178,11 +177,6 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://teamheka.github.io/meds-ontology#codeString
 :codeString rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
-            rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( :Code
-                                        :Event
-                                      )
-                        ] ;
             rdfs:range xsd:string ;
             rdfs:comment "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists." .
 
@@ -319,7 +313,8 @@ rdfs:Resource rdf:type owl:Class .
                       ] ,
                       [ rdf:type owl:Restriction ;
                         owl:onProperty :codeString ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:string
                       ] ;
       owl:hasKey ( :codeString
                  ) ;
@@ -357,7 +352,8 @@ rdfs:Resource rdf:type owl:Class .
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :medsVersion ;
-                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:string
                                  ] ;
                  rdfs:comment "High-level provenance and conversion metadata for a MEDS dataset." ;
                  rdfs:label "DatasetMetadata" .
@@ -370,24 +366,34 @@ rdfs:Resource rdf:type owl:Class .
                          owl:allValuesFrom :DatasetMetadata
                        ] ,
                        [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasCode ;
-                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                         owl:onProperty :hasSubject ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Subject
                        ] ,
                        [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasSubject ;
-                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                         owl:onProperty :hasCode ;
+                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Code
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :codeString ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onDataRange xsd:string
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :numericValue ;
-                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onDataRange xsd:double
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :textValue ;
-                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onDataRange xsd:string
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :time ;
-                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onDataRange xsd:dateTime
                        ] ;
        owl:disjointWith :LabelSample ;
        rdfs:comment "A single observation/row in MEDS: (subject, time?, code, value modalities...). Time is nullable for static events." ;
@@ -402,27 +408,32 @@ rdfs:Resource rdf:type owl:Class .
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :hasSubject ;
-                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                               owl:allValuesFrom :Subject
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :predictionTime ;
-                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:dateTime
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :booleanValue ;
-                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:boolean
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :categoricalValue ;
-                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :floatValue ;
-                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:double
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :integerValue ;
-                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:integer
                              ] ;
              rdfs:comment "A prediction sample row: subject, prediction_time, and one label value (boolean/integer/float/categorical)." ;
              rdfs:label "LabelSample" .
@@ -474,16 +485,19 @@ rdfs:Resource rdf:type owl:Class .
              rdfs:label "tuning"@en .
 
 
-[ owl:cardinality "1"^^xsd:nonNegativeInteger
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Code
+                :Event
+                :LabelSample
+                :Subject
+                :SubjectSplit
+                :ValueModality
+              )
 ] .
 
-[ owl:cardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:maxCardinality 1
- ] .
-
-[ owl:maxCardinality 1
- ] .
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
