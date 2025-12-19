@@ -153,9 +153,9 @@
 # 
 # https://teamheka.github.io/meds-ontology#codeString
 <https://teamheka.github.io/meds-ontology#codeString> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://teamheka.github.io/meds-ontology#codeString> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <https://teamheka.github.io/meds-ontology#codeString> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://teamheka.github.io/meds-ontology#codeString> <http://www.w3.org/2000/01/rdf-schema#comment> "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists." .
+<https://teamheka.github.io/meds-ontology#codeString> <http://www.w3.org/2000/01/rdf-schema#label> "codeString" .
 # 
 # https://teamheka.github.io/meds-ontology#floatValue
 <https://teamheka.github.io/meds-ontology#floatValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -332,8 +332,7 @@ _:genid11 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://teamheka.github
 _:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasDerivedFrom> .
 _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://teamheka.github.io/meds-ontology#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
-_:genid12 <http://www.w3.org/2002/07/owl#onClass> <https://teamheka.github.io/meds-ontology#Subject> .
-_:genid12 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid12 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://teamheka.github.io/meds-ontology#Subject> .
 _:genid12 <http://www.w3.org/2002/07/owl#onProperty> <https://teamheka.github.io/meds-ontology#hasSubject> .
 _:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://teamheka.github.io/meds-ontology#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .

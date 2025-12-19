@@ -175,10 +175,10 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://teamheka.github.io/meds-ontology#codeString
-:codeString rdf:type owl:DatatypeProperty ,
-                     owl:FunctionalProperty ;
+:codeString rdf:type owl:DatatypeProperty ;
             rdfs:range xsd:string ;
-            rdfs:comment "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists." .
+            rdfs:comment "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists." ;
+            rdfs:label "codeString" .
 
 
 ###  https://teamheka.github.io/meds-ontology#floatValue
@@ -367,8 +367,7 @@ rdfs:Resource rdf:type owl:Class .
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :hasSubject ;
-                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                         owl:onClass :Subject
+                         owl:allValuesFrom :Subject
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :hasCode ;

@@ -290,9 +290,9 @@ across implementations.</terms:description>
 
 
     <owl:DatatypeProperty rdf:about="https://teamheka.github.io/meds-ontology#codeString">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Canonical textual code; functional for Code. Also present on Event when no Code metadata exists.</rdfs:comment>
+        <rdfs:label>codeString</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -589,8 +589,7 @@ across implementations.</terms:description>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://teamheka.github.io/meds-ontology#hasSubject"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://teamheka.github.io/meds-ontology#Subject"/>
+                <owl:allValuesFrom rdf:resource="https://teamheka.github.io/meds-ontology#Subject"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>

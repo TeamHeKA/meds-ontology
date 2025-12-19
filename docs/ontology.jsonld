@@ -32,15 +32,11 @@
 }, {
   "@id" : "_:genid12",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://teamheka.github.io/meds-ontology#Subject"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://teamheka.github.io/meds-ontology#hasSubject"
-  } ],
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
   } ]
 }, {
   "@id" : "_:genid13",
@@ -612,9 +608,12 @@
   } ]
 }, {
   "@id" : "https://teamheka.github.io/meds-ontology#codeString",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "codeString"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"

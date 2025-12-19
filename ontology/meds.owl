@@ -203,6 +203,11 @@ meds:time a owl:DatatypeProperty ;
     rdfs:domain meds:Event ;
     rdfs:range xsd:dateTime .
 
+meds:codeString a owl:DatatypeProperty;
+    rdfs:label "codeString" ;
+    rdfs:comment "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists." ;
+    rdfs:range xsd:string .
+
 meds:ValueModality a owl:Class ;
     rdfs:label "ValueModality" ;
     rdfs:comment "Generic holder for additional value modalities (image path, waveform id, etc.). Instances may contain modality-specific properties." .
@@ -212,11 +217,6 @@ meds:hasSubject a owl:FunctionalProperty,
     rdfs:label "hasSubject" ;
     rdfs:comment "Links a Event or LabelSample to its Subject (maps to subject_id)." ;
     rdfs:range meds:Subject .
-
-meds:codeString a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    rdfs:comment "Canonical textual code; functional for Code. Also present on Event when no Code metadata exists." ;
-    rdfs:range xsd:string .
 
 prov:wasDerivedFrom a owl:ObjectProperty .
 
@@ -247,9 +247,8 @@ meds:Event a owl:Class ;
             owl:allValuesFrom meds:DatasetMetadata ;
             owl:onProperty prov:wasDerivedFrom ],
         [ a owl:Restriction ;
-            owl:onClass meds:Subject ;
-            owl:onProperty meds:hasSubject ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+            owl:allValuesFrom meds:Subject ;
+            owl:onProperty meds:hasSubject ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass meds:Code ;
